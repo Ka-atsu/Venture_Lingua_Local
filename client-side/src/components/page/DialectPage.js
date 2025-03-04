@@ -1,13 +1,11 @@
 import React from 'react';
-import TopComponent from '../home_page_modules/TopComponent';
-import DialectPickerComponent from '../home_page_modules/DialectPickerComponent';
+import DialectPickerComponent from '../DialectSelection/DialectPickerComponent';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-function Homepage() {
+function DialectPage() {
     return (
         <>
-        <TopComponent />
         {/* 
                 The Container component is used to center the content 
                 and make it responsive. 
@@ -17,7 +15,7 @@ function Homepage() {
                 - align-items-center: This centers the content vertically.
                 - style={{ minHeight: '100vh' }}: This ensures the Container takes the full height of the viewport.
         */}
-        <Container className="d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+        <Container className="d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
             <Row className="w-100">
                 <h1 className="text-center">Choose a dialect</h1>
             </Row>
@@ -29,4 +27,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default DialectPage;
