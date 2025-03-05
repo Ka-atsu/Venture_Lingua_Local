@@ -1,18 +1,31 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Use useNavigate for navigation
+import { FaArrowLeft } from 'react-icons/fa'; // Import the Font Awesome icon
 import './BasicWordsTagalog.css'; // Import the CSS file for animation
 
 function BasicWordsTagalog() {
+    const navigate = useNavigate(); 
+
+    const goBack = () => {
+        navigate(-1); // Use navigate(-1) to go back to the previous page
+    };
+
     const words = [
-        { tagalog: 'Salamat', english: 'Thank you', example: 'Salamat sa tulong mo.' },
-        { tagalog: 'Magandang araw', english: 'Good day', example: 'Magandang araw sa iyo!' },
-        { tagalog: 'Kamusta', english: 'Hello', example: 'Kamusta, paano ka?' },
-        { tagalog: 'Paalam', english: 'Goodbye', example: 'Paalam, magkita tayo muli.' },
-        { tagalog: 'Salamat', english: 'Thank you', example: 'Salamat sa tulong mo.' },
-        { tagalog: 'Magandang araw', english: 'Good day', example: 'Magandang araw sa iyo!' },
+        { tagalog: 'Salamat', english: 'Thank you' },
+        { tagalog: 'Kamusta', english: 'Hello' },
+        { tagalog: 'Magandang umaga', english: 'Good Morning' },
+        { tagalog: 'Magandang hapon', english: 'Good Afternoon' },
+        { tagalog: 'Magandang gabi', english: 'Good Evening' },
+        { tagalog: 'Magandang gabi', english: 'Good Night' },
+        { tagalog: 'Magandang araw', english: 'Good day' },
+        { tagalog: 'Masarap', english: 'Delicious' },
+        { tagalog: 'Tulog na', english: 'Go to sleep' },
+        { tagalog: 'Mahal kita', english: 'I love you' },
+        { tagalog: 'How are you?', english: 'Kumusta ka?' },
+        { tagalog: 'What is your name? / My name is Sampaguita', english: 'Ano pangalan mo / Ang pangalan ko ay Sampaguita' },
     ];
 
-    // Flashcard-style toggle state to keep track of flipped cards
     const [flippedIndices, setFlippedIndices] = useState(new Set());
 
     const handleFlip = (index) => {
@@ -26,25 +39,27 @@ function BasicWordsTagalog() {
     };
 
     return (
-        <Container fluid className="vh-100 bg-dark p-5">
-            <h1 className="text-center mb-5" style={{ color: '#ffff' }}>Basic Tagalog Words</h1>
+        <Container fluid className="bg-dark p-5">
+            <div className="tagalog-go-back-icon">
+                {/* Clickable Arrow Icon */}
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
+            </div>
+
+            <h1 className="text-center mb-5 text-white">Basic Tagalog Words</h1>
 
             <Row>
                 {words.map((word, index) => (
-                    <Col md={6} sm={12} key={index} className="mb-4">
-                        {/* Book-like layout */}
+                    <Col md={4} sm={6} key={index} className="mb-4">
                         <div
                             className={`tagalog-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)} // Flip the card on click
                         >
                             <div className="tagalog-flashcard-inner">
                                 <div className="tagalog-flashcard-front">
-                                    <h3 className="text-primary">{word.tagalog}</h3>
-                                    <p><strong>English:</strong> {word.english}</p>
+                                    <h2 className="tagalog-word">{word.english}</h2>
                                 </div>
                                 <div className="tagalog-flashcard-back">
-                                    <h3 className="text-primary">{word.tagalog}</h3>
-                                    <p><strong>Example Sentence:</strong> {word.example}</p>
+                                    <h2 className="tagalog-word">{word.tagalog}</h2>
                                 </div>
                             </div>
                         </div>

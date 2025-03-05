@@ -1,13 +1,21 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function LearnTagalogMainContent() {
+  const navigate = useNavigate(); // Initialize the navigate function
+
+  const gotoBasicWords = () => {
+    navigate('/tagalogLearn/BasicWords'); // Programmatically navigate to the settings page
+};
   return (
     <Container fluid className="vh-100 bg-dark p-5">
       {/* Title and description section */}
       <Row className="mt-4">
         <Col>
-          <h1 className="text-center font-weight-bold text-white">Welcome to Learn Tagalog</h1>
+          <h1 className="text-center font-weight-bold text-white" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: '600', color: '#ffffff' }}>
+            Welcome User
+          </h1>
           <p className="text-center text-light">This is the main content area where you'll learn Tagalog.</p>
         </Col>
       </Row>
@@ -19,7 +27,7 @@ function LearnTagalogMainContent() {
             variant="secondary"
             size="lg"
             className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start transition-transform transform-hover"
-            onClick={() => alert('Basic Words Module Clicked')}
+            onClick={gotoBasicWords}
           >
             <strong className="text-light">Basic Words</strong>
             <p className="text-body">Learn common words in Tagalog such as greetings, essential nouns, numbers, and more.</p>

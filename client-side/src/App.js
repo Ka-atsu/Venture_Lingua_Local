@@ -4,6 +4,7 @@ import LoginRegisterPage from './components/page/LoginRegisterPage';
 import DialectPage from './components/page/DialectPage';
 import TagalogLearnPage from './components/page/TagalogLearnPage';
 import TagalogPracticePage from './components/page/TagalogPracticePage';
+import BasicWordsTagalogPage from './components/page/BasicWordsTagalogPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<DialectPage />} />
           <Route path="/login" element={<LoginRegisterPage />} />
           <Route path="/tagalogLearn" element={<TagalogLearnPage />} />
+          <Route path="/tagalogLearn/BasicWords" element={<BasicWordsTagalogPage />} />
           <Route path="/tagalogPractice" element={<TagalogPracticePage />} />
         </Routes>
       </Router>

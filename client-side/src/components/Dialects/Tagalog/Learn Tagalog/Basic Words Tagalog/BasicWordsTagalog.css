@@ -1,40 +1,94 @@
-/* BasicWordsTagalog.css */
-
-.tagalog-flashcard {
-    width: 100%;
-    height: 200px; /* Set a fixed height for the flashcard */
-    perspective: 1000px; /* Adds perspective to the card */
+/* Styling for the Go Back Arrow Icon */
+.tagalog-go-back-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10; /* Ensure the icon stays on top */
+    cursor: pointer; /* Indicates the icon is clickable */
 }
 
+/* Custom Hover effect for the icon */
+.go-back-arrow:hover {
+    color: #ff5722; /* Change icon color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Styling for the tagalog words and flashcards */
+.tagalog-flashcard {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    perspective: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tagalog-flashcard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Flashcard inner container */
 .tagalog-flashcard-inner {
     width: 100%;
     height: 100%;
-    transition: transform 0.6s; /* Smooth flip transition */
+    position: absolute;
     transform-style: preserve-3d;
-    position: relative;
+    transition: transform 0.5s;
+    border-radius: 12px;
 }
 
+/* Flip effect */
 .tagalog-flashcard.flipped .tagalog-flashcard-inner {
-    transform: rotateY(180deg); /* Flip the card */
+    transform: rotateY(180deg);
 }
 
+/* Front and back faces of the flashcard */
 .tagalog-flashcard-front,
 .tagalog-flashcard-back {
     position: absolute;
-    backface-visibility: hidden; /* Prevents backface from showing */
+    backface-visibility: hidden;
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column; 
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
+}
+
+.tagalog-flashcard-front {
     background-color: #f8f9fa;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tagalog-flashcard-back {
-    transform: rotateY(180deg); /* Initially rotate the back side */
-    background-color: #e9ecef;
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Styling for the Tagalog word to give emphasis */
+.tagalog-word {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Add some space between cards on mobile devices */
+@media (max-width: 768px) {
+    .tagalog-flashcard {
+        height: 200px;
+    }
+}
+
+/* Header styles */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
 }
