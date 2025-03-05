@@ -2,7 +2,8 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginRegisterPage from './components/page/LoginRegisterPage';
 import DialectPage from './components/page/DialectPage';
-import TagalogPage from './components/page/Tagalogpage';
+import TagalogLearnPage from './components/page/TagalogLearnPage';
+import TagalogPracticePage from './components/page/TagalogPracticePage';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Routes>
           <Route path="/" element={<DialectPage />} />
           <Route path="/login" element={<LoginRegisterPage />} />
-          <Route path="/tagalog" element={<TagalogPage />} />
+          <Route path="/tagalogLearn" element={<TagalogLearnPage />} />
+          <Route path="/tagalogPractice" element={<TagalogPracticePage />} />
         </Routes>
       </Router>
     </div>

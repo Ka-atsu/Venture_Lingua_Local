@@ -61,7 +61,7 @@ function BasicWordsQuizTagalog() {
     };
 
     return (
-        <>
+        <Container>
             {/* 
                 border-0 This is to remove the border of Card
                 shadow-none This is to remove the Shadow of Card
@@ -97,7 +97,7 @@ function BasicWordsQuizTagalog() {
                     </Button>
                 </Container>
             )}
-        </>
+        </Container>
     );
 }
 
