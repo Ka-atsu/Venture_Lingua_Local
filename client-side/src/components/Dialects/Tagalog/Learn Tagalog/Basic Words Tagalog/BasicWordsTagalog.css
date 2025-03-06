@@ -8,7 +8,7 @@
 }
 
 /* Custom Hover effect for the icon */
-.go-back-arrow:hover {
+.tagalog-go-back-arrow:hover {
     color: #ff5722; /* Change icon color on hover */
     transform: scale(1.1); /* Slight zoom effect */
     transition: transform 0.3s ease, color 0.3s ease;
@@ -83,12 +83,4 @@
     .tagalog-flashcard {
         height: 200px;
     }
-}
-
-/* Header styles */
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #fff;
 }

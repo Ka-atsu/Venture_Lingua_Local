@@ -10,7 +10,7 @@ function DialectPickerComponent() {
     const navigate = useNavigate(); // Initialize the navigate function
     // If tagalog is clicked
     const tagalog = () => {
-        navigate('/tagalog'); 
+        navigate('/tagalogLearn'); 
     };
     return (
         <Container className="bg-white" style={{ width: '100%', maxWidth: '600px' }}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Button, Container } from 'react-bootstrap';
 import { useNavigate, useLocation  } from 'react-router-dom';
-import { FaCog, FaSignOutAlt, FaBook, FaPencilAlt } from 'react-icons/fa'; // Icons for settings and logout
+import { FaCog, FaSignOutAlt, FaBook, FaPencilAlt, FaDiceD6 } from 'react-icons/fa'; // Icons for settings and logout
 
 function TagalogSideComponent() {
     const navigate = useNavigate(); // Initialize the navigate function
@@ -53,6 +53,15 @@ function TagalogSideComponent() {
 
             {/* Settings and Logout buttons */}
             <Container className="flex-column">
+                <Button
+                    variant="light"
+                    className="w-100 mb-3 py-3 d-flex align-items-center justify-content-start"
+                    onClick={() => navigate('/dialectSelector')}
+                    style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
+                >
+                    <FaDiceD6 className="me-3" />
+                    Change Dialect
+                </Button>
                 <Button
                     variant="light"
                     className="w-100 mb-3 py-3 d-flex align-items-center justify-content-start"

@@ -22,8 +22,8 @@ function BasicWordsTagalog() {
         { tagalog: 'Masarap', english: 'Delicious' },
         { tagalog: 'Tulog na', english: 'Go to sleep' },
         { tagalog: 'Mahal kita', english: 'I love you' },
-        { tagalog: 'How are you?', english: 'Kumusta ka?' },
-        { tagalog: 'What is your name? / My name is Sampaguita', english: 'Ano pangalan mo / Ang pangalan ko ay Sampaguita' },
+        { tagalog: 'Kumusta ka? ', english: 'How are you?' },
+        { tagalog: 'Ano pangalan mo? / Ang pangalan ko ay Russel', english: 'What is your name? / My name is Russel' },
     ];
 
     const [flippedIndices, setFlippedIndices] = useState(new Set());
@@ -42,10 +42,11 @@ function BasicWordsTagalog() {
         <Container fluid className="bg-dark p-5">
             <div className="tagalog-go-back-icon">
                 {/* Clickable Arrow Icon */}
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
             </div>
 
-            <h1 className="text-center mb-5 text-white">Basic Tagalog Words</h1>
+            <h1 className="text-center text-white">Basic Tagalog Words</h1>
+            <p className="text-center mb-5 text-white"> Click the card to Flip</p>
 
             <Row>
                 {words.map((word, index) => (
