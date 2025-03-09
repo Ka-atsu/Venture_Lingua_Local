@@ -10,6 +10,9 @@ function LearnTagalogMainContent() {
   const gotoCommonPhrase = () => navigate('/tagalogLearn/commonPhrase');
   const gotoPronounceSentences = () => navigate('/tagalogLearn/pronounce&sentence');
   const gotoVerbsTenses = () => navigate('/tagalogLearn/verbs&tenses');
+  const gotoUsefulExpresions = () => navigate('/tagalogLearn/usefulExpressions');
+
+  
 
   // Hover effect handlers with a smoother transition
   const handleMouseOver = (e) => {
@@ -113,7 +116,7 @@ function LearnTagalogMainContent() {
           <Button
             variant="light"
             size="lg"
-            onClick={() => alert('Useful Expressions Module Clicked')}
+            onClick={gotoUsefulExpresions}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start mb-4"

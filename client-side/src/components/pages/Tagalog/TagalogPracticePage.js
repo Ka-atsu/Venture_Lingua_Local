@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import TagalogSideComponent from '../../Side Panel/TagalogSideComponent';
-import PracticeTagalogMainContent from '../../Dialects/Tagalog/Practice Tagalog/Dashboard/PracticeTagalogMainContent';
+import PracticeTagalogMainContent from '../../Dialects/Tagalog/Practice Tagalog/1 Dashboard/PracticeTagalogMainContent';
 
 function TagalogPracticePage() {
     return (

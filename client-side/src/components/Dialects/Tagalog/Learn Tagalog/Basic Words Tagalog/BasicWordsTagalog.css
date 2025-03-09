@@ -1,8 +1,8 @@
 /* Styling for the Go Back Arrow Icon */
 .tagalog-go-back-icon {
     position: absolute;
-    top: 6vh;
-    left: 6vh;
+    top: 5vh;
+    left: 5vh;
     z-index: 10; /* Ensure the icon stays on top */
     cursor: pointer; /* Indicates the icon is clickable */
 }

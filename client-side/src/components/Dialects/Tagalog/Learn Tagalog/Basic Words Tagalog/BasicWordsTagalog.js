@@ -11,6 +11,17 @@ function BasicWordsTagalog() {
         navigate(-1); // Use navigate(-1) to go back to the previous page
     };
 
+    // Hover effect handlers with a smoother transition
+    const handleMouseOver = (e) => {
+        e.currentTarget.style.transition = 'transform 0.5s ease';
+        e.currentTarget.style.transform = 'translateY(-5px)';
+    };
+
+    const handleMouseOut = (e) => {
+        e.currentTarget.style.transition = 'transform 0.5s ease';
+        e.currentTarget.style.transform = 'translateY(0)';
+    };
+
     // Grouping the words
     const wordGroups = [
         // Group 1: Basic Greetings
@@ -136,24 +147,46 @@ function BasicWordsTagalog() {
                 ))}
             </Row>
 
-            {/* Navigation buttons */}
-            <Row className="d-flex justify-content-between mt-5">
+            {/* Button to navigate between groups */}
+            <Row className="d-flex w-100 justify-content-between mt-5">
                 <Col xs="auto">
-                    <Button 
-                        variant="outline-light" 
-                        onClick={prevSet} 
-                        disabled={currentSet === 0} 
+                    <Button
+                        variant="outline-light"
+                        onClick={prevSet}
+                        disabled={currentSet === 0}
                         className="btn-lg rounded-pill mx-2"
+                        style={{
+                            transition: 'transform 0.3s',
+                            transform: 'translateY(0)',
+                            padding: '12px 25px',
+                            backgroundColor: '#5783db',
+                            borderColor: '#5783db',
+                            color: '#fff',
+                            fontSize: '1.1rem',
+                        }}
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
                     >
                         Previous Set
                     </Button>
                 </Col>
                 <Col xs="auto">
-                    <Button 
-                        variant="outline-success" 
-                        onClick={nextSet} 
-                        disabled={currentSet + 1 >= wordGroups.length} 
+                    <Button
+                        variant="outline-success"
+                        onClick={nextSet}
+                        disabled={currentSet + 1 >= wordGroups.length}
                         className="btn-lg rounded-pill mx-2"
+                        style={{
+                            transition: 'transform 0.3s',
+                            transform: 'translateY(0)',
+                            padding: '12px 25px',
+                            backgroundColor: '#5adbb5',
+                            borderColor: '#5adbb5',
+                            color: '#000',
+                            fontSize: '1.1rem',
+                        }}
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
                     >
                         Next Set
                     </Button>

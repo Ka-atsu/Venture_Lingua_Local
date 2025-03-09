@@ -10,8 +10,19 @@ function PronounceSentenceTagalog() {
         navigate(-1); 
     };
 
+    // Hover effect handlers with a smoother transition
+    const handleMouseOver = (e) => {
+        e.currentTarget.style.transition = 'transform 0.5s ease';
+        e.currentTarget.style.transform = 'translateY(-5px)';
+    };
+
+    const handleMouseOut = (e) => {
+        e.currentTarget.style.transition = 'transform 0.5s ease';
+        e.currentTarget.style.transform = 'translateY(0)';
+    };
+
     // Grouped phrases with pronunciation, example sentences, and explanation
-    const phrases = [
+    const pronounceSentenceGroups = [
         // Group 1: Greeting phrases
         {
             group: 'Greetings',
@@ -151,7 +162,7 @@ function PronounceSentenceTagalog() {
     const nextSet = () => {
         flipBackCards(); // Flip all cards back
         setTimeout(() => {
-            if (currentSet + 1 < phrases.length) {
+            if (currentSet + 1 < pronounceSentenceGroups.length) {
                 setCurrentSet(currentSet + 1); // Move to the next group
             }
         }, 500); // Delay to allow flip back animation
@@ -176,11 +187,11 @@ function PronounceSentenceTagalog() {
             <h1 className="text-center text-white">Tagalog Pronunciation and Example Sentences</h1>
             <p className="text-center mb-3 text-white">Click the card to Flip</p>
 
-            <h2 className="text-center text-white mb-5 ">{phrases[currentSet].group}</h2>
+            <h2 className="text-center text-white mb-5 ">{pronounceSentenceGroups[currentSet].group}</h2>
 
             {/* Display phrases for the current group */}
             <Row className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
-                {phrases[currentSet].phrases.map((phrase, index) => (
+                {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
                             className={`tagalog-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
@@ -203,29 +214,49 @@ function PronounceSentenceTagalog() {
                 ))}
             </Row>
 
-            {/* Button to navigate between groups */}
-            <Row className="d-flex w-100 justify-content-between mt-5">
-                <Col xs="auto">
-                    <Button 
-                        variant="outline-light" 
-                        onClick={prevSet} 
-                        disabled={currentSet === 0} 
-                        className="btn-lg rounded-pill mx-2"
-                    >
-                        Previous Set
-                    </Button>
-                </Col>
-                <Col xs="auto">
-                    <Button 
-                        variant="outline-success" 
-                        onClick={nextSet} 
-                        disabled={currentSet + 1 >= phrases.length} 
-                        className="btn-lg rounded-pill mx-2"
-                    >
-                        Next Set
-                    </Button>
-                </Col>
-            </Row>
+            {/* Navigation buttons to move between groups */}
+                  <Row className="d-flex w-100 justify-content-between mt-5">
+                    <Col xs="auto">
+                      <Button
+                        onClick={prevSet}
+                        disabled={currentSet === 0}
+                        className="btn-lg rounded-pill"
+                        style={{
+                          transition: 'transform 0.3s',
+                          transform: 'translateY(0)',
+                          padding: '12px 25px',
+                          backgroundColor: '#5783db',
+                          borderColor: '#5783db',
+                          color: '#fff',
+                          fontSize: '1.1rem',
+                        }}
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                      >
+                        Previous Word
+                      </Button>
+                    </Col>
+                    <Col xs="auto">
+                      <Button
+                        onClick={nextSet}
+                        disabled={currentSet + 1 >= pronounceSentenceGroups.length}
+                        className="btn-lg rounded-pill"
+                        style={{
+                          transition: 'transform 0.3s',
+                          transform: 'translateY(0)',
+                          padding: '12px 25px',
+                          backgroundColor: '#5adbb5',
+                          borderColor: '#5adbb5',
+                          color: '#000',
+                          fontSize: '1.1rem',
+                        }}
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                      >
+                        Next Word
+                      </Button>
+                    </Col>
+                  </Row>
         </Container>
     );
 }

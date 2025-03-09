@@ -8,6 +8,7 @@ import TagalogBasicWordsPage from './components/pages/Tagalog/Learn Tagalog/Taga
 import TagalogCommonPharsePage from './components/pages/Tagalog/Learn Tagalog/TagalogCommonPharsePage';
 import TagalogPronouncePage from './components/pages/Tagalog/Learn Tagalog/TagalogPronouncePage';
 import TagalogVerbsTensesPage from './components/pages/Tagalog/Learn Tagalog/TagalogVerbsTensesPage';
+import TagalogExpressionsPage from './components/pages/Tagalog/Learn Tagalog/TagalogExpressionsPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/tagalogLearn/commonPhrase" element={<TagalogCommonPharsePage />} />
           <Route path="/tagalogLearn/pronounce&sentence" element={<TagalogPronouncePage />} />
           <Route path="/tagalogLearn/verbs&tenses" element={<TagalogVerbsTensesPage />} />
+          <Route path="/tagalogLearn/usefulExpressions" element={<TagalogExpressionsPage />} />
           <Route path="/tagalogPractice" element={<TagalogPracticePage />} />
         </Routes>
       </Router>
