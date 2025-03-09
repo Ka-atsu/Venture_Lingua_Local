@@ -10,6 +10,7 @@ import TagalogPronouncePage from './components/pages/Tagalog/Learn Tagalog/Tagal
 import TagalogVerbsTensesPage from './components/pages/Tagalog/Learn Tagalog/TagalogVerbsTensesPage';
 import TagalogExpressionsPage from './components/pages/Tagalog/Learn Tagalog/TagalogExpressionsPage';
 import TagalogCulturalPage from './components/pages/Tagalog/Learn Tagalog/TagalogCulturalPage';
+import TagalogVocabularyPage from './components/pages/Tagalog/Practice Tagalog/TagalogVocabularyPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/tagalogLearn/usefulExpressions" element={<TagalogExpressionsPage />} />
           <Route path="/tagalogLearn/cultural" element={<TagalogCulturalPage />} />
           <Route path="/tagalogPractice" element={<TagalogPracticePage />} />
+          <Route path="/tagalogPractice/vocabulary/easy" element={<TagalogVocabularyPage />} />
         </Routes>
       </Router>
     </div>
