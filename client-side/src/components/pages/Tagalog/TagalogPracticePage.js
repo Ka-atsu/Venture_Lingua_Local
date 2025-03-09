@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import TagalogSideComponent from '../../Side Panel/TagalogSideComponent';
-import PracticeTagalogComponent from '../../Dialects/Tagalog/Practice Tagalog/PracticeTagalogComponent';
+import PracticeTagalogMainContent from '../../Dialects/Tagalog/Practice Tagalog/Dashboard/PracticeTagalogMainContent';
 
 function TagalogPracticePage() {
     return (
@@ -14,7 +14,7 @@ function TagalogPracticePage() {
 
             {/* Main content */}
             <Col xs={10} className="p-0">
-                <PracticeTagalogComponent />
+                <PracticeTagalogMainContent />
             </Col>
         </Row>
     );

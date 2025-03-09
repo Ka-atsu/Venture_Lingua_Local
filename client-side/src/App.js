@@ -4,8 +4,10 @@ import LoginRegisterPage from './components/pages/LoginRegisterPage';
 import DialectPage from './components/pages/DialectPage';
 import TagalogLearnPage from './components/pages/Tagalog/TagalogLearnPage';
 import TagalogPracticePage from './components/pages/Tagalog/TagalogPracticePage';
-import TagalogBasicWordsPage from './components/pages/Tagalog/TagalogBasicWordsPage';
-import TagalogCommonPharsePage from './components/pages/Tagalog/TagalogCommonPharsePage';
+import TagalogBasicWordsPage from './components/pages/Tagalog/Learn Tagalog/TagalogBasicWordsPage';
+import TagalogCommonPharsePage from './components/pages/Tagalog/Learn Tagalog/TagalogCommonPharsePage';
+import TagalogPronouncePage from './components/pages/Tagalog/Learn Tagalog/TagalogPronouncePage';
+import TagalogVerbsTensesPage from './components/pages/Tagalog/Learn Tagalog/TagalogVerbsTensesPage';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/tagalogLearn" element={<TagalogLearnPage />} />
           <Route path="/tagalogLearn/basicWords" element={<TagalogBasicWordsPage />} />
           <Route path="/tagalogLearn/commonPhrase" element={<TagalogCommonPharsePage />} />
+          <Route path="/tagalogLearn/pronounce&sentence" element={<TagalogPronouncePage />} />
+          <Route path="/tagalogLearn/verbs&tenses" element={<TagalogVerbsTensesPage />} />
           <Route path="/tagalogPractice" element={<TagalogPracticePage />} />
         </Routes>
       </Router>

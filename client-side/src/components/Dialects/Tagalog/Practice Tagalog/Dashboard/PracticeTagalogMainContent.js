@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Button, Row, Col } from 'react-bootstrap';
 
-function PracticeTagalogComponent() {
+function PracticeTagalogMainContent() {
     // Handle button click for each challenge
     const handleChallengeClick = (challenge) => {
         alert(`Starting ${challenge} challenge...`);
@@ -143,4 +143,4 @@ function PracticeTagalogComponent() {
     );
 }
 
-export default PracticeTagalogComponent;
+export default PracticeTagalogMainContent;

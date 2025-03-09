@@ -3,27 +3,43 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 function LearnTagalogMainContent() {
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
 
-  // Function Go to Basic Words
-  const gotoBasicWords = () => {
-    navigate('/tagalogLearn/basicWords'); 
+  // Navigation functions
+  const gotoBasicWords = () => navigate('/tagalogLearn/basicWords');
+  const gotoCommonPhrase = () => navigate('/tagalogLearn/commonPhrase');
+  const gotoPronounceSentences = () => navigate('/tagalogLearn/pronounce&sentence');
+  const gotoVerbsTenses = () => navigate('/tagalogLearn/verbs&tenses');
+
+  // Hover effect handlers with a smoother transition
+  const handleMouseOver = (e) => {
+    e.currentTarget.style.transition = 'transform 0.5s ease';
+    e.currentTarget.style.transform = 'translateY(-5px)';
   };
 
-  // Function Go to Basic Words
-  const gotoCommonPhrase = () => {
-    navigate('/tagalogLearn/commonPhrase'); 
+  const handleMouseOut = (e) => {
+    e.currentTarget.style.transition = 'transform 0.5s ease';
+    e.currentTarget.style.transform = 'translateY(0)';
+  };
+
+  // Inline style for headings to add text shadow for better contrast
+  const headerStyle = {
+    textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: '600',
   };
 
   return (
     <Container fluid className="vh-100 bg-dark p-5">
       {/* Title and description section */}
-      <Row className="text-start">
+      <Row className="text-start mb-4">
         <Col>
-          <h1 className="font-weight-bold text-white" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: '600', color: '#ffffff' }}>
-            Welcome User
+          <h1 className="display-4 text-white" style={headerStyle}>
+            Welcome, User!
           </h1>
-          <p className="text-light">This is the main content area where you'll learn Tagalog.</p>
+          <p className="lead text-light" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+            This is the main content area where you'll learn Tagalog.
+          </p>
         </Col>
       </Row>
 
@@ -33,44 +49,60 @@ function LearnTagalogMainContent() {
           <Button
             variant="secondary"
             size="lg"
-            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start transition-transform transform-hover"
             onClick={gotoBasicWords}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start"
           >
             <strong className="text-light">Basic Words</strong>
-            <p className="text-white">Learn common words in Tagalog such as greetings, essential nouns, numbers, and more.</p>
+            <p className="text-white">
+              Learn common words in Tagalog such as greetings, essential nouns, numbers, and more.
+            </p>
           </Button>
         </Col>
         <Col>
           <Button
             variant="secondary"
             size="lg"
-            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start transition-transform transform-hover"
             onClick={gotoCommonPhrase}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start"
           >
             <strong className="text-light">Common Phrases</strong>
-            <p className="text-white">Discover everyday phrases like "Kamusta" (How are you?) and "Paalam" (Goodbye).</p>
+            <p className="text-white">
+              Discover everyday phrases like "Kamusta" (How are you?) and "Paalam" (Goodbye).
+            </p>
           </Button>
         </Col>
         <Col>
           <Button
             variant="secondary"
             size="lg"
-            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start transition-transform transform-hover"
-            onClick={() => alert('Pronouns and Sentence Structure Module Clicked')}
+            onClick={gotoPronounceSentences}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start"
           >
             <strong className="text-light">Pronouns and Sentences</strong>
-            <p className="text-white">Learn basic pronouns and sentence structure to start forming simple sentences.</p>
+            <p className="text-white">
+              Learn basic pronouns and sentence structure to start forming simple sentences.
+            </p>
           </Button>
         </Col>
         <Col>
           <Button
             variant="secondary"
             size="lg"
-            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start transition-transform transform-hover"
-            onClick={() => alert('Verbs and Tenses Module Clicked')}
+            onClick={gotoVerbsTenses}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start"
           >
             <strong className="text-light">Verbs and Tenses</strong>
-            <p className="text-white">Understand verb conjugation in different tenses (past, present, future) to form more complex sentences.</p>
+            <p className="text-white">
+              Understand verb conjugation in different tenses (past, present, future) to form more complex sentences.
+            </p>
           </Button>
         </Col>
       </Row>
@@ -81,22 +113,30 @@ function LearnTagalogMainContent() {
           <Button
             variant="light"
             size="lg"
-            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start transition-transform transform-hover mb-4"
             onClick={() => alert('Useful Expressions Module Clicked')}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start mb-4"
           >
             <strong className="text-dark">Useful Expressions</strong>
-            <p className="text-body">Learn important expressions like “Salamat” (Thank you) and “Pasensya na” (Sorry).</p>
+            <p className="text-body">
+              Learn important expressions like “Salamat” (Thank you) and “Pasensya na” (Sorry).
+            </p>
           </Button>
         </Col>
         <Col>
           <Button
             variant="light"
             size="lg"
-            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start transition-transform transform-hover mb-4"
             onClick={() => alert('Cultural and Contextual Learning Module Clicked')}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start mb-4"
           >
             <strong className="text-dark">Cultural and Contextual Learning</strong>
-            <p className="text-body">Understand Filipino culture and the contextual use of language in different settings.</p>
+            <p className="text-body">
+              Understand Filipino culture and the contextual use of language in different settings.
+            </p>
           </Button>
         </Col>
       </Row>

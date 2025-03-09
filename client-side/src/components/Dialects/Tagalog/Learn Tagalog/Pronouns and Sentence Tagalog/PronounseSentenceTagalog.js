@@ -4,37 +4,38 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Basic Words Tagalog/BasicWordsTagalog.css';
 
-function CommonPharseTagalog() {
+function PronounceSentenceTagalog() {
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1); 
     };
 
-    // Grouped phrases (same as your example)
+    // Grouped phrases with pronunciation, example sentences, and explanation
     const phrases = [
         // Group 1: Greeting phrases
         {
             group: 'Greetings',
             phrases: [
                 {
-                    english: 'Hello (General greeting)',
-                    tagalog: 'Mabuhay',
-                    example: 'Mabuhay! Kamusta ka? (Hello! How are you?)',
-                },
-                {
-                    english: 'How are you?',
-                    tagalog: 'Kamusta ka?',
-                    example: 'Kamusta ka? (How are you?)',
+                    english: 'Hello',
+                    tagalog: 'Kamusta',
+                    pronunciation: 'Ka-mus-ta',
+                    sentence: 'Kamusta ka? (Hello! How are you?)',
+                    explanation: 'This is a greeting you use when meeting someone or when checking in with someone to see how they are doing.',
                 },
                 {
                     english: 'Good morning',
                     tagalog: 'Magandang umaga',
-                    example: 'Magandang umaga! Kamusta ka? (Good morning! How are you?)',
+                    pronunciation: 'Mah-gan-dang oo-mah-ga',
+                    sentence: 'Magandang umaga! Kamusta ka at ang iyong pamilya? (Good morning! How are you and your family?)',
+                    explanation: 'This is used to greet someone in the morning and inquire about their well-being.',
                 },
                 {
                     english: 'Good evening',
                     tagalog: 'Magandang gabi',
-                    example: 'Magandang gabi, paano ka? (Good evening, how are you?)',
+                    pronunciation: 'Mah-gan-dang gah-bee',
+                    sentence: 'Magandang gabi, paano ka? Matagal na kitang hindi nakita! (Good evening, how are you? It’s been a while since I last saw you!)',
+                    explanation: 'This is a greeting used in the evening to ask how someone is doing after the day has passed.',
                 }
             ]
         },
@@ -46,27 +47,37 @@ function CommonPharseTagalog() {
                 {
                     english: 'What’s your name?',
                     tagalog: 'Anong pangalan mo?',
-                    example: 'Anong pangalan mo? (What’s your name?)',
+                    pronunciation: 'A-nong pahng-ah-lahn mo?',
+                    sentence: 'Anong pangalan mo? Ako si Maria, at ikaw? (What’s your name? I’m Maria, and you?)',
+                    explanation: 'This phrase is used when meeting someone for the first time and asking for their name.',
                 },
                 {
                     english: 'My name is ...',
                     tagalog: 'Ang pangalan ko ay ...',
-                    example: 'Ang pangalan ko ay Maria. (My name is Maria.)',
+                    pronunciation: 'Ang pahng-ah-lahn ko ay ...',
+                    sentence: 'Ang pangalan ko ay Maria, at ako ay taga Maynila. (My name is Maria, and I’m from Manila.)',
+                    explanation: 'This is how you introduce yourself and tell others your name and where you\'re from.',
                 },
                 {
                     english: 'Where are you from?',
                     tagalog: 'Tagasaan ka?',
-                    example: 'Tagasaan ka? (Where are you from?)',
+                    pronunciation: 'Tah-gah-sah-ahn kah?',
+                    sentence: 'Tagasaan ka? Ako ay taga Bicol, ikaw? (Where are you from? I’m from Bicol, how about you?)',
+                    explanation: 'This question is used when you want to know where someone is from.',
                 },
                 {
                     english: 'I’m from ...',
                     tagalog: 'Taga... ako',
-                    example: 'Taga Manila ako. (I’m from Manila.)',
+                    pronunciation: 'Tah-gah... ah-ko',
+                    sentence: 'Taga Manila ako. Nais kong matutunan ang Tagalog nang mas maayos. (I’m from Manila. I want to learn Tagalog more fluently.)',
+                    explanation: 'This is used when you are telling someone where you are from.',
                 },
                 {
                     english: 'Nice to meet you',
                     tagalog: 'Ikinalulugod kong makilala ka',
-                    example: 'Ikinalulugod kong makilala ka. (Nice to meet you.)',
+                    pronunciation: 'I-kee-nah-loo-loo-god kong mah-kee-lah-lah kah',
+                    sentence: 'Ikinalulugod kong makilala ka. Sana ay maging magkaibigan tayo. (Nice to meet you, I hope we can become friends.)',
+                    explanation: 'This is a polite way of expressing happiness when meeting someone for the first time.',
                 }
             ]
         },
@@ -78,27 +89,37 @@ function CommonPharseTagalog() {
                 {
                     english: 'Goodbye',
                     tagalog: 'Paalam',
-                    example: 'Paalam, magkita tayo muli! (Goodbye, see you again!)',
+                    pronunciation: 'Pah-ah-lahm',
+                    sentence: 'Paalam, magkita tayo muli sa susunod na linggo. (Goodbye, see you again next week.)',
+                    explanation: 'This is the standard way to say goodbye when you expect to see someone again soon.',
                 },
                 {
                     english: 'See you later',
                     tagalog: 'Magkita tayo mamaya',
-                    example: 'Magkita tayo mamaya! (See you later!)',
+                    pronunciation: 'Mag-kee-tah tah-yo mah-mah-yah',
+                    sentence: 'Magkita tayo mamaya pagkatapos ng trabaho. (See you later after work.)',
+                    explanation: 'This is used when you are planning to meet someone later in the day after a specific activity.',
                 },
                 {
                     english: 'Take care',
                     tagalog: 'Ingat ka',
-                    example: 'Ingat ka, ha? (Take care, okay?)',
+                    pronunciation: 'Eeng-aht kah',
+                    sentence: 'Ingat ka sa daan, mag-ingat sa mga sasakyan. (Take care on the road, be careful with the vehicles.)',
+                    explanation: 'This is used when you want to show concern for someone\'s safety as they leave.',
                 },
                 {
                     english: 'Good night',
                     tagalog: 'Magandang gabi',
-                    example: 'Magandang gabi, matulog na tayo! (Good night, let’s go to sleep!)',
+                    pronunciation: 'Mah-gan-dang gah-bee',
+                    sentence: 'Magandang gabi, matulog ka ng mahimbing at magpahinga. (Good night, sleep well and rest.)',
+                    explanation: 'This is used when saying goodbye before someone goes to bed.',
                 },
                 {
                     english: 'See you tomorrow',
                     tagalog: 'Magkita tayo bukas',
-                    example: 'Magkita tayo bukas! (See you tomorrow!)',
+                    pronunciation: 'Mag-kee-tah tah-yo boo-kahs',
+                    sentence: 'Magkita tayo bukas sa mga 10:00 AM. (See you tomorrow at around 10:00 AM.)',
+                    explanation: 'This phrase is used when confirming plans to meet someone the following day.',
                 }
             ]
         }
@@ -152,7 +173,7 @@ function CommonPharseTagalog() {
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white">Common Tagalog Phrases</h1>
+            <h1 className="text-center text-white">Tagalog Pronunciation and Example Sentences</h1>
             <p className="text-center mb-3 text-white">Click the card to Flip</p>
 
             <h2 className="text-center text-white mb-5 ">{phrases[currentSet].group}</h2>
@@ -168,11 +189,13 @@ function CommonPharseTagalog() {
                             <div className="tagalog-flashcard-inner">
                                 <div className="tagalog-flashcard-front flex-column">
                                     <h3 className="tagalog-word">{phrase.english}</h3>
+                                    <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
                                     <p><strong>Tagalog:</strong> {phrase.tagalog}</p>
                                 </div>
                                 <div className="tagalog-flashcard-back flex-column">
-                                    <h3 className="tagalog-word">{phrase.tagalog}</h3>
-                                    <p><strong>Example:</strong> {phrase.example}</p>
+                                    <h1 className="tagalog-word">{phrase.tagalog}</h1>
+                                    <p className='text-start'><strong>Example:</strong> {phrase.sentence}</p>
+                                    <p className='text-start'><strong>Explanation:</strong> {phrase.explanation}</p>
                                 </div>
                             </div>
                         </div>
@@ -207,4 +230,4 @@ function CommonPharseTagalog() {
     );
 }
 
-export default CommonPharseTagalog;
+export default PronounceSentenceTagalog;

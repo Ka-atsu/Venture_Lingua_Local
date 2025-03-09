@@ -1,8 +1,8 @@
 /* Styling for the Go Back Arrow Icon */
 .tagalog-go-back-icon {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 6vh;
+    left: 6vh;
     z-index: 10; /* Ensure the icon stays on top */
     cursor: pointer; /* Indicates the icon is clickable */
 }
@@ -54,10 +54,9 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 .tagalog-flashcard-front {
@@ -73,9 +72,11 @@
 /* Styling for the Tagalog word to give emphasis */
 .tagalog-word {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2rem; /* Reduced font size for heading inside card */
+    font-weight: 600;
     margin: 0;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
 }
 
 /* Add some space between cards on mobile devices */
