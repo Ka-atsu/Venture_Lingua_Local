@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import '../Basic Words Tagalog/BasicWordsTagalog.css';
 
 function VerbsTensesTagalog() {
   const navigate = useNavigate();

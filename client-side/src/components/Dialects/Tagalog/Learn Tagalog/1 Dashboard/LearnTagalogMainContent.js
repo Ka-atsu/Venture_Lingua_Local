@@ -11,8 +11,7 @@ function LearnTagalogMainContent() {
   const gotoPronounceSentences = () => navigate('/tagalogLearn/pronounce&sentence');
   const gotoVerbsTenses = () => navigate('/tagalogLearn/verbs&tenses');
   const gotoUsefulExpresions = () => navigate('/tagalogLearn/usefulExpressions');
-
-  
+  const gotoCultural = () => navigate('/tagalogLearn/cultural');
 
   // Hover effect handlers with a smoother transition
   const handleMouseOver = (e) => {
@@ -131,7 +130,7 @@ function LearnTagalogMainContent() {
           <Button
             variant="light"
             size="lg"
-            onClick={() => alert('Cultural and Contextual Learning Module Clicked')}
+            onClick={gotoCultural}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             className="w-100 p-4 rounded-lg shadow-lg border-0 text-left d-flex flex-column align-items-start mb-4"

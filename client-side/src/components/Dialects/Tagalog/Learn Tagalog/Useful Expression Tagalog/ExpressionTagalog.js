@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import '../Basic Words Tagalog/BasicWordsTagalog.css';
 
 function ExpressionsTagalog() {
 
