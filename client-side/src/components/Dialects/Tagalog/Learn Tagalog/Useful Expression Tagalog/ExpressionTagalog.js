@@ -82,7 +82,7 @@ function ExpressionsTagalog() {
       </p>
 
       {/* Display current expression */}
-      <Row className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+      <Row className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
         <Col md={6}>
           <Card className="bg-light text-dark p-4 shadow-lg rounded">
             <Card.Body>

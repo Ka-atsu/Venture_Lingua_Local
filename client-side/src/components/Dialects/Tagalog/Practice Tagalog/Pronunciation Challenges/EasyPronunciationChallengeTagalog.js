@@ -3,80 +3,74 @@ import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-boo
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-function VocabularyChallengeTagalog() {
+function EasyPronunciationChallengeTagalog() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
-    const [score, setScore] = useState(0); // Keep score
+    const [score, setScore] = useState(0);
     const [resultMessage, setResultMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [lives, setLives] = useState(3); // Set initial lives to 3
-    const [showToast, setShowToast] = useState(false); // State to control toast visibility
+    const [lives, setLives] = useState(3);
+    const [showToast, setShowToast] = useState(false);
 
-    // Sample vocabulary challenge questions
+    // Pronunciation-based questions
     const questions = [
         {
-            question: "What is the Tagalog word for 'Hello'?",
-            correctAnswer: 'Kamusta',
-            options: ['Kamusta', 'Salamat', 'Pagkain', 'Kotse'],
+            question: "Which pronunciation matches the Tagalog word 'Mahal' (Love)?",
+            correctAnswer: 'Ma-hal',
+            options: ['Ma-hal', 'Mal', 'Mahaluh', 'Mahal-ay'],
         },
         {
-            question: "What is the Tagalog word for 'Food'?",
-            correctAnswer: 'Pagkain',
-            options: ['Kamusta', 'Salamat', 'Pagkain', 'Magandang umaga'],
+            question: "How do you pronounce 'Salamat' (Thank you)?",
+            correctAnswer: 'Sa-la-mat',
+            options: ['Sa-lah-mat', 'Sah-lam', 'Sal-mat', 'Sa-la-mat'],
         },
         {
-            question: "What is the Tagalog word for 'Thank you'?",
-            correctAnswer: 'Salamat',
-            options: ['Kamusta', 'Salamat', 'Kotse', 'Pagkain'],
+            question: "Which is the correct pronunciation of 'Kaibigan' (Friend)?",
+            correctAnswer: 'Ka-i-bi-gan',
+            options: ['Kai-bigan', 'Ka-i-bi-gan', 'Kaa-bi-gan', 'Ka-bigan'],
         },
         {
-            question: "What is the Tagalog word for 'Good morning'?",
-            correctAnswer: 'Magandang umaga',
-            options: ['Magandang umaga', 'Salamat', 'Kotse', 'Kamusta'],
+            question: "Choose the correct pronunciation of 'Maganda' (Beautiful):",
+            correctAnswer: 'Ma-gan-da',
+            options: ['Maan-gan-da', 'Ma-gan-da', 'Magan-duh', 'Mag-dana'],
         },
         {
-            question: "What is the Tagalog word for 'Car'?",
-            correctAnswer: 'Kotse',
-            options: ['Kamusta', 'Magandang umaga', 'Pagkain', 'Kotse'],
+            question: "How should 'Pamilya' (Family) be pronounced?",
+            correctAnswer: 'Pa-mil-ya',
+            options: ['Paa-mil-ya', 'Pam-ya', 'Pa-mil-ya', 'Pam-lia'],
         }
     ];
 
     const handleAnswerSelection = (answer) => {
         setSelectedAnswer(answer);
         setIsSubmitted(false);
-        setResultMessage('');  // Reset result message when a new answer is selected
+        setResultMessage('');
     };
 
     const submitAnswer = () => {
         setIsSubmitted(true);
         if (selectedAnswer === questions[questionIndex].correctAnswer) {
-            setScore(score + 1); // Increment the score for correct answers
+            setScore(score + 1);
             setResultMessage('Correct!');
         } else {
-            setLives(lives - 1); // Decrease lives if answer is incorrect
+            setLives(lives - 1);
             setResultMessage(`Incorrect! You have ${lives - 1} lives remaining.`);
             if (lives - 1 === 0) {
                 setResultMessage('Game Over! You lost all lives.');
-                setTimeout(resetGame, 2000); // Automatically reset the game after 2 seconds
+                setTimeout(resetGame, 2000);
             }
         }
     };
 
     const nextQuestion = () => {
         if (lives === 0) {
-            // If no lives left, reset the game
-            setLives(3);
-            setScore(0); // Reset score when game is reset
-            setQuestionIndex(0);
-            setSelectedAnswer(null);
-            setIsSubmitted(false);
-            setResultMessage('');
+            resetGame();
         } else if (questionIndex < questions.length - 1) {
             setQuestionIndex(questionIndex + 1);
-            setSelectedAnswer(null); // Reset selected answer for the next question
-            setIsSubmitted(false);  // Reset the submit state
+            setSelectedAnswer(null);
+            setIsSubmitted(false);
             setResultMessage('');
         } else {
             alert(`Challenge complete! You scored ${score} out of ${questions.length}`);
@@ -84,16 +78,15 @@ function VocabularyChallengeTagalog() {
     };
 
     const resetGame = () => {
-        setShowToast(true); // Show the reset notification toast
+        setShowToast(true);
         setLives(3);
-        setScore(0); // Reset score when game is reset
+        setScore(0);
         setQuestionIndex(0);
         setSelectedAnswer(null);
         setIsSubmitted(false);
         setResultMessage('');
     };
 
-    // Progress bar percentage calculation
     const progress = ((questionIndex + 1) / questions.length) * 100;
 
     return (
@@ -108,7 +101,7 @@ function VocabularyChallengeTagalog() {
             </div>
 
             <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '500' }}>
-                Tagalog Vocabulary Challenge
+                Easy Pronunciation Challenge - Tagalog
             </h2>
 
             {/* Progress Bar */}
@@ -134,7 +127,7 @@ function VocabularyChallengeTagalog() {
                                         variant={selectedAnswer === word ? 'dark' : 'outline-dark'}
                                         className={`w-100 py-3 mb-3 shadow-sm rounded-pill ${selectedAnswer === word ? 'bg-dark text-white' : ''}`}
                                         onClick={() => handleAnswerSelection(word)}
-                                        disabled={isSubmitted} // Disable buttons after submission
+                                        disabled={isSubmitted}
                                     >
                                         <h5>{word}</h5>
                                     </Button>
@@ -178,12 +171,12 @@ function VocabularyChallengeTagalog() {
             <Toast
                 onClose={() => setShowToast(false)}
                 show={showToast}
-                delay={3000} // Auto-hide after 3 seconds
+                delay={3000}
                 autohide
                 style={{
                     position: 'absolute',
                     top: '50%',
-                    backgroundColor: '#28a745', // Green color for success
+                    backgroundColor: '#28a745',
                     color: '#fff',
                     borderRadius: '10px',
                     padding: '10px',
@@ -196,4 +189,4 @@ function VocabularyChallengeTagalog() {
     );
 }
 
-export default VocabularyChallengeTagalog;
+export default EasyPronunciationChallengeTagalog;

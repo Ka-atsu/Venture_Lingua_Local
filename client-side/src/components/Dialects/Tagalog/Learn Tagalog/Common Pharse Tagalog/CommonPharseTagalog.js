@@ -99,7 +99,7 @@ function CommonPharseTagalog() {
             <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: '2.5rem' }}>
                 Common Tagalog Phrases
             </h1>
-            <p className="text-center mb-4 text-white" style={{ fontSize: '1.3rem' }}>
+            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>
                 Click the card to Flip
             </p>
 

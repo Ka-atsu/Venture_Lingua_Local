@@ -80,7 +80,7 @@ function PracticeTagalogMainContent() {
                                 variant="primary"
                                 className="w-100 py-4 shadow-lg"
                                 style={vocabularyStyle}
-                                onClick={() => gotoChallenge('vocabulary', 'easy')}
+                                onClick={() => gotoChallenge('vocabularyChallenge', 'easy')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
@@ -92,7 +92,7 @@ function PracticeTagalogMainContent() {
                                 variant="primary"
                                 className="w-100 py-4 shadow-lg"
                                 style={vocabularyStyle}
-                                onClick={() => gotoChallenge('vocabulary', 'medium')}
+                                onClick={() => gotoChallenge('vocabularyChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
@@ -104,7 +104,7 @@ function PracticeTagalogMainContent() {
                                 variant="primary"
                                 className="w-100 py-4 shadow-lg"
                                 style={vocabularyStyle}
-                                onClick={() => gotoChallenge('vocabulary', 'hard')}
+                                onClick={() => gotoChallenge('vocabularyChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >

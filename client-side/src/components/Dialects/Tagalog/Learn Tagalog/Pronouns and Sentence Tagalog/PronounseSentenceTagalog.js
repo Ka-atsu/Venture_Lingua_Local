@@ -184,13 +184,13 @@ function PronounceSentenceTagalog() {
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white">Tagalog Pronunciation and Example Sentences</h1>
-            <p className="text-center mb-3 text-white">Click the card to Flip</p>
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Tagalog Pronunciation and Example Sentences</h1>
+            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
 
             <h2 className="text-center text-white mb-5 ">{pronounceSentenceGroups[currentSet].group}</h2>
 
             {/* Display phrases for the current group */}
-            <Row className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
+            <Row className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
                 {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div

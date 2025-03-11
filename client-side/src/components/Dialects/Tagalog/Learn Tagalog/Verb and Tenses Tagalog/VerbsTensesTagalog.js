@@ -136,8 +136,8 @@ function VerbsTensesTagalog() {
         />
       </div>
 
-      <h1 className="text-center text-white">Tagalog Verb Conjugation</h1>
-      <p className="text-center mb-3 text-white">Click the card to Flip</p>
+      <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Tagalog Verb Conjugation</h1>
+      <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
 
       <h2 className="text-center mb-3 text-white"> {verbTenseGroups[currentSet].group}</h2>
 

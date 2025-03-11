@@ -4,13 +4,8 @@ import LoginRegisterPage from './components/pages/LoginRegisterPage';
 import DialectPage from './components/pages/DialectPage';
 import TagalogLearnPage from './components/pages/Tagalog/TagalogLearnPage';
 import TagalogPracticePage from './components/pages/Tagalog/TagalogPracticePage';
-import TagalogBasicWordsPage from './components/pages/Tagalog/Learn Tagalog/TagalogBasicWordsPage';
-import TagalogCommonPharsePage from './components/pages/Tagalog/Learn Tagalog/TagalogCommonPharsePage';
-import TagalogPronouncePage from './components/pages/Tagalog/Learn Tagalog/TagalogPronouncePage';
-import TagalogVerbsTensesPage from './components/pages/Tagalog/Learn Tagalog/TagalogVerbsTensesPage';
-import TagalogExpressionsPage from './components/pages/Tagalog/Learn Tagalog/TagalogExpressionsPage';
-import TagalogCulturalPage from './components/pages/Tagalog/Learn Tagalog/TagalogCulturalPage';
-import TagalogVocabularyPage from './components/pages/Tagalog/Practice Tagalog/TagalogVocabularyPage';
+import { TagalogBasicWordsPage, TagalogCommonPharsePage, TagalogPronouncePage, TagalogExpressionsPage, TagalogCulturalPage, TagalogVerbsTensesPage } from './components/pages/Tagalog/AllLearnTagalogPage';
+import { TagalogPronunciationEasyPage, TagalogVocabularyEasyPage, TagalogSentenceEasyPage, TagalogPhraseEasyPage, TagalogTranslationEasyPage } from './components/pages/Tagalog/AllPracticeTagalogPage';
 
 function App() {
   return (
@@ -28,7 +23,11 @@ function App() {
           <Route path="/tagalogLearn/usefulExpressions" element={<TagalogExpressionsPage />} />
           <Route path="/tagalogLearn/cultural" element={<TagalogCulturalPage />} />
           <Route path="/tagalogPractice" element={<TagalogPracticePage />} />
-          <Route path="/tagalogPractice/vocabulary/easy" element={<TagalogVocabularyPage />} />
+          <Route path="/tagalogPractice/vocabularyChallenge/easy" element={<TagalogVocabularyEasyPage />} />
+          <Route path="/tagalogPractice/pronunciationChallenge/easy" element={<TagalogPronunciationEasyPage />} />
+          <Route path="/tagalogPractice/sentenceChallenge/easy" element={<TagalogSentenceEasyPage />} />
+          <Route path="/tagalogPractice/translationChallenge/easy" element={<TagalogTranslationEasyPage />} />
+          <Route path="/tagalogPractice/commonPhrasesChallenge/easy" element={<TagalogPhraseEasyPage />} />
         </Routes>
       </Router>
     </div>

@@ -120,16 +120,16 @@ function BasicWordsTagalog() {
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white">Basic Tagalog Words</h1>
-            <p className="text-center mb-3 text-white">Click the card to Flip</p>
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Tagalog Words</h1>
+            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
 
             {/* Group Name */}
             <h2 className="text-center text-white mb-5 ">{wordGroups[currentSet].group}</h2>
 
             {/* Display words for the current group */}
-            <Row className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
+            <Row className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
                 {wordGroups[currentSet].words.map((word, index) => (
-                    <Col md={4} sm={6} key={index} className="mb-4">
+                    <Col md={4} sm={6} key={index}>
                         <div
                             className={`tagalog-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)} // Flip the card on click
