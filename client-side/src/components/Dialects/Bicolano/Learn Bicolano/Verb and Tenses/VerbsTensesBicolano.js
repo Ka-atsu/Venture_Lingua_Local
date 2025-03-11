@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Tagalog.css';
+import '../Bicolano.css';
 
-function VerbsTensesTagalog() {
+function VerbsTensesBicolano() {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
@@ -127,16 +127,16 @@ function VerbsTensesTagalog() {
 
   return (
     <Container fluid className="bg-dark p-5 vh-100">
-      <div className="tagalog-go-back-icon">
+      <div className="bikol-go-back-icon">
         <FaArrowLeft
           size={30}
           color="#fff"
           onClick={goBack}
-          className="tagalog-go-back-arrow"
+          className="bikol-go-back-arrow"
         />
       </div>
 
-      <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Tagalog Verb Conjugation</h1>
+      <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Bikol Verb Conjugation</h1>
       <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
 
       <h2 className="text-center mb-3 text-white"> {verbTenseGroups[currentSet].group}</h2>
@@ -146,18 +146,18 @@ function VerbsTensesTagalog() {
         {verbTenseGroups[currentSet].tenses.map((item, index) => (
           <Col md={4} sm={6} key={item.tense}>
             <div
-              className={`tagalog-flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
+              className={`bikol-flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
               onClick={() => handleFlip(item.tense)}
             >
-              <div className="tagalog-flashcard-inner">
-                <div className="tagalog-flashcard-front flex-column">
-                  <h3 className="tagalog-word">{item.tense}</h3>
+              <div className="bikol-flashcard-inner">
+                <div className="bikol-flashcard-front flex-column">
+                  <h3 className="bikol-word">{item.tense}</h3>
                   <p>
                     <strong>Base Form:</strong> {verbTenseGroups[currentSet].group.split('(')[1].replace(')', '')}
                   </p>
                 </div>
-                <div className="tagalog-flashcard-back flex-column">
-                  <h3 className="tagalog-word">{item.conjugated}</h3>
+                <div className="bikol-flashcard-back flex-column">
+                  <h3 className="bikol-word">{item.conjugated}</h3>
                   <p className="text-start"><strong>Example:</strong> {item.example}</p>
                   <p className="text-start"><strong>Explanation:</strong> {item.explanation}</p>
                 </div>
@@ -214,4 +214,4 @@ function VerbsTensesTagalog() {
   );
 }
 
-export default VerbsTensesTagalog;
+export default VerbsTensesBicolano;

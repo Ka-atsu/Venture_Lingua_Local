@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Basic Words/Tagalog.css';
+import '../Tagalog.css';
 
 function CommonPharseTagalog() {
     const navigate = useNavigate();

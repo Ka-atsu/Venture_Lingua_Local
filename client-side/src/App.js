@@ -6,8 +6,9 @@ import TagalogLearnPage from './components/pages/Tagalog/TagalogLearnPage';
 import TagalogPracticePage from './components/pages/Tagalog/TagalogPracticePage';
 import BicolanoLearnPage from './components/pages/Bicolano/BicolanoLearnPage';
 import BicolanoPracticePage from './components/pages/Bicolano/BicolanoPracticePage';
-import { TagalogBasicWordsPage, TagalogCommonPharsePage, TagalogPronouncePage, TagalogExpressionsPage, TagalogCulturalPage, TagalogVerbsTensesPage } from './components/pages/Tagalog/AllLearnTagalogPage';
+import { TagalogBasicWordsPage, TagalogCommonPhrasePage, TagalogPronouncePage, TagalogExpressionsPage, TagalogCulturalPage, TagalogVerbsTensesPage } from './components/pages/Tagalog/AllLearnTagalogPage';
 import { TagalogPronunciationEasyPage, TagalogVocabularyEasyPage, TagalogSentenceEasyPage, TagalogPhraseEasyPage, TagalogTranslationEasyPage } from './components/pages/Tagalog/AllPracticeTagalogPage';
+import { BicolanoBasicWordsPage, BicolanoCommonPhrasePage, BicolanoCulturalPage, BicolanoExpressionsPage, BicolanoPronouncePage, BicolanoVerbsTensesPage } from './components/pages/Bicolano/AllLearnBicolanoPage';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
 
           <Route path="/tagalogLearn" element={<TagalogLearnPage />} />
           <Route path="/tagalogLearn/basicWords" element={<TagalogBasicWordsPage />} />
-          <Route path="/tagalogLearn/commonPhrase" element={<TagalogCommonPharsePage />} />
+          <Route path="/tagalogLearn/commonPhrase" element={<TagalogCommonPhrasePage />} />
           <Route path="/tagalogLearn/pronounce&sentence" element={<TagalogPronouncePage />} />
           <Route path="/tagalogLearn/verbs&tenses" element={<TagalogVerbsTensesPage />} />
           <Route path="/tagalogLearn/usefulExpressions" element={<TagalogExpressionsPage />} />
@@ -35,6 +36,12 @@ function App() {
 
           <Route path="/bikolLearn" element={<BicolanoLearnPage />} />
           <Route path="/bikolPractice" element={<BicolanoPracticePage />} />
+          <Route path="/bikolLearn/basicWords" element={<BicolanoBasicWordsPage />} />
+          <Route path="/bikolLearn/commonPhrase" element={<BicolanoCommonPhrasePage />} />
+          <Route path="/bikolLearn/pronounce&sentence" element={<BicolanoPronouncePage />} />
+          <Route path="/bikolLearn/verbs&tenses" element={<BicolanoVerbsTensesPage />} />
+          <Route path="/bikolLearn/usefulExpressions" element={<BicolanoExpressionsPage />} />
+          <Route path="/bikolLearn/cultural" element={<BicolanoCulturalPage />} />
         </Routes>
       </Router>
     </div>

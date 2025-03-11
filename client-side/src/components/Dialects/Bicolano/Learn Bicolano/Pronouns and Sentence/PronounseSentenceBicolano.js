@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Tagalog.css';
+import '../Bicolano.css';
 
-function PronounceSentenceTagalog() {
+function PronounseSentenceBicolano() {
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1); 
@@ -180,11 +180,11 @@ function PronounceSentenceTagalog() {
 
     return (
         <Container fluid className="bg-dark p-5 vh-100">
-            <div className="tagalog-go-back-icon">
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
+            <div className="bikol-go-back-icon">
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="bikol-go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Tagalog Pronunciation and Example Sentences</h1>
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Bikol Pronunciation and Example Sentences</h1>
             <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
 
             <h2 className="text-center text-white mb-5 ">{pronounceSentenceGroups[currentSet].group}</h2>
@@ -194,17 +194,17 @@ function PronounceSentenceTagalog() {
                 {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
-                            className={`tagalog-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+                            className={`bikol-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
                         >
-                            <div className="tagalog-flashcard-inner">
-                                <div className="tagalog-flashcard-front flex-column">
-                                    <h3 className="tagalog-word">{phrase.english}</h3>
+                            <div className="bikol-flashcard-inner">
+                                <div className="bikol-flashcard-front flex-column">
+                                    <h3 className="bikol-word">{phrase.english}</h3>
                                     <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
-                                    <p><strong>Tagalog:</strong> {phrase.tagalog}</p>
+                                    <p><strong>Bikol:</strong> {phrase.tagalog}</p>
                                 </div>
-                                <div className="tagalog-flashcard-back flex-column">
-                                    <h1 className="tagalog-word">{phrase.tagalog}</h1>
+                                <div className="bikol-flashcard-back flex-column">
+                                    <h1 className="bikol-word">{phrase.tagalog}</h1>
                                     <p className='text-start'><strong>Example:</strong> {phrase.sentence}</p>
                                     <p className='text-start'><strong>Explanation:</strong> {phrase.explanation}</p>
                                 </div>
@@ -261,4 +261,4 @@ function PronounceSentenceTagalog() {
     );
 }
 
-export default PronounceSentenceTagalog;
+export default PronounseSentenceBicolano;

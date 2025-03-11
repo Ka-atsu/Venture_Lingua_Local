@@ -15,7 +15,7 @@ export function TagalogBasicWordsPage() {
     );
 }
 
-export function TagalogCommonPharsePage() {
+export function TagalogCommonPhrasePage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 

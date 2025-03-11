@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Tagalog.css';
+import '../Bicolano.css';
 
-function BasicWordsTagalog() {
+function BasicWordsBicolano() {
     const navigate = useNavigate(); 
 
     const goBack = () => {
@@ -28,45 +28,45 @@ function BasicWordsTagalog() {
         {
             group: 'Greetings',
             words: [
-                { tagalog: 'Kamusta', english: 'Hello' },
-                { tagalog: 'Magandang umaga', english: 'Good Morning' },
-                { tagalog: 'Magandang hapon', english: 'Good Afternoon' },
-                { tagalog: 'Magandang gabi', english: 'Good Evening' },
-                { tagalog: 'Magandang gabi', english: 'Good Night' },
-                { tagalog: 'Magandang araw', english: 'Good day' }
+                { bicolano: 'Kamusta', english: 'Hello' },
+                { bicolano: 'Magandang aga', english: 'Good Morning' },
+                { bicolano: 'Magandang hapon', english: 'Good Afternoon' },
+                { bicolano: 'Magandang gab-i', english: 'Good Evening' },
+                { bicolano: 'Magandang gab-i', english: 'Good Night' },
+                { bicolano: 'Magandang aldaw', english: 'Good day' }
             ]
         },
         // Group 2: Essential Nouns
         {
             group: 'Essential Nouns',
             words: [
-                { tagalog: 'Pamilya', english: 'Family' },
-                { tagalog: 'Bahay', english: 'House' },
-                { tagalog: 'Kaibigan', english: 'Friend' },
-                { tagalog: 'Trabaho', english: 'Work' },
-                { tagalog: 'Kotse', english: 'Car' },
-                { tagalog: 'Aso', english: 'Dog' }
+                { bicolano: 'Pamilya', english: 'Family' },
+                { bicolano: 'Balay', english: 'House' },
+                { bicolano: 'Kaibahan', english: 'Friend' },
+                { bicolano: 'Obra', english: 'Work' },
+                { bicolano: 'Kotse', english: 'Car' },
+                { bicolano: 'Iro', english: 'Dog' }
             ]
         },
         // Group 3: Numbers
         {
             group: 'Numbers 1 to 5',
             words: [
-                { tagalog: 'Isa', english: 'One' },
-                { tagalog: 'Dalawa', english: 'Two' },
-                { tagalog: 'Tatlo', english: 'Three' },
-                { tagalog: 'Apat', english: 'Four' },
-                { tagalog: 'Lima', english: 'Five' },
+                { bicolano: 'Isa', english: 'One' },
+                { bicolano: 'Dua', english: 'Two' },
+                { bicolano: 'Tulo', english: 'Three' },
+                { bicolano: 'Apat', english: 'Four' },
+                { bicolano: 'Lima', english: 'Five' },
             ]
         },
         {
             group: 'Numbers 6 to 10',
             words: [
-                { tagalog: 'Anim', english: 'Six' },
-                { tagalog: 'Pito', english: 'Seven' },
-                { tagalog: 'Walo', english: 'Eight' },
-                { tagalog: 'Siyam', english: 'Nine' },
-                { tagalog: 'Sampu', english: 'Ten' }
+                { bicolano: 'Anom', english: 'Six' },
+                { bicolano: 'Pito', english: 'Seven' },
+                { bicolano: 'Walo', english: 'Eight' },
+                { bicolano: 'Siyam', english: 'Nine' },
+                { bicolano: 'Sampo', english: 'Ten' }
             ]
         }
     ];
@@ -115,12 +115,12 @@ function BasicWordsTagalog() {
 
     return (
         <Container fluid className="bg-dark p-5 vh-100">
-            <div className="tagalog-go-back-icon">
+            <div className="bikol-go-back-icon">
                 {/* Go back icon */}
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="bikol-go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Tagalog Words</h1>
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Bicolano Words</h1>
             <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
 
             {/* Group Name */}
@@ -131,15 +131,15 @@ function BasicWordsTagalog() {
                 {wordGroups[currentSet].words.map((word, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
-                            className={`tagalog-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+                            className={`bikol-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)} // Flip the card on click
                         >
-                            <div className="tagalog-flashcard-inner">
-                                <div style={{ alignItems: 'center' }} className="tagalog-flashcard-front">
-                                    <h2 className="tagalog-word">{word.english}</h2>
+                            <div className="bikol-flashcard-inner">
+                                <div style={{ alignItems: 'center' }} className="bikol-flashcard-front">
+                                    <h2 className="bikol-word">{word.english}</h2>
                                 </div>
-                                <div style={{ alignItems: 'center' }} className="tagalog-flashcard-back">
-                                    <h2 className="tagalog-word">{word.tagalog}</h2>
+                                <div style={{ alignItems: 'center' }} className="bikol-flashcard-back">
+                                    <h2 className="bikol-word">{word.bicolano}</h2>
                                 </div>
                             </div>
                         </div>
@@ -196,4 +196,4 @@ function BasicWordsTagalog() {
     );
 }
 
-export default BasicWordsTagalog;
+export default BasicWordsBicolano;

@@ -6,12 +6,12 @@ function LearnBicolanoMainContent() {
   const navigate = useNavigate();
 
   // Navigation functions
-  const gotoBasicWords = () => navigate('/tagalogLearn/basicWords');
-  const gotoCommonPhrase = () => navigate('/tagalogLearn/commonPhrase');
-  const gotoPronounceSentences = () => navigate('/tagalogLearn/pronounce&sentence');
-  const gotoVerbsTenses = () => navigate('/tagalogLearn/verbs&tenses');
-  const gotoUsefulExpresions = () => navigate('/tagalogLearn/usefulExpressions');
-  const gotoCultural = () => navigate('/tagalogLearn/cultural');
+  const gotoBasicWords = () => navigate('/bikolLearn/basicWords');
+  const gotoCommonPhrase = () => navigate('/bikolLearn/commonPhrase');
+  const gotoPronounceSentences = () => navigate('/bikolLearn/pronounce&sentence');
+  const gotoVerbsTenses = () => navigate('/bikolLearn/verbs&tenses');
+  const gotoUsefulExpresions = () => navigate('/bikolLearn/usefulExpressions');
+  const gotoCultural = () => navigate('/bikolLearn/cultural');
 
   // Hover effect handlers with a smoother transition
   const handleMouseOver = (e) => {

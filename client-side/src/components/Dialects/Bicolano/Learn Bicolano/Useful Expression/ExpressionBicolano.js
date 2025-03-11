@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Tagalog.css';
+import '../Bicolano.css';
 
-function ExpressionsTagalog() {
+function ExpressionBicolano() {
 
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
@@ -70,12 +70,12 @@ function ExpressionsTagalog() {
 
   return (
     <Container fluid className="bg-dark p-5 vh-100">
-      <div className="tagalog-go-back-icon">
-        <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
+      <div className="bikol-go-back-icon">
+        <FaArrowLeft size={30} color="#fff" onClick={goBack} className="bikol-go-back-arrow" />
       </div>
 
       <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: '2.5rem' }}>
-        Tagalog Useful Expressions
+        Bikol Useful Expressions
       </h1>
       <p className="text-center mb-4 text-white" style={{ fontSize: '1.3rem' }}>
         Learn how to use these useful expressions in everyday conversations.
@@ -90,7 +90,7 @@ function ExpressionsTagalog() {
                 {currentExpression.english}
               </h3>
               <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
-                Tagalog: {currentExpression.tagalog}
+                Bikol: {currentExpression.tagalog}
               </h5>
               <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Example:</strong> {currentExpression.example}</p>
               <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Explanation:</strong> {currentExpression.explanation}</p>
@@ -151,4 +151,4 @@ function ExpressionsTagalog() {
   );
 }
 
-export default ExpressionsTagalog;
+export default ExpressionBicolano;
