@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Basic Words Tagalog/BasicWordsTagalog.css';
+import '../Basic Words/Tagalog.css';
 import BayanihanImage from '../2 Images/Bayanihan.jpg';
 import OpoImage from '../2 Images/PoatOPO.jpg';
 

@@ -12,13 +12,16 @@ function DialectPickerComponent() {
     const tagalog = () => {
         navigate('/tagalogLearn'); 
     };
+
+    const bicolano = () => {
+        navigate('/bikolLearn'); 
+    };
     return (
         <Container className="bg-white" style={{ width: '100%', maxWidth: '600px' }}>
             <Row>
                 <Col md={6} className="my-3">
                     <Card>
                         <Button variant="outline-dark" block onClick={tagalog}>
-                            {/* <Card.Img variant="top" src="path_to_spanish_flag_image" /> */}
                             <Card.Body>
                                 <Card.Title>Tagalog</Card.Title>
                             </Card.Body>
@@ -27,7 +30,7 @@ function DialectPickerComponent() {
                 </Col>
                 <Col md={6} className="my-3">
                     <Card>
-                        <Button variant="outline-dark" block>
+                        <Button variant="outline-dark" block onClick={bicolano}>
                             <Card.Body>
                                 <Card.Title>Central Bikol</Card.Title>
                             </Card.Body>

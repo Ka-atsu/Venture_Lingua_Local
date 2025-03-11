@@ -108,7 +108,7 @@ function EasyVocabularyChallengeTagalog() {
             </div>
 
             <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '500' }}>
-                Tagalog Vocabulary Challenge
+                Easy Vocabulary Challenge - Tagalog
             </h2>
 
             {/* Progress Bar */}
