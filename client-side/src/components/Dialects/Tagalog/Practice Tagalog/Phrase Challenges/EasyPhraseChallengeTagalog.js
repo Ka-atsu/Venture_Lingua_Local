@@ -100,14 +100,14 @@ function EasyPhraseChallengeTagalog() {
                 />
             </div>
 
-            <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '500' }}>
+            <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
                 Easy Phrase Challenge - Tagalog
             </h2>
 
             {/* Progress Bar */}
             <Row className="w-50 my-4">
                 <Col>
-                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} />
+                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} variant="success"/>
                 </Col>
             </Row>
 

@@ -7,73 +7,76 @@ function EasyTranslationChallengeTagalog() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const [questionIndex, setQuestionIndex] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [selectedWords, setSelectedWords] = useState([]);
     const [score, setScore] = useState(0);
     const [resultMessage, setResultMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [lives, setLives] = useState(3);
     const [showToast, setShowToast] = useState(false);
 
-    // Translation-based challenge questions
-    const questions = [
+
+    const sentences = [
         {
-            question: "What is the correct translation of 'Water' in Tagalog?",
-            correctAnswer: 'Tubig',
-            options: ['Tubig', 'Ulam', 'Langit', 'Aso'],
+            english: "WHERE SHOULD WE EAT?", 
+            correctAnswer: ['SAAN', 'TAYO', 'KAIN'],
+            options: ['TAYO', 'SAAN', 'PRE', 'KAIN'],
         },
         {
-            question: "How do you translate 'Sky' to Tagalog?",
-            correctAnswer: 'Langit',
-            options: ['Dagat', 'Lupa', 'Langit', 'Puno'],
+            english: "ANG GANDA NG TAGPO", 
+            correctAnswer: ['TAGPO', 'ANG', 'GANDA', 'NG'],
+            options: ['TAGPO', 'GANDA', 'ANG', 'NG'],
         },
         {
-            question: "What is the Tagalog word for 'Rice'?",
-            correctAnswer: 'Bigas',
-            options: ['Bigas', 'Isda', 'Mesa', 'Sapatos'],
+            english: "MAY NAKITA AKONG ISDA",
+            correctAnswer: ['AKONG', 'ISDA', 'MAY', 'NAKITA'],
+            options: ['MAY', 'NAKITA', 'ISDA', 'AKONG'],
         },
         {
-            question: "Choose the correct translation of 'Dog'.",
-            correctAnswer: 'Aso',
-            options: ['Pusa', 'Ibon', 'Aso', 'Baka'],
+            english: "MASAYA AKO SA BUHAY KO",
+            correctAnswer: ['MASAYA', 'AKO', 'BAY', 'SA'],
+            options: ['MASAYA', 'AKO', 'SA', 'BAY'],
         },
         {
-            question: "How do you say 'Food' in Tagalog?",
-            correctAnswer: 'Pagkain',
-            options: ['Tubig', 'Pagkain', 'Dahon', 'Kotse'],
+            english: "KUMAIN NA AKO NG PIZZA",
+            correctAnswer: ['AKO', 'NG', 'PIZZA', 'KUMAIN'],
+            options: ['AKO', 'NG', 'KUMAIN', 'PIZZA'],
         }
     ];
 
-    const handleAnswerSelection = (answer) => {
-        setSelectedAnswer(answer);
-        setIsSubmitted(false);
-        setResultMessage('');
+    const handleAnswerSelection = (selectedWord) => {
+        if (isSubmitted) return;  // Prevent changes once the answer is submitted
+
+        // If word is already in selectedWords, remove it (unselect)
+        if (selectedWords.includes(selectedWord)) {
+            setSelectedWords(selectedWords.filter(word => word !== selectedWord));
+        } else {
+            // Otherwise, add it to selectedWords (select)
+            setSelectedWords([...selectedWords, selectedWord]);
+        }
     };
 
     const submitAnswer = () => {
         setIsSubmitted(true);
-        if (selectedAnswer === questions[questionIndex].correctAnswer) {
+
+        if (JSON.stringify(selectedWords) === JSON.stringify(sentences[questionIndex].correctAnswer)) {
             setScore(score + 1);
             setResultMessage('Correct!');
         } else {
             setLives(lives - 1);
             setResultMessage(`Incorrect! You have ${lives - 1} lives remaining.`);
-            if (lives - 1 === 0) {
-                setResultMessage('Game Over! You lost all lives.');
-                setTimeout(resetGame, 2000);
-            }
         }
     };
 
     const nextQuestion = () => {
         if (lives === 0) {
             resetGame();
-        } else if (questionIndex < questions.length - 1) {
+        } else if (questionIndex < sentences.length - 1) {
             setQuestionIndex(questionIndex + 1);
-            setSelectedAnswer(null);
-            setIsSubmitted(false);
-            setResultMessage('');
+            setSelectedWords([]);  // Reset selected words for the next question
+            setIsSubmitted(false);  // Reset submit status
+            setResultMessage('');  // Reset result message
         } else {
-            alert(`Challenge complete! You scored ${score} out of ${questions.length}`);
+            alert(`Challenge complete! You scored ${score} out of ${sentences.length}`);
         }
     };
 
@@ -82,15 +85,15 @@ function EasyTranslationChallengeTagalog() {
         setLives(3);
         setScore(0);
         setQuestionIndex(0);
-        setSelectedAnswer(null);
+        setSelectedWords([]);
         setIsSubmitted(false);
         setResultMessage('');
     };
 
-    const progress = ((questionIndex + 1) / questions.length) * 100;
+    const progress = ((questionIndex + 1) / sentences.length) * 100;
 
     return (
-        <Container fluid className="d-flex flex-column align-items-center bg-dark vh-100">
+        <Container fluid className="d-flex flex-column align-items-center bg-dark vh-100 p-4">
             <div className="tagalog-go-back-icon">
                 <FaArrowLeft
                     size={30}
@@ -100,42 +103,56 @@ function EasyTranslationChallengeTagalog() {
                 />
             </div>
 
-            <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '500' }}>
-                Easy Translation Challenge - Tagalog
+            <h2 className="text-center my-4 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
+                Complete the Sentence - Tagalog
             </h2>
 
             {/* Progress Bar */}
             <Row className="w-50 my-4">
                 <Col>
-                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} />
+                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} variant="success" />
                 </Col>
             </Row>
 
             <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
                 <Col>
-                    <Card className="p-4 shadow-sm">
+                    <Card className="shadow-lg rounded-lg bg-light">
                         <Card.Body>
-                            <div className="text-center mb-4">
-                                <h4>{questions[questionIndex].question}</h4>
+                            <div className="text-center my-4">
+                                <h4 className="text-dark" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '500' }}>{sentences[questionIndex].english}</h4>
+                            </div>
+
+                            {/* Selected words displayed in order */}
+                            <div className="d-flex flex-wrap justify-content-center mb-4">
+                                {selectedWords.map((word, index) => (
+                                    <Button
+                                        key={index}
+                                        variant="outline-dark"
+                                        className="m-1 py-3 px-5 shadow-sm rounded-pill"
+                                        onClick={() => handleAnswerSelection(word)} // Click to deselect
+                                    >
+                                        {word}
+                                    </Button>
+                                ))}
                             </div>
 
                             {/* Options Column */}
-                            <div className="d-flex flex-column align-items-center">
-                                {questions[questionIndex].options.map((word, index) => (
+                            <div className="d-flex flex-wrap justify-content-center mb-4">
+                                {sentences[questionIndex].options.map((word, index) => (
                                     <Button
                                         key={index}
-                                        variant={selectedAnswer === word ? 'dark' : 'outline-dark'}
-                                        className={`w-100 py-3 mb-3 shadow-sm rounded-pill ${selectedAnswer === word ? 'bg-dark text-white' : ''}`}
-                                        onClick={() => handleAnswerSelection(word)}
+                                        variant={selectedWords.includes(word) ? "dark" : "outline-dark"}
+                                        className="m-3 py-3 px-5 shadow-sm rounded-pill"
+                                        onClick={() => handleAnswerSelection(word)} // Select or deselect word
                                         disabled={isSubmitted}
                                     >
-                                        <h5>{word}</h5>
+                                        {word}
                                     </Button>
                                 ))}
                             </div>
 
                             {/* Submit Answer Button */}
-                            {selectedAnswer && !isSubmitted && (
+                            {selectedWords.length > 0 && !isSubmitted && (
                                 <div className="text-center mt-4">
                                     <Button variant="outline-primary" onClick={submitAnswer}>
                                         Submit Answer
@@ -148,11 +165,11 @@ function EasyTranslationChallengeTagalog() {
                                 <div className="text-center mt-4">
                                     <h5>{resultMessage}</h5>
                                     <Button 
-                                        variant="outline-secondary" 
+                                        variant="outline-light" 
                                         onClick={nextQuestion} 
                                         className="mt-3"
                                     >
-                                        {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}
+                                        {questionIndex < sentences.length - 1 ? 'Next Question' : 'Finish Challenge'}
                                     </Button>
                                 </div>
                             )}

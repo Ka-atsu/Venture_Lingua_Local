@@ -3,43 +3,38 @@ import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-boo
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-function EasySentenceChallengeTagalog() {
+function EasySentenceConstructionChallengeTagalog() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const [questionIndex, setQuestionIndex] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [selectedAnswer, setSelectedAnswer] = useState('');
     const [score, setScore] = useState(0);
     const [resultMessage, setResultMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [lives, setLives] = useState(3);
     const [showToast, setShowToast] = useState(false);
 
-    // Sentence-based challenge questions
+    // Sentence construction challenge questions (Jumbled Tagalog words)
     const questions = [
         {
-            question: "What is the correct translation of 'I love you' in Tagalog?",
-            correctAnswer: 'Mahal kita',
-            options: ['Mahal kita', 'Salamat po', 'Paalam', 'Kamusta'],
+            jumbledWords: ['ay', 'umalis', 'ng', 'nanay', 'Si', 'bahay'],
+            correctAnswer: 'Si nanay ay umalis ng bahay',
         },
         {
-            question: "Which is the correct translation of 'Good morning'?",
-            correctAnswer: 'Magandang umaga',
-            options: ['Magandang umaga', 'Magandang gabi', 'Mahal kita', 'Paalam'],
+            jumbledWords: ['umaga', 'Magandang', 'gabi'],
+            correctAnswer: 'Magandang gabi',
         },
         {
-            question: "How do you say 'Where is the restroom?' in Tagalog?",
+            jumbledWords: ['Saan', 'banyo', 'ang'],
             correctAnswer: 'Saan ang banyo?',
-            options: ['Anong oras na?', 'Saan ang banyo?', 'Kumusta ka?', 'Ano ito?'],
         },
         {
-            question: "Choose the correct sentence: 'I am hungry.'",
+            jumbledWords: ['Nagugutom', 'ako'],
             correctAnswer: 'Nagugutom ako',
-            options: ['Nagugutom ako', 'Nauuhaw ako', 'Maligayang bati', 'Mahal kita'],
         },
         {
-            question: "What is the correct translation of 'Thank you very much'?",
+            jumbledWords: ['Maraming', 'salamat'],
             correctAnswer: 'Maraming salamat',
-            options: ['Salamat', 'Walang anuman', 'Maraming salamat', 'Paalam'],
         }
     ];
 
@@ -51,7 +46,8 @@ function EasySentenceChallengeTagalog() {
 
     const submitAnswer = () => {
         setIsSubmitted(true);
-        if (selectedAnswer === questions[questionIndex].correctAnswer) {
+        // Convert both the selected answer and correct answer to lowercase for comparison
+        if (selectedAnswer.trim().toLowerCase() === questions[questionIndex].correctAnswer.toLowerCase()) {
             setScore(score + 1);
             setResultMessage('Correct!');
         } else {
@@ -69,7 +65,7 @@ function EasySentenceChallengeTagalog() {
             resetGame();
         } else if (questionIndex < questions.length - 1) {
             setQuestionIndex(questionIndex + 1);
-            setSelectedAnswer(null);
+            setSelectedAnswer('');
             setIsSubmitted(false);
             setResultMessage('');
         } else {
@@ -82,7 +78,7 @@ function EasySentenceChallengeTagalog() {
         setLives(3);
         setScore(0);
         setQuestionIndex(0);
-        setSelectedAnswer(null);
+        setSelectedAnswer('');
         setIsSubmitted(false);
         setResultMessage('');
     };
@@ -100,38 +96,36 @@ function EasySentenceChallengeTagalog() {
                 />
             </div>
 
-            <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '500' }}>
-                Easy Sentence Challenge - Tagalog
+            <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
+                Sentence Construction Challenge - Tagalog
             </h2>
 
             {/* Progress Bar */}
             <Row className="w-50 my-4">
                 <Col>
-                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} />
+                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} variant="success" />
                 </Col>
             </Row>
 
             <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
                 <Col>
-                    <Card className="p-4 shadow-sm">
+                    <Card className="p-5 shadow-sm">
                         <Card.Body>
-                            <div className="text-center mb-4">
-                                <h4>{questions[questionIndex].question}</h4>
+                            <div className="text-center mb-5">
+                                <h4>Arrange the words to form the correct sentence:</h4>
+                                <h5>{questions[questionIndex].jumbledWords.join(' ')}</h5>
                             </div>
 
-                            {/* Options Column */}
+                            {/* Options Column (User enters the sentence here) */}
                             <div className="d-flex flex-column align-items-center">
-                                {questions[questionIndex].options.map((word, index) => (
-                                    <Button
-                                        key={index}
-                                        variant={selectedAnswer === word ? 'dark' : 'outline-dark'}
-                                        className={`w-100 py-3 mb-3 shadow-sm rounded-pill ${selectedAnswer === word ? 'bg-dark text-white' : ''}`}
-                                        onClick={() => handleAnswerSelection(word)}
-                                        disabled={isSubmitted}
-                                    >
-                                        <h5>{word}</h5>
-                                    </Button>
-                                ))}
+                                <input
+                                    type="text"
+                                    value={selectedAnswer}
+                                    onChange={(e) => handleAnswerSelection(e.target.value)}
+                                    className="form-control w-100 py-3 mb-4 shadow-sm rounded"
+                                    placeholder="Type your answer"
+                                    disabled={isSubmitted}
+                                />
                             </div>
 
                             {/* Submit Answer Button */}
@@ -189,4 +183,4 @@ function EasySentenceChallengeTagalog() {
     );
 }
 
-export default EasySentenceChallengeTagalog;
+export default EasySentenceConstructionChallengeTagalog;
