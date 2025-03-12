@@ -29,21 +29,21 @@ function PronounseSentenceCebuano() {
             phrases: [
                 {
                     english: 'Hello',
-                    tagalog: 'Kamusta',
+                    cebuano: 'Kamusta',
                     pronunciation: 'Ka-mus-ta',
                     sentence: 'Kamusta ka? (Hello! How are you?)',
                     explanation: 'This is a greeting you use when meeting someone or when checking in with someone to see how they are doing.',
                 },
                 {
                     english: 'Good morning',
-                    tagalog: 'Magandang umaga',
+                    cebuano: 'Magandang umaga',
                     pronunciation: 'Mah-gan-dang oo-mah-ga',
                     sentence: 'Magandang umaga! Kamusta ka at ang iyong pamilya? (Good morning! How are you and your family?)',
                     explanation: 'This is used to greet someone in the morning and inquire about their well-being.',
                 },
                 {
                     english: 'Good evening',
-                    tagalog: 'Magandang gabi',
+                    cebuano: 'Magandang gabi',
                     pronunciation: 'Mah-gan-dang gah-bee',
                     sentence: 'Magandang gabi, paano ka? Matagal na kitang hindi nakita! (Good evening, how are you? It’s been a while since I last saw you!)',
                     explanation: 'This is a greeting used in the evening to ask how someone is doing after the day has passed.',
@@ -57,35 +57,35 @@ function PronounseSentenceCebuano() {
             phrases: [
                 {
                     english: 'What’s your name?',
-                    tagalog: 'Anong pangalan mo?',
+                    cebuano: 'Anong pangalan mo?',
                     pronunciation: 'A-nong pahng-ah-lahn mo?',
                     sentence: 'Anong pangalan mo? Ako si Maria, at ikaw? (What’s your name? I’m Maria, and you?)',
                     explanation: 'This phrase is used when meeting someone for the first time and asking for their name.',
                 },
                 {
                     english: 'My name is ...',
-                    tagalog: 'Ang pangalan ko ay ...',
+                    cebuano: 'Ang pangalan ko ay ...',
                     pronunciation: 'Ang pahng-ah-lahn ko ay ...',
                     sentence: 'Ang pangalan ko ay Maria, at ako ay taga Maynila. (My name is Maria, and I’m from Manila.)',
                     explanation: 'This is how you introduce yourself and tell others your name and where you\'re from.',
                 },
                 {
                     english: 'Where are you from?',
-                    tagalog: 'Tagasaan ka?',
+                    cebuano: 'Tagasaan ka?',
                     pronunciation: 'Tah-gah-sah-ahn kah?',
                     sentence: 'Tagasaan ka? Ako ay taga Bicol, ikaw? (Where are you from? I’m from Bicol, how about you?)',
                     explanation: 'This question is used when you want to know where someone is from.',
                 },
                 {
                     english: 'I’m from ...',
-                    tagalog: 'Taga... ako',
+                    cebuano: 'Taga... ako',
                     pronunciation: 'Tah-gah... ah-ko',
                     sentence: 'Taga Manila ako. Nais kong matutunan ang Tagalog nang mas maayos. (I’m from Manila. I want to learn Tagalog more fluently.)',
                     explanation: 'This is used when you are telling someone where you are from.',
                 },
                 {
                     english: 'Nice to meet you',
-                    tagalog: 'Ikinalulugod kong makilala ka',
+                    cebuano: 'Ikinalulugod kong makilala ka',
                     pronunciation: 'I-kee-nah-loo-loo-god kong mah-kee-lah-lah kah',
                     sentence: 'Ikinalulugod kong makilala ka. Sana ay maging magkaibigan tayo. (Nice to meet you, I hope we can become friends.)',
                     explanation: 'This is a polite way of expressing happiness when meeting someone for the first time.',
@@ -99,35 +99,35 @@ function PronounseSentenceCebuano() {
             phrases: [
                 {
                     english: 'Goodbye',
-                    tagalog: 'Paalam',
+                    cebuano: 'Paalam',
                     pronunciation: 'Pah-ah-lahm',
                     sentence: 'Paalam, magkita tayo muli sa susunod na linggo. (Goodbye, see you again next week.)',
                     explanation: 'This is the standard way to say goodbye when you expect to see someone again soon.',
                 },
                 {
                     english: 'See you later',
-                    tagalog: 'Magkita tayo mamaya',
+                    cebuano: 'Magkita tayo mamaya',
                     pronunciation: 'Mag-kee-tah tah-yo mah-mah-yah',
                     sentence: 'Magkita tayo mamaya pagkatapos ng trabaho. (See you later after work.)',
                     explanation: 'This is used when you are planning to meet someone later in the day after a specific activity.',
                 },
                 {
                     english: 'Take care',
-                    tagalog: 'Ingat ka',
+                    cebuano: 'Ingat ka',
                     pronunciation: 'Eeng-aht kah',
                     sentence: 'Ingat ka sa daan, mag-ingat sa mga sasakyan. (Take care on the road, be careful with the vehicles.)',
                     explanation: 'This is used when you want to show concern for someone\'s safety as they leave.',
                 },
                 {
                     english: 'Good night',
-                    tagalog: 'Magandang gabi',
+                    cebuano: 'Magandang gabi',
                     pronunciation: 'Mah-gan-dang gah-bee',
                     sentence: 'Magandang gabi, matulog ka ng mahimbing at magpahinga. (Good night, sleep well and rest.)',
                     explanation: 'This is used when saying goodbye before someone goes to bed.',
                 },
                 {
                     english: 'See you tomorrow',
-                    tagalog: 'Magkita tayo bukas',
+                    cebuano: 'Magkita tayo bukas',
                     pronunciation: 'Mag-kee-tah tah-yo boo-kahs',
                     sentence: 'Magkita tayo bukas sa mga 10:00 AM. (See you tomorrow at around 10:00 AM.)',
                     explanation: 'This phrase is used when confirming plans to meet someone the following day.',
@@ -201,10 +201,10 @@ function PronounseSentenceCebuano() {
                                 <div className="cebuano-flashcard-front flex-column">
                                     <h3 className="cebuano-word">{phrase.english}</h3>
                                     <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
-                                    <p><strong>Cebuano:</strong> {phrase.tagalog}</p>
+                                    <p><strong>Cebuano:</strong> {phrase.cebuano}</p>
                                 </div>
                                 <div className="cebuano-flashcard-back flex-column">
-                                    <h1 className="cebuano-word">{phrase.tagalog}</h1>
+                                    <h1 className="cebuano-word">{phrase.cebuano}</h1>
                                     <p className='text-start'><strong>Example:</strong> {phrase.sentence}</p>
                                     <p className='text-start'><strong>Explanation:</strong> {phrase.explanation}</p>
                                 </div>

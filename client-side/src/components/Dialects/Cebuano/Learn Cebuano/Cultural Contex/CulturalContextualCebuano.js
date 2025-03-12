@@ -24,7 +24,7 @@ function CulturalContextualCebuano() {
   const culturalExpressions = [
     {
       english: "The concept of 'Bayanihan' (Community spirit)",
-      tagalog: "Bayanihan",
+      cebuano: "Bayanihan",
       example: "Sa Bayanihan, nagtutulungan ang mga tao para sa kapakanan ng iba. (In Bayanihan, people help each other for the welfare of others.)",
       explanation: "Bayanihan refers to the Filipino culture of helping one another, especially in times of need. It embodies the concept of community cooperation and solidarity.",
       usageTips: "Use 'Bayanihan' to describe any form of community spirit or cooperation, whether it's in a rural or urban setting.",
@@ -34,7 +34,7 @@ function CulturalContextualCebuano() {
     },
     {
       english: "Respect for elders ('Po' and 'Opo')",
-      tagalog: "Paggalang sa matatanda",
+      cebuano: "Paggalang sa matatanda",
       example: "'Po' and 'Opo' are commonly used to show respect. For instance, 'Opo, lolo, masarap po ang pagkain.' (Yes, grandpa, the food is delicious.)",
       explanation: "Filipino culture places great importance on respecting elders. The words 'po' and 'opo' are added when addressing older people as a sign of respect.",
       usageTips: "'Po' and 'Opo' are essential in daily conversations when speaking to someone older or in authority. They should be used in formal and respectful contexts.",
@@ -44,7 +44,7 @@ function CulturalContextualCebuano() {
     },
     {
       english: "Filipino hospitality",
-      tagalog: "Hospitalidad ng Pilipino",
+      cebuano: "Hospitalidad ng Pilipino",
       example: "'Please come in! We have food, stay as long as you like!' (Common Filipino hospitality to visitors.)",
       explanation: "Filipino hospitality is known for its warm welcome. When visitors arrive, Filipinos go out of their way to make them feel at home, offering food, drinks, and even their bed.",
       usageTips: "When visiting a Filipino home, it's customary to accept offers of food or drinks as a sign of respect to the host.",
@@ -54,7 +54,7 @@ function CulturalContextualCebuano() {
     },
     {
       english: "Fiestas and celebrations",
-      tagalog: "Pista at pagdiriwang",
+      cebuano: "Pista at pagdiriwang",
       example: "Ang Pista ng Quiapo ay isang halimbawa ng malaking pagtitipon ng mga tao sa Maynila. (The Quiapo Fiesta is an example of a major gathering of people in Manila.)",
       explanation: "Fiestas are an important part of Filipino culture, celebrating patron saints, historical events, or other cultural traditions. These celebrations are marked by street parades, music, dancing, and food.",
       usageTips: "Use 'fiesta' when referring to any local or religious celebration. It is often followed by the name of the place or the saint it honors, such as 'Pista ng Santo Niño.'",
@@ -103,7 +103,7 @@ function CulturalContextualCebuano() {
                         {currentExpression.english}
                     </h3>
                     <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
-                        Bikol: {currentExpression.tagalog}
+                        Cebuano: {currentExpression.cebuano}
                     </h5>
                     <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Example:</strong> {currentExpression.example}</p>
                     <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Explanation:</strong> {currentExpression.explanation}</p>
@@ -118,7 +118,7 @@ function CulturalContextualCebuano() {
             <Col md={6}>
                 <Card className="bg-transparent border-0 rounded">
                     <Card.Body className="p-0">
-                    <img src={currentExpression.image} alt={currentExpression.tagalog} className="img-fluid rounded" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={currentExpression.image} alt={currentExpression.cebuano} className="img-fluid rounded" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </Card.Body>
                 </Card>
             </Col>

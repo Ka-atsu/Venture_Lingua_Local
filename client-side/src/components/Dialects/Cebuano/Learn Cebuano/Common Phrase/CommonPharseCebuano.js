@@ -26,30 +26,30 @@ function CommonPharseCebuano() {
         {
             group: 'Greetings',
             phrases: [
-                { english: 'Hello (General greeting)', bicolano: 'Mabuhay', example: 'Mabuhay! Kamusta ka? (Hello! How are you?)' },
-                { english: 'How are you?', bicolano: 'Kamusta ka?', example: 'Kamusta ka? (How are you?)' },
-                { english: 'Good morning', bicolano: 'Magandang aga', example: 'Magandang aga! Kamusta ka? (Good morning! How are you?)' },
-                { english: 'Good evening', bicolano: 'Magandang gab-i', example: 'Magandang gab-i, paano ka? (Good evening, how are you?)' }
+                { english: 'Hello (General greeting)', cebuano: 'Mabuhay', example: 'Mabuhay! Kamusta ka? (Hello! How are you?)' },
+                { english: 'How are you?', cebuano: 'Kamusta ka?', example: 'Kamusta ka? (How are you?)' },
+                { english: 'Good morning', cebuano: 'Magandang aga', example: 'Magandang aga! Kamusta ka? (Good morning! How are you?)' },
+                { english: 'Good evening', cebuano: 'Magandang gab-i', example: 'Magandang gab-i, paano ka? (Good evening, how are you?)' }
             ]
         },
         {
             group: 'Introductions',
             phrases: [
-                { english: 'What’s your name?', bicolano: 'Anong pangalan mo?', example: 'Anong pangalan mo? (What’s your name?)' },
-                { english: 'My name is ...', bicolano: 'Ang pangalan ko ay ...', example: 'Ang pangalan ko ay Maria. (My name is Maria.)' },
-                { english: 'Where are you from?', bicolano: 'Tagasaan ka?', example: 'Tagasaan ka? (Where are you from?)' },
-                { english: 'I’m from ...', bicolano: 'Taga... ako', example: 'Taga Manila ako. (I’m from Manila.)' },
-                { english: 'Nice to meet you', bicolano: 'Ikinalulugod kong makilala ka', example: 'Ikinalulugod kong makilala ka. (Nice to meet you.)' }
+                { english: 'What’s your name?', cebuano: 'Anong pangalan mo?', example: 'Anong pangalan mo? (What’s your name?)' },
+                { english: 'My name is ...', cebuano: 'Ang pangalan ko ay ...', example: 'Ang pangalan ko ay Maria. (My name is Maria.)' },
+                { english: 'Where are you from?', cebuano: 'Tagasaan ka?', example: 'Tagasaan ka? (Where are you from?)' },
+                { english: 'I’m from ...', cebuano: 'Taga... ako', example: 'Taga Manila ako. (I’m from Manila.)' },
+                { english: 'Nice to meet you', cebuano: 'Ikinalulugod kong makilala ka', example: 'Ikinalulugod kong makilala ka. (Nice to meet you.)' }
             ]
         },
         {
             group: 'Goodbyes',
             phrases: [
-                { english: 'Goodbye', bicolano: 'Paalam', example: 'Paalam, magkita tayo muli! (Goodbye, see you again!)' },
-                { english: 'See you later', bicolano: 'Magkita tayo mamaya', example: 'Magkita tayo mamaya! (See you later!)' },
-                { english: 'Take care', bicolano: 'Ingat ka', example: 'Ingat ka, ha? (Take care, okay?)' },
-                { english: 'Good night', bicolano: 'Magandang gabi', example: 'Magandang gabi, matulog na tayo! (Good night, let’s go to sleep!)' },
-                { english: 'See you tomorrow', bicolano: 'Magkita tayo bukas', example: 'Magkita tayo bukas! (See you tomorrow!)' }
+                { english: 'Goodbye', cebuano: 'Paalam', example: 'Paalam, magkita tayo muli! (Goodbye, see you again!)' },
+                { english: 'See you later', cebuano: 'Magkita tayo mamaya', example: 'Magkita tayo mamaya! (See you later!)' },
+                { english: 'Take care', cebuano: 'Ingat ka', example: 'Ingat ka, ha? (Take care, okay?)' },
+                { english: 'Good night', cebuano: 'Magandang gabi', example: 'Magandang gabi, matulog na tayo! (Good night, let’s go to sleep!)' },
+                { english: 'See you tomorrow', cebuano: 'Magkita tayo bukas', example: 'Magkita tayo bukas! (See you tomorrow!)' }
             ]
         }
     ];
@@ -116,10 +116,10 @@ function CommonPharseCebuano() {
                             <div className="cebuano-flashcard-inner">
                                 <div className="cebuano-flashcard-front flex-column">
                                     <h3 className="cebuano-word">{phrase.english}</h3>
-                                    <p><strong>Cebuano:</strong> {phrase.bicolano}</p>
+                                    <p><strong>Cebuano:</strong> {phrase.cebuano}</p>
                                 </div>
                                 <div className="cebuano-flashcard-back flex-column">
-                                    <h3 className="cebuano-word">{phrase.bicolano}</h3>
+                                    <h3 className="cebuano-word">{phrase.cebuano}</h3>
                                     <p><strong>Example:</strong> {phrase.example}</p>
                                 </div>
                             </div>

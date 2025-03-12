@@ -24,7 +24,7 @@ function ExpressionCebuano() {
   const expressions = [
     {
       english: "Thank you",
-      tagalog: "Salamat",
+      cebuano: "Salamat",
       example: "Salamat sa tulong mo! (Thank you for your help!)",
       explanation: "This is used to show gratitude when someone helps you.",
       usageTips: "You can use 'Salamat' in both formal and informal settings. If you want to be more polite or respectful, use 'Salamat po'.",
@@ -33,7 +33,7 @@ function ExpressionCebuano() {
     },
     {
       english: "Sorry",
-      tagalog: "Pasensya na",
+      cebuano: "Pasensya na",
       example: "Pasensya na, hindi ko sinasadya. (Sorry, I didn’t mean to.)",
       explanation: "This is used when apologizing for a minor mistake.",
       usageTips: "In formal situations, it’s better to say 'Pasensya po' to show respect. 'Paumanhin' is also commonly used in more formal contexts.",
@@ -42,7 +42,7 @@ function ExpressionCebuano() {
     },
     {
       english: "Excuse me",
-      tagalog: "Mawalang-galang na po / Paumanhin",
+      cebuano: "Mawalang-galang na po / Paumanhin",
       example: "Mawalang-galang na po, maaari bang magtanong? (Excuse me, may I ask a question?)",
       explanation: "This is used when politely catching someone's attention or asking for permission to pass by. 'Paumanhin' is more formal, while 'Mawalang-galang na' is a more apologetic phrase.",
       usageTips: "'Paumanhin' is respectful and formal, while 'Mawalang-galang na' is used when you want to show extra respect, especially when interrupting or asking a favor.",
@@ -90,7 +90,7 @@ function ExpressionCebuano() {
                 {currentExpression.english}
               </h3>
               <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
-              Cebuano: {currentExpression.tagalog}
+              Cebuano: {currentExpression.cebuano}
               </h5>
               <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Example:</strong> {currentExpression.example}</p>
               <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Explanation:</strong> {currentExpression.explanation}</p>

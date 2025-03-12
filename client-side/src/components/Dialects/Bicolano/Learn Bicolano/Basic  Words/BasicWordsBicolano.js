@@ -28,32 +28,30 @@ function BasicWordsBicolano() {
         {
             group: 'Greetings',
             words: [
-                { bicolano: 'Kamusta', english: 'Hello' },
-                { bicolano: 'Magandang aga', english: 'Good Morning' },
-                { bicolano: 'Magandang hapon', english: 'Good Afternoon' },
-                { bicolano: 'Magandang gab-i', english: 'Good Evening' },
-                { bicolano: 'Magandang gab-i', english: 'Good Night' },
-                { bicolano: 'Magandang aldaw', english: 'Good day' }
+                { bicolano: 'Maugmang Pag-abot', english: 'Welcome' },
+                { bicolano: 'Marhay na aga', english: 'Good Morning' },
+                { bicolano: 'Marhay na hapon', english: 'Good Afternoon' },
+                { bicolano: 'Marhay na banggi', english: 'Good Evening' },
             ]
         },
         // Group 2: Essential Nouns
         {
-            group: 'Essential Nouns',
+            group: 'Nouns',
             words: [
-                { bicolano: 'Pamilya', english: 'Family' },
-                { bicolano: 'Balay', english: 'House' },
-                { bicolano: 'Kaibahan', english: 'Friend' },
-                { bicolano: 'Obra', english: 'Work' },
-                { bicolano: 'Kotse', english: 'Car' },
-                { bicolano: 'Iro', english: 'Dog' }
+                { bicolano: 'Pay/Ama', english: 'Father' },
+                { bicolano: 'Manay', english: 'Sister' },
+                { bicolano: 'Digdi', english: 'Here' },
+                { bicolano: 'Kamot', english: 'Hand' },
+                { bicolano: 'Bayle', english: 'Dance' },
+                { bicolano: 'Iyo', english: 'Yes' }
             ]
         },
         // Group 3: Numbers
         {
             group: 'Numbers 1 to 5',
             words: [
-                { bicolano: 'Isa', english: 'One' },
-                { bicolano: 'Dua', english: 'Two' },
+                { bicolano: 'Saro', english: 'One' },
+                { bicolano: 'Duwa', english: 'Two' },
                 { bicolano: 'Tulo', english: 'Three' },
                 { bicolano: 'Apat', english: 'Four' },
                 { bicolano: 'Lima', english: 'Five' },
@@ -62,11 +60,11 @@ function BasicWordsBicolano() {
         {
             group: 'Numbers 6 to 10',
             words: [
-                { bicolano: 'Anom', english: 'Six' },
+                { bicolano: 'Anum', english: 'Six' },
                 { bicolano: 'Pito', english: 'Seven' },
                 { bicolano: 'Walo', english: 'Eight' },
                 { bicolano: 'Siyam', english: 'Nine' },
-                { bicolano: 'Sampo', english: 'Ten' }
+                { bicolano: 'Sampulo', english: 'Ten' }
             ]
         }
     ];

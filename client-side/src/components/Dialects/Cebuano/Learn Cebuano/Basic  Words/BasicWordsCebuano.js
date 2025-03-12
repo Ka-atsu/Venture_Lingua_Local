@@ -28,45 +28,45 @@ function BasicWordsCebuano() {
         {
             group: 'Greetings',
             words: [
-                { bicolano: 'Kamusta', english: 'Hello' },
-                { bicolano: 'Magandang aga', english: 'Good Morning' },
-                { bicolano: 'Magandang hapon', english: 'Good Afternoon' },
-                { bicolano: 'Magandang gab-i', english: 'Good Evening' },
-                { bicolano: 'Magandang gab-i', english: 'Good Night' },
-                { bicolano: 'Magandang aldaw', english: 'Good day' }
+                { cebuano: 'Kamusta', english: 'Hello' },
+                { cebuano: 'Magandang aga', english: 'Good Morning' },
+                { cebuano: 'Magandang hapon', english: 'Good Afternoon' },
+                { cebuano: 'Magandang gab-i', english: 'Good Evening' },
+                { cebuano: 'Magandang gab-i', english: 'Good Night' },
+                { cebuano: 'Magandang aldaw', english: 'Good day' }
             ]
         },
         // Group 2: Essential Nouns
         {
             group: 'Essential Nouns',
             words: [
-                { bicolano: 'Pamilya', english: 'Family' },
-                { bicolano: 'Balay', english: 'House' },
-                { bicolano: 'Kaibahan', english: 'Friend' },
-                { bicolano: 'Obra', english: 'Work' },
-                { bicolano: 'Kotse', english: 'Car' },
-                { bicolano: 'Iro', english: 'Dog' }
+                { cebuano: 'Pamilya', english: 'Family' },
+                { cebuano: 'Balay', english: 'House' },
+                { cebuano: 'Kaibahan', english: 'Friend' },
+                { cebuano: 'Obra', english: 'Work' },
+                { cebuano: 'Kotse', english: 'Car' },
+                { cebuano: 'Iro', english: 'Dog' }
             ]
         },
         // Group 3: Numbers
         {
             group: 'Numbers 1 to 5',
             words: [
-                { bicolano: 'Isa', english: 'One' },
-                { bicolano: 'Dua', english: 'Two' },
-                { bicolano: 'Tulo', english: 'Three' },
-                { bicolano: 'Apat', english: 'Four' },
-                { bicolano: 'Lima', english: 'Five' },
+                { cebuano: 'Isa', english: 'One' },
+                { cebuano: 'Dua', english: 'Two' },
+                { cebuano: 'Tulo', english: 'Three' },
+                { cebuano: 'Apat', english: 'Four' },
+                { cebuano: 'Lima', english: 'Five' },
             ]
         },
         {
             group: 'Numbers 6 to 10',
             words: [
-                { bicolano: 'Anom', english: 'Six' },
-                { bicolano: 'Pito', english: 'Seven' },
-                { bicolano: 'Walo', english: 'Eight' },
-                { bicolano: 'Siyam', english: 'Nine' },
-                { bicolano: 'Sampo', english: 'Ten' }
+                { cebuano: 'Anom', english: 'Six' },
+                { cebuano: 'Pito', english: 'Seven' },
+                { cebuano: 'Walo', english: 'Eight' },
+                { cebuano: 'Siyam', english: 'Nine' },
+                { cebuano: 'Sampo', english: 'Ten' }
             ]
         }
     ];
@@ -139,7 +139,7 @@ function BasicWordsCebuano() {
                                     <h2 className="cebuano-word">{word.english}</h2>
                                 </div>
                                 <div style={{ alignItems: 'center' }} className="cebuano-flashcard-back">
-                                    <h2 className="cebuano-word">{word.bicolano}</h2>
+                                    <h2 className="cebuano-word">{word.cebuano}</h2>
                                 </div>
                             </div>
                         </div>
