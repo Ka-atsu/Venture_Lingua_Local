@@ -1,51 +1,51 @@
 import React from 'react';
-import EasyVocabularyChallengeBicolano from '../../Dialects/Bicolano/Practice Bicolano/Vocabulary Challenges/EasyVocabularyChallengeBicolano';
-import EasyPronunciationChallengeBicolano from '../../Dialects/Bicolano/Practice Bicolano/Pronunciation Challenges/EasyPronunciationChallengeBicolano';
-import EasySentenceChallengeBicolano from '../../Dialects/Bicolano/Practice Bicolano/Sentence Challenges/EasySentenceChallengeBicolano';
-import EasyPhraseChallengeBicolano from '../../Dialects/Bicolano/Practice Bicolano/Phrase Challenges/EasyPhraseChallengeBicolano';
-import EasyTranslationChallengeBicolano from '../../Dialects/Bicolano/Practice Bicolano/Translation Challenges/EasyTranslationChallengeBicolano';
+import EasyVocabularyChallengeCebuano from '../../Dialects/Cebuano/Practice Cebuano/Vocabulary Challenges/EasyVocabularyChallengeCebuano';
+import EasyPronunciationChallengeCebuano from '../../Dialects/Cebuano/Practice Cebuano/Pronunciation Challenges/EasyPronunciationChallengeCebuano';
+import EasySentenceChallengeCebuano from '../../Dialects/Cebuano/Practice Cebuano/Sentence Challenges/EasySentenceChallengeCebuano';
+import EasyPhraseChallengeCebuano from '../../Dialects/Cebuano/Practice Cebuano/Phrase Challenges/EasyPhraseChallengeCebuano';
+import EasyTranslationChallengeCebuano from '../../Dialects/Cebuano/Practice Cebuano/Translation Challenges/EasyTranslationChallengeCebuano';
 
-export function BicolanoVocabularyEasyPage() {
+export function CebuanoVocabularyEasyPage() {
     console.log("TagalogVocabularyEasyPage is rendering!");
     return (
         <> 
-            <EasyVocabularyChallengeBicolano />
+            <EasyVocabularyChallengeCebuano />
         </>
     );
 }
 
-export function BicolanoPronunciationEasyPage() {
+export function CebuanoPronunciationEasyPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <EasyPronunciationChallengeBicolano />
+            <EasyPronunciationChallengeCebuano />
         </>
     );
 }
 
-export function BicolanoSentenceEasyPage() {
+export function CebuanoSentenceEasyPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <EasySentenceChallengeBicolano />
+            <EasySentenceChallengeCebuano />
         </>
     );
 }
 
-export function BicolanoPhraseEasyPage() {
+export function CebuanoPhraseEasyPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <EasyPhraseChallengeBicolano />
+            <EasyPhraseChallengeCebuano />
         </>
     );
 }
 
-export function BicolanoTranslationEasyPage() {
+export function CebuanoTranslationEasyPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <EasyTranslationChallengeBicolano />
+            <EasyTranslationChallengeCebuano />
         </>
     );
 }

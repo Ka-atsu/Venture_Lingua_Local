@@ -31,9 +31,9 @@ function CebuanoSideComponent() {
                 </Navbar.Brand>
 
                 <Button
-                    variant={isActive('/bikolLearn') ? 'primary' : 'light'}
-                    className={`w-100 mb-3 py-3 d-flex align-items-center justify-content-start ${isActive('/bikolLearn') ? 'active' : ''}`} 
-                    onClick={() => navigate('/bikolLearn')}
+                    variant={isActive('/cebuanoLearn') ? 'primary' : 'light'}
+                    className={`w-100 mb-3 py-3 d-flex align-items-center justify-content-start ${isActive('/cebuanoLearn') ? 'active' : ''}`} 
+                    onClick={() => navigate('/cebuanoLearn')}
                     style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
                 >
                     <FaBook className="me-3" />
@@ -41,9 +41,9 @@ function CebuanoSideComponent() {
                 </Button>
 
                 <Button
-                    variant={isActive('/bikolPractice') ? 'primary' : 'light'}
-                    className={`w-100 mb-3 py-3 d-flex align-items-center justify-content-start ${isActive('/bikolPractice') ? 'active' : ''}`} 
-                    onClick={() => navigate('/bikolPractice')}
+                    variant={isActive('/cebuanoPractice') ? 'primary' : 'light'}
+                    className={`w-100 mb-3 py-3 d-flex align-items-center justify-content-start ${isActive('/cebuanoPractice') ? 'active' : ''}`} 
+                    onClick={() => navigate('/cebuanoPractice')}
                     style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
                 >
                     <FaPencilAlt className="me-3" />

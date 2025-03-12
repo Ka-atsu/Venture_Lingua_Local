@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CebuanoSideComponent from '../../Side Panel/CebuanoSideComponent';
-import PracticeBicolanoMainContent from '../../Dialects/Bicolano/Practice Bicolano/1 Dashboard/PracticeBicolanoMainContent';
+import PracticeCebuanoMainContent from '../../Dialects/Cebuano/Practice Cebuano/1 Dashboard/PracticeCebuanoMainContent';
 
 function CebuanoPracticePage() {
     return (
@@ -21,7 +21,7 @@ function CebuanoPracticePage() {
 
             {/* Main content */}
             <Col xs={10} className="p-0" style={{ marginLeft: '16.6667%' }}> {/* 2/12 width for the sidebar */}
-                <PracticeBicolanoMainContent />
+                <PracticeCebuanoMainContent />
             </Col>
         </Row>
     );
