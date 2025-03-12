@@ -51,10 +51,12 @@ function EasySentenceConstructionChallengeTagalog() {
             setScore(score + 1);
             setResultMessage('Correct!');
         } else {
-            setLives(lives - 1);
-            setResultMessage(`Incorrect! You have ${lives - 1} lives remaining.`);
-            if (lives - 1 === 0) {
-                setResultMessage('Game Over! You lost all lives.');
+            const remainingLives = lives - 1;
+            setLives(remainingLives);
+            setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
+            if (remainingLives === 0) {
+                setResultMessage('Game Over! You lost all lives. Resetting game...');
+                // Automatically reset after 1 second
                 setTimeout(resetGame, 2000);
             }
         }
@@ -68,8 +70,6 @@ function EasySentenceConstructionChallengeTagalog() {
             setSelectedAnswer('');
             setIsSubmitted(false);
             setResultMessage('');
-        } else {
-            alert(`Challenge complete! You scored ${score} out of ${questions.length}`);
         }
     };
 
@@ -107,7 +107,7 @@ function EasySentenceConstructionChallengeTagalog() {
                 </Col>
             </Row>
 
-            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh', maxWidth: '600px' }}>
                 <Col>
                     <Card className="p-5 shadow-sm">
                         <Card.Body>
@@ -141,13 +141,15 @@ function EasySentenceConstructionChallengeTagalog() {
                             {resultMessage && (
                                 <div className="text-center mt-4">
                                     <h5>{resultMessage}</h5>
-                                    <Button 
-                                        variant="outline-secondary" 
-                                        onClick={nextQuestion} 
-                                        className="mt-3"
-                                    >
-                                        {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}
-                                    </Button>
+                                    {lives > 0 && (
+                                        <Button 
+                                            variant="outline-secondary" 
+                                            onClick={questionIndex < questions.length - 1 ? nextQuestion : goBack} 
+                                            className="mt-3"
+                                        >
+                                            {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}
+                                        </Button>
+                                    )}
                                 </div>
                             )}
                         </Card.Body>

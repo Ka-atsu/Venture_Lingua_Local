@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -7,58 +7,93 @@ function EasyPronunciationChallengeTagalog() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const [questionIndex, setQuestionIndex] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [selectedSyllables, setSelectedSyllables] = useState([]);
+    const [availableSyllables, setAvailableSyllables] = useState([]);
     const [score, setScore] = useState(0);
     const [resultMessage, setResultMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [lives, setLives] = useState(3);
     const [showToast, setShowToast] = useState(false);
 
-    // Pronunciation-based questions
-    const questions = [
+    // Use useMemo to ensure the questions array is stable
+    const questions = useMemo(() => [
         {
-            question: "Which pronunciation matches the Tagalog word 'Mahal' (Love)?",
-            correctAnswer: 'Ma-hal',
-            options: ['Ma-hal', 'Mal', 'Mahaluh', 'Mahal-ay'],
+            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            word: "Kaibigan",
+            syllables: ["Ka", "i", "bi", "gan"]
         },
         {
-            question: "How do you pronounce 'Salamat' (Thank you)?",
-            correctAnswer: 'Sa-la-mat',
-            options: ['Sa-lah-mat', 'Sah-lam', 'Sal-mat', 'Sa-la-mat'],
+            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            word: "Maganda",
+            syllables: ["Ma", "gan", "da"]
         },
         {
-            question: "Which is the correct pronunciation of 'Kaibigan' (Friend)?",
-            correctAnswer: 'Ka-i-bi-gan',
-            options: ['Kai-bigan', 'Ka-i-bi-gan', 'Kaa-bi-gan', 'Ka-bigan'],
+            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            word: "Pamilya",
+            syllables: ["Pa", "mil", "ya"]
         },
         {
-            question: "Choose the correct pronunciation of 'Maganda' (Beautiful):",
-            correctAnswer: 'Ma-gan-da',
-            options: ['Maan-gan-da', 'Ma-gan-da', 'Magan-duh', 'Mag-dana'],
+            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            word: "Mahal",
+            syllables: ["Ma", "hal"]
         },
         {
-            question: "How should 'Pamilya' (Family) be pronounced?",
-            correctAnswer: 'Pa-mil-ya',
-            options: ['Paa-mil-ya', 'Pam-ya', 'Pa-mil-ya', 'Pam-lia'],
+            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            word: "Salamat",
+            syllables: ["Sa", "la", "mat"]
         }
-    ];
+    ], []);
 
-    const handleAnswerSelection = (answer) => {
-        setSelectedAnswer(answer);
+    // Helper to shuffle an array (Fisher-Yates)
+    const shuffleArray = (array) => {
+        let arr = [...array];
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    };
+
+    // Initialize selected and available syllables on question change
+    useEffect(() => {
+        setSelectedSyllables([]);
+        const currentSyllables = questions[questionIndex].syllables;
+        setAvailableSyllables(shuffleArray(currentSyllables));
         setIsSubmitted(false);
         setResultMessage('');
+    }, [questionIndex, questions]);
+
+    // When a player selects a syllable, add it to the answer and remove from available
+    const handleSelectSyllable = (syllable) => {
+        setSelectedSyllables([...selectedSyllables, syllable]);
+        setAvailableSyllables(availableSyllables.filter((s) => s !== syllable));
+    };
+
+    // Allow removal of a selected syllable (tapping it returns it to available)
+    const handleRemoveSelected = (index) => {
+        const syllable = selectedSyllables[index];
+        const newSelected = [...selectedSyllables];
+        newSelected.splice(index, 1);
+        setSelectedSyllables(newSelected);
+        setAvailableSyllables([...availableSyllables, syllable]);
     };
 
     const submitAnswer = () => {
         setIsSubmitted(true);
-        if (selectedAnswer === questions[questionIndex].correctAnswer) {
+        const correctOrder = questions[questionIndex].syllables;
+        const isCorrect =
+            selectedSyllables.length === correctOrder.length &&
+            selectedSyllables.every((s, idx) => s === correctOrder[idx]);
+        if (isCorrect) {
             setScore(score + 1);
             setResultMessage('Correct!');
         } else {
-            setLives(lives - 1);
-            setResultMessage(`Incorrect! You have ${lives - 1} lives remaining.`);
-            if (lives - 1 === 0) {
-                setResultMessage('Game Over! You lost all lives.');
+            const remainingLives = lives - 1;
+            setLives(remainingLives);
+            setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
+            if (remainingLives === 0) {
+                setResultMessage('Game Over! You lost all lives. Resetting game...');
+                // Automatically reset after 1 second
                 setTimeout(resetGame, 2000);
             }
         }
@@ -69,11 +104,6 @@ function EasyPronunciationChallengeTagalog() {
             resetGame();
         } else if (questionIndex < questions.length - 1) {
             setQuestionIndex(questionIndex + 1);
-            setSelectedAnswer(null);
-            setIsSubmitted(false);
-            setResultMessage('');
-        } else {
-            alert(`Challenge complete! You scored ${score} out of ${questions.length}`);
         }
     };
 
@@ -82,7 +112,7 @@ function EasyPronunciationChallengeTagalog() {
         setLives(3);
         setScore(0);
         setQuestionIndex(0);
-        setSelectedAnswer(null);
+        setSelectedSyllables([]);
         setIsSubmitted(false);
         setResultMessage('');
     };
@@ -101,7 +131,7 @@ function EasyPronunciationChallengeTagalog() {
             </div>
 
             <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
-                Easy Pronunciation Challenge - Tagalog
+                Syllable Scramble Challenge - Tagalog
             </h2>
 
             {/* Progress Bar */}
@@ -111,31 +141,50 @@ function EasyPronunciationChallengeTagalog() {
                 </Col>
             </Row>
 
-            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh', maxWidth: '800px' }}>
                 <Col>
                     <Card className="p-4 shadow-sm">
                         <Card.Body>
                             <div className="text-center mb-4">
-                                <h4>{questions[questionIndex].question}</h4>
+                                <h4>{questions[questionIndex].prompt}</h4>
                             </div>
 
-                            {/* Options Column */}
-                            <div className="d-flex flex-column align-items-center">
-                                {questions[questionIndex].options.map((word, index) => (
-                                    <Button
-                                        key={index}
-                                        variant={selectedAnswer === word ? 'dark' : 'outline-dark'}
-                                        className={`w-100 py-3 mb-3 shadow-sm rounded-pill ${selectedAnswer === word ? 'bg-dark text-white' : ''}`}
-                                        onClick={() => handleAnswerSelection(word)}
-                                        disabled={isSubmitted}
-                                    >
-                                        <h5>{word}</h5>
-                                    </Button>
-                                ))}
+                            {/* Display the selected syllables */}
+                            <div className="mb-3">
+                                <h5 className="text-center">Your Answer:</h5>
+                                <div className="d-flex flex-wrap justify-content-center">
+                                    {selectedSyllables.map((syllable, index) => (
+                                        <Button
+                                            key={index}
+                                            variant="secondary"
+                                            className="m-1 py-3 px-5"
+                                            onClick={() => handleRemoveSelected(index)}
+                                        >
+                                            {syllable}
+                                        </Button>
+                                    ))}
+                                </div>
                             </div>
 
-                            {/* Submit Answer Button */}
-                            {selectedAnswer && !isSubmitted && (
+                            {/* Display the available syllables */}
+                            <div className="mb-3">
+                                <h5 className="text-center">Available Syllables:</h5>
+                                <div className="d-flex flex-wrap justify-content-center">
+                                    {availableSyllables.map((syllable, index) => (
+                                        <Button
+                                            key={index}
+                                            variant="outline-dark"
+                                            className="m-2 py-3 px-5"
+                                            onClick={() => handleSelectSyllable(syllable)}
+                                        >
+                                            {syllable}
+                                        </Button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Submit Answer Button: only appears when all syllables are selected */}
+                            {!isSubmitted && selectedSyllables.length === questions[questionIndex].syllables.length && (
                                 <div className="text-center mt-4">
                                     <Button variant="outline-primary" onClick={submitAnswer}>
                                         Submit Answer
@@ -144,16 +193,14 @@ function EasyPronunciationChallengeTagalog() {
                             )}
 
                             {/* Result Message & Next Question Button */}
-                            {resultMessage && (
+                            {isSubmitted && (
                                 <div className="text-center mt-4">
                                     <h5>{resultMessage}</h5>
-                                    <Button 
-                                        variant="outline-secondary" 
-                                        onClick={nextQuestion} 
-                                        className="mt-3"
-                                    >
-                                        {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}
-                                    </Button>
+                                    {lives > 0 && (
+                                        <Button variant="outline-secondary" onClick={questionIndex < questions.length - 1 ? nextQuestion : goBack} className="mt-3">
+                                            {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}
+                                        </Button>
+                                    )}
                                 </div>
                             )}
                         </Card.Body>

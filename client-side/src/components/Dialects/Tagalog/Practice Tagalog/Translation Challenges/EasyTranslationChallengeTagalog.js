@@ -14,7 +14,6 @@ function EasyTranslationChallengeTagalog() {
     const [lives, setLives] = useState(3);
     const [showToast, setShowToast] = useState(false);
 
-
     const sentences = [
         {
             english: "WHERE SHOULD WE EAT?", 
@@ -62,8 +61,14 @@ function EasyTranslationChallengeTagalog() {
             setScore(score + 1);
             setResultMessage('Correct!');
         } else {
-            setLives(lives - 1);
-            setResultMessage(`Incorrect! You have ${lives - 1} lives remaining.`);
+            const remainingLives = lives - 1;
+            setLives(remainingLives);
+            setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
+            if (remainingLives === 0) {
+                setResultMessage('Game Over! You lost all lives. Resetting game...');
+                // Automatically reset after 1 second
+                setTimeout(resetGame, 2000);
+            }
         }
     };
 
@@ -75,9 +80,7 @@ function EasyTranslationChallengeTagalog() {
             setSelectedWords([]);  // Reset selected words for the next question
             setIsSubmitted(false);  // Reset submit status
             setResultMessage('');  // Reset result message
-        } else {
-            alert(`Challenge complete! You scored ${score} out of ${sentences.length}`);
-        }
+        } 
     };
 
     const resetGame = () => {
@@ -114,7 +117,7 @@ function EasyTranslationChallengeTagalog() {
                 </Col>
             </Row>
 
-            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh'}}>
                 <Col>
                     <Card className="shadow-lg rounded-lg bg-light">
                         <Card.Body>
@@ -165,8 +168,8 @@ function EasyTranslationChallengeTagalog() {
                                 <div className="text-center mt-4">
                                     <h5>{resultMessage}</h5>
                                     <Button 
-                                        variant="outline-light" 
-                                        onClick={nextQuestion} 
+                                        variant="outline-secondary" 
+                                        onClick={questionIndex < sentences.length - 1 ? nextQuestion : goBack} 
                                         className="mt-3"
                                     >
                                         {questionIndex < sentences.length - 1 ? 'Next Question' : 'Finish Challenge'}

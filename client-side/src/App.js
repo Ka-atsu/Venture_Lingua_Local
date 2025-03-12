@@ -35,13 +35,13 @@ function App() {
           <Route path="/tagalogPractice/commonPhrasesChallenge/easy" element={<TagalogPhraseEasyPage />} />
 
           <Route path="/bikolLearn" element={<BicolanoLearnPage />} />
-          <Route path="/bikolPractice" element={<BicolanoPracticePage />} />
           <Route path="/bikolLearn/basicWords" element={<BicolanoBasicWordsPage />} />
           <Route path="/bikolLearn/commonPhrase" element={<BicolanoCommonPhrasePage />} />
           <Route path="/bikolLearn/pronounce&sentence" element={<BicolanoPronouncePage />} />
           <Route path="/bikolLearn/verbs&tenses" element={<BicolanoVerbsTensesPage />} />
           <Route path="/bikolLearn/usefulExpressions" element={<BicolanoExpressionsPage />} />
           <Route path="/bikolLearn/cultural" element={<BicolanoCulturalPage />} />
+          <Route path="/bikolPractice" element={<BicolanoPracticePage />} />
         </Routes>
       </Router>
     </div>

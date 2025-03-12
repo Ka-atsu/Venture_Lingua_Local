@@ -17,9 +17,9 @@ function EasyPhraseChallengeTagalog() {
     // Phrase-based challenge questions
     const questions = [
         {
-            question: "What is the correct translation of 'Take care' in Tagalog?",
-            correctAnswer: 'Ingat ka',
-            options: ['Mahal kita', 'Ingat ka', 'Salamat po', 'Paalam'],
+            question: "Is used as a friendly inquiry when greeting someone informally like when you meet a friend, a neighbor, or someone you're familiar with.",
+            correctAnswer: 'Kumusta ka?',
+            options: ['Kumusta ka?', 'Ingat ka', 'Salamat po', 'Paalam'],
         },
         {
             question: "Which phrase means 'How are you?' in Tagalog?",
@@ -55,10 +55,12 @@ function EasyPhraseChallengeTagalog() {
             setScore(score + 1);
             setResultMessage('Correct!');
         } else {
-            setLives(lives - 1);
-            setResultMessage(`Incorrect! You have ${lives - 1} lives remaining.`);
-            if (lives - 1 === 0) {
-                setResultMessage('Game Over! You lost all lives.');
+            const remainingLives = lives - 1;
+            setLives(remainingLives);
+            setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
+            if (remainingLives === 0) {
+                setResultMessage('Game Over! You lost all lives. Resetting game...');
+                // Automatically reset after 2 seconds
                 setTimeout(resetGame, 2000);
             }
         }
@@ -72,8 +74,6 @@ function EasyPhraseChallengeTagalog() {
             setSelectedAnswer(null);
             setIsSubmitted(false);
             setResultMessage('');
-        } else {
-            alert(`Challenge complete! You scored ${score} out of ${questions.length}`);
         }
     };
 
@@ -107,11 +107,11 @@ function EasyPhraseChallengeTagalog() {
             {/* Progress Bar */}
             <Row className="w-50 my-4">
                 <Col>
-                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} variant="success"/>
+                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} variant="success" />
                 </Col>
             </Row>
 
-            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh', maxWidth: '600px' }}>
                 <Col>
                     <Card className="p-4 shadow-sm">
                         <Card.Body>
@@ -147,9 +147,9 @@ function EasyPhraseChallengeTagalog() {
                             {resultMessage && (
                                 <div className="text-center mt-4">
                                     <h5>{resultMessage}</h5>
-                                    <Button 
-                                        variant="outline-secondary" 
-                                        onClick={nextQuestion} 
+                                    <Button
+                                        variant="outline-secondary"
+                                        onClick={questionIndex < questions.length - 1 ? nextQuestion : goBack}
                                         className="mt-3"
                                     >
                                         {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}

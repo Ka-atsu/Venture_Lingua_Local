@@ -55,11 +55,13 @@ function EasyVocabularyChallengeTagalog() {
             setScore(score + 1); // Increment the score for correct answers
             setResultMessage('Correct!');
         } else {
-            setLives(lives - 1); // Decrease lives if answer is incorrect
-            setResultMessage(`Incorrect! You have ${lives - 1} lives remaining.`);
-            if (lives - 1 === 0) {
-                setResultMessage('Game Over! You lost all lives.');
-                setTimeout(resetGame, 2000); // Automatically reset the game after 2 seconds
+            const remainingLives = lives - 1;
+            setLives(remainingLives);
+            setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
+            if (remainingLives === 0) {
+                setResultMessage('Game Over! You lost all lives. Resetting game...');
+                // Automatically reset after 2 seconds
+                setTimeout(resetGame, 2000);
             }
         }
     };
@@ -78,8 +80,6 @@ function EasyVocabularyChallengeTagalog() {
             setSelectedAnswer(null); // Reset selected answer for the next question
             setIsSubmitted(false);  // Reset the submit state
             setResultMessage('');
-        } else {
-            alert(`Challenge complete! You scored ${score} out of ${questions.length}`);
         }
     };
 
@@ -114,11 +114,11 @@ function EasyVocabularyChallengeTagalog() {
             {/* Progress Bar */}
             <Row className="w-50 my-4">
                 <Col>
-                    <ProgressBar now={progress} label={`${Math.round(progress)}%` } variant="success" />
+                    <ProgressBar now={progress} label={`${Math.round(progress)}%`} variant="success" />
                 </Col>
             </Row>
 
-            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+            <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh', maxWidth: '600px' }}>
                 <Col>
                     <Card className="p-4 shadow-sm">
                         <Card.Body>
@@ -150,16 +150,16 @@ function EasyVocabularyChallengeTagalog() {
                                 </div>
                             )}
 
-                            {/* Result Message & Next Question Button */}
+                            {/* Result Message & Next/Finish Button */}
                             {resultMessage && (
                                 <div className="text-center mt-4">
                                     <h5>{resultMessage}</h5>
                                     <Button 
                                         variant="outline-secondary" 
-                                        onClick={nextQuestion} 
+                                        onClick={questionIndex < questions.length - 1 ? nextQuestion : goBack} 
                                         className="mt-3"
                                     >
-                                        {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}
+                                        {questionIndex < questions.length - 1 ? 'Next Question' : 'Challenge'}
                                     </Button>
                                 </div>
                             )}
