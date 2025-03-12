@@ -1,10 +1,10 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import BicolanoSideComponent from '../../Side Panel/BicolanoSideComponent';
+import CebuanoSideComponent from '../../Side Panel/CebuanoSideComponent';
 import PracticeBicolanoMainContent from '../../Dialects/Bicolano/Practice Bicolano/1 Dashboard/PracticeBicolanoMainContent';
 
-function BicolanoPracticePage() {
+function CebuanoPracticePage() {
     return (
         <Row>
             {/* Left sidebar */}
@@ -16,7 +16,7 @@ function BicolanoPracticePage() {
                     overflowY: 'auto', // Allow scrolling if content exceeds viewport height
                 }}
             >
-                <BicolanoSideComponent />
+                <CebuanoSideComponent />
             </Col>
 
             {/* Main content */}
@@ -27,4 +27,4 @@ function BicolanoPracticePage() {
     );
 }
 
-export default BicolanoPracticePage;
+export default CebuanoPracticePage;

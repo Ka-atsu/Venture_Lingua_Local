@@ -3,52 +3,56 @@ import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-boo
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-function EasySentenceChallengeTagalog() {
+function EasyVocabularyChallengeBicolano() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const [questionIndex, setQuestionIndex] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState('');
-    const [score, setScore] = useState(0);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [score, setScore] = useState(0); // Keep score
     const [resultMessage, setResultMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [lives, setLives] = useState(3);
-    const [showToast, setShowToast] = useState(false);
+    const [lives, setLives] = useState(3); // Set initial lives to 3
+    const [showToast, setShowToast] = useState(false); // State to control toast visibility
 
-    // Sentence construction challenge questions (Jumbled Tagalog words)
+    // Sample vocabulary challenge questions
     const questions = [
         {
-            jumbledWords: ['ay', 'umalis', 'ng', 'nanay', 'Si', 'bahay'],
-            correctAnswer: 'Si nanay ay umalis ng bahay',
+            question: "What is the Tagalog word for 'Hello'?",
+            correctAnswer: 'Kamusta',
+            options: ['Kamusta', 'Salamat', 'Pagkain', 'Kotse'],
         },
         {
-            jumbledWords: ['umaga', 'Magandang', 'gabi'],
-            correctAnswer: 'Magandang gabi',
+            question: "What is the Tagalog word for 'Food'?",
+            correctAnswer: 'Pagkain',
+            options: ['Kamusta', 'Salamat', 'Pagkain', 'Magandang umaga'],
         },
         {
-            jumbledWords: ['Saan', 'banyo', 'ang'],
-            correctAnswer: 'Saan ang banyo?',
+            question: "What is the Tagalog word for 'Thank you'?",
+            correctAnswer: 'Salamat',
+            options: ['Kamusta', 'Salamat', 'Kotse', 'Pagkain'],
         },
         {
-            jumbledWords: ['Nagugutom', 'ako'],
-            correctAnswer: 'Nagugutom ako',
+            question: "What is the Tagalog word for 'Good morning'?",
+            correctAnswer: 'Magandang umaga',
+            options: ['Magandang umaga', 'Salamat', 'Kotse', 'Kamusta'],
         },
         {
-            jumbledWords: ['Maraming', 'salamat'],
-            correctAnswer: 'Maraming salamat',
+            question: "What is the Tagalog word for 'Car'?",
+            correctAnswer: 'Kotse',
+            options: ['Kamusta', 'Magandang umaga', 'Pagkain', 'Kotse'],
         }
     ];
 
     const handleAnswerSelection = (answer) => {
         setSelectedAnswer(answer);
         setIsSubmitted(false);
-        setResultMessage('');
+        setResultMessage('');  // Reset result message when a new answer is selected
     };
 
     const submitAnswer = () => {
         setIsSubmitted(true);
-        // Convert both the selected answer and correct answer to lowercase for comparison
-        if (selectedAnswer.trim().toLowerCase() === questions[questionIndex].correctAnswer.toLowerCase()) {
-            setScore(score + 1);
+        if (selectedAnswer === questions[questionIndex].correctAnswer) {
+            setScore(score + 1); // Increment the score for correct answers
             setResultMessage('Correct!');
         } else {
             const remainingLives = lives - 1;
@@ -56,7 +60,7 @@ function EasySentenceChallengeTagalog() {
             setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
             if (remainingLives === 0) {
                 setResultMessage('Game Over! You lost all lives. Resetting game...');
-                // Automatically reset after 1 second
+                // Automatically reset after 2 seconds
                 setTimeout(resetGame, 2000);
             }
         }
@@ -64,25 +68,32 @@ function EasySentenceChallengeTagalog() {
 
     const nextQuestion = () => {
         if (lives === 0) {
-            resetGame();
+            // If no lives left, reset the game
+            setLives(3);
+            setScore(0); // Reset score when game is reset
+            setQuestionIndex(0);
+            setSelectedAnswer(null);
+            setIsSubmitted(false);
+            setResultMessage('');
         } else if (questionIndex < questions.length - 1) {
             setQuestionIndex(questionIndex + 1);
-            setSelectedAnswer('');
-            setIsSubmitted(false);
+            setSelectedAnswer(null); // Reset selected answer for the next question
+            setIsSubmitted(false);  // Reset the submit state
             setResultMessage('');
         }
     };
 
     const resetGame = () => {
-        setShowToast(true);
+        setShowToast(true); // Show the reset notification toast
         setLives(3);
-        setScore(0);
+        setScore(0); // Reset score when game is reset
         setQuestionIndex(0);
-        setSelectedAnswer('');
+        setSelectedAnswer(null);
         setIsSubmitted(false);
         setResultMessage('');
     };
 
+    // Progress bar percentage calculation
     const progress = ((questionIndex + 1) / questions.length) * 100;
 
     return (
@@ -97,7 +108,7 @@ function EasySentenceChallengeTagalog() {
             </div>
 
             <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
-                Sentence Construction Challenge - Tagalog
+                Easy Vocabulary Challenge - Tagalog
             </h2>
 
             {/* Progress Bar */}
@@ -109,23 +120,25 @@ function EasySentenceChallengeTagalog() {
 
             <Row className="p-4 mb-4 d-flex justify-content-center align-items-center" style={{ height: '70vh', maxWidth: '600px' }}>
                 <Col>
-                    <Card className="p-5 shadow-sm">
+                    <Card className="p-4 shadow-sm">
                         <Card.Body>
-                            <div className="text-center mb-5">
-                                <h4>Arrange the words to form the correct sentence:</h4>
-                                <h5>{questions[questionIndex].jumbledWords.join(' ')}</h5>
+                            <div className="text-center mb-4">
+                                <h4>{questions[questionIndex].question}</h4>
                             </div>
 
-                            {/* Options Column (User enters the sentence here) */}
+                            {/* Options Column */}
                             <div className="d-flex flex-column align-items-center">
-                                <input
-                                    type="text"
-                                    value={selectedAnswer}
-                                    onChange={(e) => handleAnswerSelection(e.target.value)}
-                                    className="form-control w-100 py-3 mb-4 shadow-sm rounded"
-                                    placeholder="Type your answer"
-                                    disabled={isSubmitted}
-                                />
+                                {questions[questionIndex].options.map((word, index) => (
+                                    <Button
+                                        key={index}
+                                        variant={selectedAnswer === word ? 'dark' : 'outline-dark'}
+                                        className={`w-100 py-3 mb-3 shadow-sm rounded-pill ${selectedAnswer === word ? 'bg-dark text-white' : ''}`}
+                                        onClick={() => handleAnswerSelection(word)}
+                                        disabled={isSubmitted} // Disable buttons after submission
+                                    >
+                                        <h5>{word}</h5>
+                                    </Button>
+                                ))}
                             </div>
 
                             {/* Submit Answer Button */}
@@ -137,19 +150,17 @@ function EasySentenceChallengeTagalog() {
                                 </div>
                             )}
 
-                            {/* Result Message & Next Question Button */}
+                            {/* Result Message & Next/Finish Button */}
                             {resultMessage && (
                                 <div className="text-center mt-4">
                                     <h5>{resultMessage}</h5>
-                                    {lives > 0 && (
-                                        <Button 
-                                            variant="outline-secondary" 
-                                            onClick={questionIndex < questions.length - 1 ? nextQuestion : goBack} 
-                                            className="mt-3"
-                                        >
-                                            {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}
-                                        </Button>
-                                    )}
+                                    <Button 
+                                        variant="outline-secondary" 
+                                        onClick={questionIndex < questions.length - 1 ? nextQuestion : goBack} 
+                                        className="mt-3"
+                                    >
+                                        {questionIndex < questions.length - 1 ? 'Next Question' : 'Challenge'}
+                                    </Button>
                                 </div>
                             )}
                         </Card.Body>
@@ -167,12 +178,12 @@ function EasySentenceChallengeTagalog() {
             <Toast
                 onClose={() => setShowToast(false)}
                 show={showToast}
-                delay={3000}
+                delay={3000} // Auto-hide after 3 seconds
                 autohide
                 style={{
                     position: 'absolute',
                     top: '50%',
-                    backgroundColor: '#28a745',
+                    backgroundColor: '#28a745', // Green color for success
                     color: '#fff',
                     borderRadius: '10px',
                     padding: '10px',
@@ -185,4 +196,4 @@ function EasySentenceChallengeTagalog() {
     );
 }
 
-export default EasySentenceChallengeTagalog;
+export default EasyVocabularyChallengeBicolano;

@@ -66,7 +66,7 @@ function PracticeBicolanoMainContent() {
         <Container fluid className="d-flex flex-column bg-dark p-5">
             <Row className="text-start mb-4">
                 <h1 className="display-4 text-white" style={headerStyle}>
-                Practice Tagalog: Challenges
+                Practice Bikol: Challenges
                 </h1>  
             </Row>
 

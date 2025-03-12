@@ -1,10 +1,10 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import BicolanoSideComponent from '../../Side Panel/BicolanoSideComponent';
-import LearnBicolanoMainContent from '../../Dialects/Bicolano/Learn Bicolano/1 Dashboard/LearnBicolanoMainContent';
+import CebuanoSideComponent from '../../Side Panel/CebuanoSideComponent';
+import LearnCebuanoMainContent from '../../Dialects/Cebuano/Learn Cebuano/1 Dashboard/LearnCebuanoMainContent';
 
-function BicolanoLearnPage() {
+function CebuanoLearnPage() {
     return (
             <Row>
                 {/* Left sidebar */}
@@ -15,15 +15,15 @@ function BicolanoLearnPage() {
                     height: '100vh', // Make the side component 100% of the viewport height
                     overflowY: 'auto', // Allow scrolling if content exceeds viewport height
                 }}>
-                    <BicolanoSideComponent />
+                    <CebuanoSideComponent />
                 </Col>
 
                 {/* Main content */}
                 <Col xs={10} className="p-0" style={{ marginLeft: '16.6667%' }}>
-                    <LearnBicolanoMainContent />
+                    <LearnCebuanoMainContent />
                 </Col>
             </Row>
     );
 }
 
-export default BicolanoLearnPage;
+export default CebuanoLearnPage;

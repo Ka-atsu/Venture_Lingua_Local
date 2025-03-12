@@ -16,6 +16,14 @@ function DialectPickerComponent() {
     const bicolano = () => {
         navigate('/bikolLearn'); 
     };
+
+    const cebuano = () => {
+        navigate('/cebuanoLearn'); 
+    };
+
+    const ilocano = () => {
+        navigate('/ilocanoLearn'); 
+    };
     return (
         <Container className="bg-white" style={{ width: '100%', maxWidth: '600px' }}>
             <Row>
@@ -41,7 +49,7 @@ function DialectPickerComponent() {
             <Row>
                 <Col md={6} className="my-3">
                     <Card>
-                        <Button variant="outline-dark" block>
+                        <Button variant="outline-dark" block onClick={cebuano}>
                             <Card.Body>
                                 <Card.Title>Cebuano</Card.Title>
                             </Card.Body>
@@ -50,7 +58,7 @@ function DialectPickerComponent() {
                 </Col>
                 <Col md={6}>
                     <Card className="my-3">
-                        <Button variant="outline-dark" block>
+                        <Button variant="outline-dark" block onClick={ilocano}>
                             <Card.Body>
                                 <Card.Title>Ilocano</Card.Title>
                             </Card.Body>

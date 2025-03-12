@@ -3,7 +3,7 @@ import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-boo
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-function EasySentenceChallengeTagalog() {
+function EasySentenceChallengeBicolano() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const [questionIndex, setQuestionIndex] = useState(0);
@@ -185,4 +185,4 @@ function EasySentenceChallengeTagalog() {
     );
 }
 
-export default EasySentenceChallengeTagalog;
+export default EasySentenceChallengeBicolano;

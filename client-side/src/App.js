@@ -6,9 +6,13 @@ import TagalogLearnPage from './components/pages/Tagalog/TagalogLearnPage';
 import TagalogPracticePage from './components/pages/Tagalog/TagalogPracticePage';
 import BicolanoLearnPage from './components/pages/Bicolano/BicolanoLearnPage';
 import BicolanoPracticePage from './components/pages/Bicolano/BicolanoPracticePage';
+import CebuanoLearnPage from './components/pages/Cebuano/CebuanoLearnPage';
+import CebuanoPracticePage from './components/pages/Cebuano/CebuanoPracticePage';
 import { TagalogBasicWordsPage, TagalogCommonPhrasePage, TagalogPronouncePage, TagalogExpressionsPage, TagalogCulturalPage, TagalogVerbsTensesPage } from './components/pages/Tagalog/AllLearnTagalogPage';
 import { TagalogPronunciationEasyPage, TagalogVocabularyEasyPage, TagalogSentenceEasyPage, TagalogPhraseEasyPage, TagalogTranslationEasyPage } from './components/pages/Tagalog/AllPracticeTagalogPage';
 import { BicolanoBasicWordsPage, BicolanoCommonPhrasePage, BicolanoCulturalPage, BicolanoExpressionsPage, BicolanoPronouncePage, BicolanoVerbsTensesPage } from './components/pages/Bicolano/AllLearnBicolanoPage';
+import { BicolanoPronunciationEasyPage, BicolanoPhraseEasyPage, BicolanoSentenceEasyPage, BicolanoTranslationEasyPage, BicolanoVocabularyEasyPage } from './components/pages/Bicolano/AllPracticeBicolanoPage';
+import { CebuanoBasicWordsPage, CebuanoCommonPhrasePage, CebuanoCulturalPage, CebuanoExpressionsPage, CebuanoPronouncePage, CebuanoVerbsTensesPage } from './components/pages/Cebuano/AllLearnCebuanoPage';
 
 function App() {
   return (
@@ -42,6 +46,21 @@ function App() {
           <Route path="/bikolLearn/usefulExpressions" element={<BicolanoExpressionsPage />} />
           <Route path="/bikolLearn/cultural" element={<BicolanoCulturalPage />} />
           <Route path="/bikolPractice" element={<BicolanoPracticePage />} />
+          <Route path="/bikolPractice/vocabularyChallenge/easy" element={<BicolanoVocabularyEasyPage />} />
+          <Route path="/bikolPractice/pronunciationChallenge/easy" element={<BicolanoPronunciationEasyPage />} />
+          <Route path="/bikolPractice/sentenceChallenge/easy" element={<BicolanoSentenceEasyPage />} />
+          <Route path="/bikolPractice/translationChallenge/easy" element={<BicolanoTranslationEasyPage />} />
+          <Route path="/bikolPractice/commonPhrasesChallenge/easy" element={<BicolanoPhraseEasyPage />} />
+
+          <Route path="/cebuanoLearn" element={<CebuanoLearnPage />} />
+          <Route path="/cebuanoLearn/basicWords" element={<CebuanoBasicWordsPage />} />
+          <Route path="/cebuanoLearn/commonPhrase" element={<CebuanoCommonPhrasePage />} />
+          <Route path="/cebuanoLearn/pronounce&sentence" element={<CebuanoPronouncePage />} />
+          <Route path="/cebuanoLearn/verbs&tenses" element={<CebuanoVerbsTensesPage />} />
+          <Route path="/cebuanoLearn/usefulExpressions" element={<CebuanoExpressionsPage />} />
+          <Route path="/cebuanoLearn/cultural" element={<CebuanoCulturalPage />} />
+          <Route path="/cebuanoPractice" element={<CebuanoPracticePage />} />
+
         </Routes>
       </Router>
     </div>
