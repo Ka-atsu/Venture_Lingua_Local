@@ -17,30 +17,30 @@ function EasyVocabularyChallengeCebuano() {
     // Sample vocabulary challenge questions
     const questions = [
         {
-            question: "What is the Tagalog word for 'Hello'?",
-            correctAnswer: 'Kamusta',
-            options: ['Kamusta', 'Salamat', 'Pagkain', 'Kotse'],
+            question: "What is the Cebuano word for 'Hello'?",
+            correctAnswer: 'Kumusta',
+            options: ['Kumusta', 'Salamat', 'Pagkaon', 'Kotse'],
         },
         {
-            question: "What is the Tagalog word for 'Food'?",
-            correctAnswer: 'Pagkain',
-            options: ['Kamusta', 'Salamat', 'Pagkain', 'Magandang umaga'],
+            question: "What is the Cebuano word for 'Food'?",
+            correctAnswer: 'Pagkaon',
+            options: ['Kumusta', 'Salamat', 'Pagkaon', 'Maayong buntag'],
         },
         {
-            question: "What is the Tagalog word for 'Thank you'?",
+            question: "What is the Cebuano word for 'Thank you'?",
             correctAnswer: 'Salamat',
-            options: ['Kamusta', 'Salamat', 'Kotse', 'Pagkain'],
+            options: ['Kumusta', 'Salamat', 'Kotse', 'Pagkaon'],
         },
         {
-            question: "What is the Tagalog word for 'Good morning'?",
-            correctAnswer: 'Magandang umaga',
-            options: ['Magandang umaga', 'Salamat', 'Kotse', 'Kamusta'],
+            question: "What is the Cebuano word for 'Good morning'?",
+            correctAnswer: 'Maayong buntag',
+            options: ['Maayong buntag', 'Salamat', 'Kotse', 'Kumusta'],
         },
         {
-            question: "What is the Tagalog word for 'Car'?",
+            question: "What is the Cebuano word for 'Car'?",
             correctAnswer: 'Kotse',
-            options: ['Kamusta', 'Magandang umaga', 'Pagkain', 'Kotse'],
-        }
+            options: ['Kumusta', 'Maayong buntag', 'Pagkaon', 'Kotse'],
+        }        
     ];
 
     const handleAnswerSelection = (answer) => {

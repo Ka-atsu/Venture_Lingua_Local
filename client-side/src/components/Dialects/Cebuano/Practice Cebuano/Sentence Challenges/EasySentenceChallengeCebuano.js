@@ -17,25 +17,25 @@ function EasySentenceChallengeCebuano() {
     // Sentence construction challenge questions (Jumbled Tagalog words)
     const questions = [
         {
-            jumbledWords: ['ay', 'umalis', 'ng', 'nanay', 'Si', 'bahay'],
-            correctAnswer: 'Si nanay ay umalis ng bahay',
+            jumbledWords: ['balay', 'Si', 'nanay', 'sa', 'mihawa'],
+            correctAnswer: 'Si nanay mihawa sa balay',
         },
         {
-            jumbledWords: ['umaga', 'Magandang', 'gabi'],
-            correctAnswer: 'Magandang gabi',
+            jumbledWords: ['gabii', 'Maayong'],
+            correctAnswer: 'Maayong gabii',
         },
         {
-            jumbledWords: ['Saan', 'banyo', 'ang'],
-            correctAnswer: 'Saan ang banyo?',
+            jumbledWords: ['banyo', 'ang', 'Asa'],
+            correctAnswer: 'Asa ang banyo?',
         },
         {
-            jumbledWords: ['Nagugutom', 'ako'],
-            correctAnswer: 'Nagugutom ako',
+            jumbledWords: ['ko', 'Gigutom'],
+            correctAnswer: 'Gigutom ko',
         },
         {
-            jumbledWords: ['Maraming', 'salamat'],
-            correctAnswer: 'Maraming salamat',
-        }
+            jumbledWords: ['salamat', 'Daghang'],
+            correctAnswer: 'Daghang salamat',
+        }        
     ];
 
     const handleAnswerSelection = (answer) => {

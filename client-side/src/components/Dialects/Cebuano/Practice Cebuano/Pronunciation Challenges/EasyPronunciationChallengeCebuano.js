@@ -18,30 +18,30 @@ function EasyPronunciationChallengeCebuano() {
     // Use useMemo to ensure the questions array is stable
     const questions = useMemo(() => [
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
-            word: "Kaibigan",
-            syllables: ["Ka", "i", "bi", "gan"]
+            prompt: "Rearrange the syllables to form the correctly pronounced Cebuano word:",
+            word: "Amigo",
+            syllables: ["A", "mi", "go"]
         },
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
-            word: "Maganda",
-            syllables: ["Ma", "gan", "da"]
+            prompt: "Rearrange the syllables to form the correctly pronounced Cebuano word:",
+            word: "Gwapa",
+            syllables: ["Gwa", "pa"]
         },
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            prompt: "Rearrange the syllables to form the correctly pronounced Cebuano word:",
             word: "Pamilya",
             syllables: ["Pa", "mil", "ya"]
         },
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
-            word: "Mahal",
-            syllables: ["Ma", "hal"]
+            prompt: "Rearrange the syllables to form the correctly pronounced Cebuano word:",
+            word: "Gihigugma",
+            syllables: ["Gi", "hi", "gug", "ma"]
         },
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            prompt: "Rearrange the syllables to form the correctly pronounced Cebuano word:",
             word: "Salamat",
             syllables: ["Sa", "la", "mat"]
-        }
+        }        
     ], []);
 
     // Helper to shuffle an array (Fisher-Yates)

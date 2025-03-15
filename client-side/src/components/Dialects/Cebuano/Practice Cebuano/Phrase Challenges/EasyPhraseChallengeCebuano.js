@@ -17,30 +17,30 @@ function EasyPhraseChallengeCebuano() {
     // Phrase-based challenge questions
     const questions = [
         {
-            question: "Is used as a friendly inquiry when greeting someone informally like when you meet a friend, a neighbor, or someone you're familiar with.",
+            question: "Is most commonly used to express romantic love, but it can also be used to express affection for family, friends, or even pets.",
+            correctAnswer: 'Gihigugma tika',
+            options: ['Gihigugma tika', 'Amping', 'Mangaon ta', 'Busog na ko'],
+        },
+        {
+            question: "Which phrase means 'How are you?' in Cebuano?",
             correctAnswer: 'Kumusta ka?',
-            options: ['Kumusta ka?', 'Ingat ka', 'Salamat po', 'Paalam'],
+            options: ['Kumusta ka?', 'Maayong gabii', 'Kita ta unya', 'Asa ta paingon?'],
         },
         {
-            question: "Which phrase means 'How are you?' in Tagalog?",
-            correctAnswer: 'Kamusta ka?',
-            options: ['Kamusta ka?', 'Magandang umaga', 'Mahal kita', 'Saan ka pupunta?'],
-        },
-        {
-            question: "How do you say 'I'm sorry' in Tagalog?",
-            correctAnswer: 'Pasensya na',
-            options: ['Walang anuman', 'Paalam', 'Pasensya na', 'Anong pangalan mo?'],
+            question: "How do you say 'I'm sorry' in Cebuano?",
+            correctAnswer: 'Pasayloa ko',
+            options: ['Walay sapayan', 'Paalam', 'Pasayloa ko', 'Unsa imong ngalan?'],
         },
         {
             question: "Choose the correct translation of 'See you later.'",
-            correctAnswer: 'Kita tayo mamaya',
-            options: ['Kita tayo mamaya', 'Magandang gabi', 'Tara na', 'Maligayang bati'],
+            correctAnswer: 'Kita ta unya',
+            options: ['Kita ta unya', 'Maayong gabii', 'Tara na', 'Hangtod unya'],
         },
         {
             question: "What is the correct phrase for 'Happy birthday'?",
-            correctAnswer: 'Maligayang kaarawan',
-            options: ['Maligayang kaarawan', 'Maligayang bati', 'Magandang gabi', 'Maraming salamat'],
-        }
+            correctAnswer: 'Malipayong adlawng natawhan',
+            options: ['Malipayong adlawng natawhan', 'Malipayong adlaw', 'Maayong adlawng natawhan', 'Malipayong pagsaulog'],
+        }        
     ];
 
     const handleAnswerSelection = (answer) => {

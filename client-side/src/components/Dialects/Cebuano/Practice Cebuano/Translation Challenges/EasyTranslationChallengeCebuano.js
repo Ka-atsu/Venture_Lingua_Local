@@ -16,30 +16,30 @@ function EasyTranslationChallengeCebuano() {
 
     const sentences = [
         {
-            english: "WHERE SHOULD WE EAT?", 
-            correctAnswer: ['SAAN', 'TAYO', 'KAIN'],
-            options: ['TAYO', 'SAAN', 'PRE', 'KAIN'],
+            english: "WHERE SHOULD WE EAT?",
+            correctAnswer: ['ASA', 'TA', 'KAON'],
+            options: ['TA', 'ASA', 'KAON', 'DINHI'],
         },
         {
             english: "ANG GANDA NG TAGPO", 
-            correctAnswer: ['TAGPO', 'ANG', 'GANDA', 'NG'],
-            options: ['TAGPO', 'GANDA', 'ANG', 'NG'],
+            correctAnswer: ['NINDOT', 'KAAYO', 'ANG', 'TAN-AWON'],
+            options: ['TAN-AWON', 'KAAYO', 'NINDOT', 'ANG'],
         },
         {
             english: "MAY NAKITA AKONG ISDA",
-            correctAnswer: ['AKONG', 'ISDA', 'MAY', 'NAKITA'],
-            options: ['MAY', 'NAKITA', 'ISDA', 'AKONG'],
+            correctAnswer: ['NAKITA', 'KO', 'OG', 'ISDA'],
+            options: ['NAKITA', 'ISDA', 'KO', 'OG'],
         },
         {
             english: "MASAYA AKO SA BUHAY KO",
-            correctAnswer: ['MASAYA', 'AKO', 'BAY', 'SA'],
-            options: ['MASAYA', 'AKO', 'SA', 'BAY'],
+            correctAnswer: ['MALIPAY', 'KO', 'SA', 'KINABUHI'],
+            options: ['MALIPAY', 'KO', 'SA', 'KINABUHI'],
         },
         {
             english: "KUMAIN NA AKO NG PIZZA",
-            correctAnswer: ['AKO', 'NG', 'PIZZA', 'KUMAIN'],
-            options: ['AKO', 'NG', 'KUMAIN', 'PIZZA'],
-        }
+            correctAnswer: ['KAON', 'KO', 'OG', 'PIZZA'],
+            options: ['KAON', 'KO', 'OG', 'PIZZA'],
+        }        
     ];
 
     const handleAnswerSelection = (selectedWord) => {
