@@ -19,52 +19,50 @@ function VerbsTensesBicolano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Grouping the verb conjugations similar to your phrases grouping.
-  // Each group represents one verb (with its base form in the title)
-  // and contains an array of tense cards (Past, Present, Future).
+  // Grouping the verb conjugations (updated to Bicolano)
   const verbTenseGroups = [
     {
-      group: 'To eat (kain)',
+      group: 'To eat (kaon)',
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'kumain',
-          example: 'Kumain siya ng mangga kahapon.',
+          conjugated: 'kinan',
+          example: 'Kinan siya nin mangga kahapon.',
           explanation: 'Indicates a completed action in the past.'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'kumakain',
-          example: 'Kumakain siya ng almusal ngayon.',
+          conjugated: 'nagkaon',
+          example: 'Nagkaon siya nin almusal ngunyan.',
           explanation: 'Describes an action that is currently in progress.'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'kakain',
-          example: 'Kakain siya ng hapunan mamaya.',
+          conjugated: 'kaonon',
+          example: 'Kaonon niya an hapunan mamaya.',
           explanation: 'Indicates that the action will happen in the future.'
         }
       ]
     },
     {
-      group: 'To go (punta)',
+      group: 'To go (adto)',
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'pumunta',
-          example: 'Pumunta sila sa simbahan noong nakaraang linggo.',
+          conjugated: 'dinadto',
+          example: 'Dinadto sinda sa simbahan kan nakalipas na linggo.',
           explanation: 'Describes a movement that has been completed.'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'pumupunta',
-          example: 'Pumupunta sila sa trabaho sa kasalukuyan.',
+          conjugated: 'nagadto',
+          example: 'Nagadto sinda sa trabaho ngunyan.',
           explanation: 'Indicates an action that is happening at the moment.'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'pupunta',
-          example: 'Pupunta sila sa paaralan bukas.',
+          conjugated: 'adtoon',
+          example: 'Adtoon sinda sa paaralan buwas.',
           explanation: 'Indicates an upcoming movement or action.'
         }
       ]
@@ -74,20 +72,20 @@ function VerbsTensesBicolano() {
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'nagbasa',
-          example: 'Nagbasa siya ng libro kagabi.',
+          conjugated: 'nabasa',
+          example: 'Nabasa niya an libro kagabi.',
           explanation: 'Shows that the action of reading was completed in the past.'
         },
         {
           tense: 'Present Tense',
           conjugated: 'nagbabasa',
-          example: 'Nagbabasa siya ng pahayagan tuwing umaga.',
+          example: 'Nagbabasa siya nin pahayagan tuwing aga.',
           explanation: 'Describes an action that is currently taking place.'
         },
         {
           tense: 'Future Tense',
           conjugated: 'babasa',
-          example: 'Babasa siya ng bagong nobela sa susunod na linggo.',
+          example: 'Babasa niya an bagong nobela sa sunod na semana.',
           explanation: 'Indicates that the action is planned for the future.'
         }
       ]

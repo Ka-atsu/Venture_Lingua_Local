@@ -24,35 +24,35 @@ function CommonPharseBicolano() {
     // Grouped phrases
     const phraseGroups = [
         {
-            group: 'Greetings',
-            phrases: [
-                { english: 'Hello (General greeting)', bicolano: 'Mabuhay', example: 'Mabuhay! Kamusta ka? (Hello! How are you?)' },
-                { english: 'How are you?', bicolano: 'Kamusta ka?', example: 'Kamusta ka? (How are you?)' },
-                { english: 'Good morning', bicolano: 'Magandang aga', example: 'Magandang aga! Kamusta ka? (Good morning! How are you?)' },
-                { english: 'Good evening', bicolano: 'Magandang gab-i', example: 'Magandang gab-i, paano ka? (Good evening, how are you?)' }
-            ]
+          group: 'Greetings',
+          phrases: [
+            { english: 'Hello (General greeting)', bicolano: 'Kumusta?', example: 'Kumusta, mga tugang? (Hello, everyone?)' },
+            { english: 'How are you?', bicolano: 'Kumusta ka?', example: 'Kumusta ka ngunyan? (How are you now?)' },
+            { english: 'Good morning', bicolano: 'Marhay na aga', example: 'Marhay na aga saimo! (Good morning to you!)' },
+            { english: 'Good evening', bicolano: 'Marhay na banggi', example: 'Marhay na banggi saindo! (Good evening to all of you!)' }
+          ]
         },
         {
-            group: 'Introductions',
-            phrases: [
-                { english: 'What’s your name?', bicolano: 'Anong pangalan mo?', example: 'Anong pangalan mo? (What’s your name?)' },
-                { english: 'My name is ...', bicolano: 'Ang pangalan ko ay ...', example: 'Ang pangalan ko ay Maria. (My name is Maria.)' },
-                { english: 'Where are you from?', bicolano: 'Tagasaan ka?', example: 'Tagasaan ka? (Where are you from?)' },
-                { english: 'I’m from ...', bicolano: 'Taga... ako', example: 'Taga Manila ako. (I’m from Manila.)' },
-                { english: 'Nice to meet you', bicolano: 'Ikinalulugod kong makilala ka', example: 'Ikinalulugod kong makilala ka. (Nice to meet you.)' }
-            ]
+          group: 'Introductions',
+          phrases: [
+            { english: 'What’s your name?', bicolano: 'Ano an ngaran mo?', example: 'Ano an ngaran mo? (What’s your name?)' },
+            { english: 'My name is ...', bicolano: 'Ako si ... / An ngaran ko si ...', example: 'Ako si Maria. (My name is Maria.)' },
+            { english: 'Where are you from?', bicolano: 'Taga sain ka?', example: 'Taga sain ka? (Where are you from?)' },
+            { english: 'I’m from ...', bicolano: 'Taga ... ako', example: 'Taga Manila ako. (I’m from Manila.)' },
+            { english: 'Nice to meet you', bicolano: 'Marhay na makilala ka', example: 'Marhay na makilala ka. (Nice to meet you.)' }
+          ]
         },
         {
-            group: 'Goodbyes',
-            phrases: [
-                { english: 'Goodbye', bicolano: 'Paalam', example: 'Paalam, magkita tayo muli! (Goodbye, see you again!)' },
-                { english: 'See you later', bicolano: 'Magkita tayo mamaya', example: 'Magkita tayo mamaya! (See you later!)' },
-                { english: 'Take care', bicolano: 'Ingat ka', example: 'Ingat ka, ha? (Take care, okay?)' },
-                { english: 'Good night', bicolano: 'Magandang gabi', example: 'Magandang gabi, matulog na tayo! (Good night, let’s go to sleep!)' },
-                { english: 'See you tomorrow', bicolano: 'Magkita tayo bukas', example: 'Magkita tayo bukas! (See you tomorrow!)' }
-            ]
+          group: 'Goodbyes',
+          phrases: [
+            { english: 'Goodbye', bicolano: 'Adios', example: 'Adios, magkita pa kita! (Goodbye, we’ll see each other again!)' },
+            { english: 'See you later', bicolano: 'Makita kita pag abot madali', example: 'Makita kita pag abot madali! (See you later!)' },
+            { english: 'Take care', bicolano: 'Mag-ingat ka', example: 'Mag-ingat ka palan, ha? (Take care, okay?)' },
+            { english: 'Good night', bicolano: 'Marhay na banggi', example: 'Marhay na banggi, katurog na kita! (Good night, let’s sleep now!)' },
+            { english: 'See you tomorrow', bicolano: 'Makita kita buwas', example: 'Makita kita buwas! (See you tomorrow!)' }
+          ]
         }
-    ];
+      ];
 
     const [currentSet, setCurrentSet] = useState(0);
     const [flippedIndices, setFlippedIndices] = useState(new Set());

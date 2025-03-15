@@ -18,29 +18,29 @@ function EasyPronunciationChallengeBicolano() {
     // Use useMemo to ensure the questions array is stable
     const questions = useMemo(() => [
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
-            word: "Kaibigan",
-            syllables: ["Ka", "i", "bi", "gan"]
+            prompt: "Rearrange the syllables to form the correctly pronounced Bicolano word:",
+            word: "Kumusta",
+            syllables: ["Ku", "mus", "ta"]
         },
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
-            word: "Maganda",
-            syllables: ["Ma", "gan", "da"]
+            prompt: "Rearrange the syllables to form the correctly pronounced Bicolano word:",
+            word: "Kaon",
+            syllables: ["Ka", "on"]
         },
         {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
-            word: "Pamilya",
-            syllables: ["Pa", "mil", "ya"]
-        },
-        {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
-            word: "Mahal",
-            syllables: ["Ma", "hal"]
-        },
-        {
-            prompt: "Rearrange the syllables to form the correctly pronounced Tagalog word:",
+            prompt: "Rearrange the syllables to form the correctly pronounced Bicolano word:",
             word: "Salamat",
             syllables: ["Sa", "la", "mat"]
+        },
+        {
+            prompt: "Rearrange the syllables to form the correctly pronounced Bicolano word:",
+            word: "Marhay",
+            syllables: ["Mar", "hay"]
+        },
+        {
+            prompt: "Rearrange the syllables to form the correctly pronounced Bicolano word:",
+            word: "Kotse",
+            syllables: ["Kot", "se"]
         }
     ], []);
 
@@ -93,7 +93,7 @@ function EasyPronunciationChallengeBicolano() {
             setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
             if (remainingLives === 0) {
                 setResultMessage('Game Over! You lost all lives. Resetting game...');
-                // Automatically reset after 1 second
+                // Automatically reset after 2 seconds
                 setTimeout(resetGame, 2000);
             }
         }
@@ -121,17 +121,17 @@ function EasyPronunciationChallengeBicolano() {
 
     return (
         <Container fluid className="d-flex flex-column align-items-center bg-dark vh-100">
-            <div className="tagalog-go-back-icon">
+            <div className="bikol-go-back-icon">
                 <FaArrowLeft
                     size={30}
                     color="#fff"
                     onClick={goBack}
-                    className="tagalog-go-back-arrow"
+                    className="bikol-go-back-arrow"
                 />
             </div>
 
             <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
-                Syllable Scramble Challenge - Tagalog
+                Syllable Scramble Challenge - Bicolano
             </h2>
 
             {/* Progress Bar */}

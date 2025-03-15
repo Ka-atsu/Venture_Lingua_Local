@@ -20,11 +20,11 @@ function ExpressionBicolano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Sample useful expressions with general information
+  // Sample useful expressions with general information (property name changed to bicolano)
   const expressions = [
     {
       english: "Thank you",
-      tagalog: "Salamat",
+      bicolano: "Salamat",
       example: "Salamat sa tulong mo! (Thank you for your help!)",
       explanation: "This is used to show gratitude when someone helps you.",
       usageTips: "You can use 'Salamat' in both formal and informal settings. If you want to be more polite or respectful, use 'Salamat po'.",
@@ -33,7 +33,7 @@ function ExpressionBicolano() {
     },
     {
       english: "Sorry",
-      tagalog: "Pasensya na",
+      bicolano: "Pasensya na",
       example: "Pasensya na, hindi ko sinasadya. (Sorry, I didn’t mean to.)",
       explanation: "This is used when apologizing for a minor mistake.",
       usageTips: "In formal situations, it’s better to say 'Pasensya po' to show respect. 'Paumanhin' is also commonly used in more formal contexts.",
@@ -42,7 +42,7 @@ function ExpressionBicolano() {
     },
     {
       english: "Excuse me",
-      tagalog: "Mawalang-galang na po / Paumanhin",
+      bicolano: "Mawalang-galang na po / Paumanhin",
       example: "Mawalang-galang na po, maaari bang magtanong? (Excuse me, may I ask a question?)",
       explanation: "This is used when politely catching someone's attention or asking for permission to pass by. 'Paumanhin' is more formal, while 'Mawalang-galang na' is a more apologetic phrase.",
       usageTips: "'Paumanhin' is respectful and formal, while 'Mawalang-galang na' is used when you want to show extra respect, especially when interrupting or asking a favor.",
@@ -90,15 +90,24 @@ function ExpressionBicolano() {
                 {currentExpression.english}
               </h3>
               <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
-                Bikol: {currentExpression.tagalog}
+                Bikol: {currentExpression.bicolano}
               </h5>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Example:</strong> {currentExpression.example}</p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Explanation:</strong> {currentExpression.explanation}</p>
-
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
+                <strong>Example:</strong> {currentExpression.example}
+              </p>
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
+                <strong>Explanation:</strong> {currentExpression.explanation}
+              </p>
               {/* Additional Information */}
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Usage Tips:</strong> {currentExpression.usageTips}</p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Common Mistakes:</strong> {currentExpression.commonMistakes}</p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Synonyms:</strong> {currentExpression.synonyms}</p>
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
+                <strong>Usage Tips:</strong> {currentExpression.usageTips}
+              </p>
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
+                <strong>Common Mistakes:</strong> {currentExpression.commonMistakes}
+              </p>
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
+                <strong>Synonyms:</strong> {currentExpression.synonyms}
+              </p>
             </Card.Body>
           </Card>
         </Col>

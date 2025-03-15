@@ -14,32 +14,32 @@ function EasyVocabularyChallengeBicolano() {
     const [lives, setLives] = useState(3); // Set initial lives to 3
     const [showToast, setShowToast] = useState(false); // State to control toast visibility
 
-    // Sample vocabulary challenge questions
+    // Sample vocabulary challenge questions updated to Bicolano
     const questions = [
         {
-            question: "What is the Tagalog word for 'Hello'?",
-            correctAnswer: 'Kamusta',
-            options: ['Kamusta', 'Salamat', 'Pagkain', 'Kotse'],
+            question: "What is the Bicolano word for 'Hello'?",
+            correctAnswer: 'Kumusta',
+            options: ['Kumusta', 'Salamat', 'Kaon', 'Kotse'],
         },
         {
-            question: "What is the Tagalog word for 'Food'?",
-            correctAnswer: 'Pagkain',
-            options: ['Kamusta', 'Salamat', 'Pagkain', 'Magandang umaga'],
+            question: "What is the Bicolano word for 'Food'?",
+            correctAnswer: 'Kaon',
+            options: ['Kumusta', 'Salamat', 'Kaon', 'Kotse'],
         },
         {
-            question: "What is the Tagalog word for 'Thank you'?",
+            question: "What is the Bicolano word for 'Thank you'?",
             correctAnswer: 'Salamat',
-            options: ['Kamusta', 'Salamat', 'Kotse', 'Pagkain'],
+            options: ['Kumusta', 'Salamat', 'Kotse', 'Kaon'],
         },
         {
-            question: "What is the Tagalog word for 'Good morning'?",
-            correctAnswer: 'Magandang umaga',
-            options: ['Magandang umaga', 'Salamat', 'Kotse', 'Kamusta'],
+            question: "What is the Bicolano word for 'Good morning'?",
+            correctAnswer: 'Marhay na aga',
+            options: ['Marhay na aga', 'Salamat', 'Kotse', 'Kumusta'],
         },
         {
-            question: "What is the Tagalog word for 'Car'?",
+            question: "What is the Bicolano word for 'Car'?",
             correctAnswer: 'Kotse',
-            options: ['Kamusta', 'Magandang umaga', 'Pagkain', 'Kotse'],
+            options: ['Kumusta', 'Marhay na aga', 'Kaon', 'Kotse'],
         }
     ];
 
@@ -108,7 +108,7 @@ function EasyVocabularyChallengeBicolano() {
             </div>
 
             <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
-                Easy Vocabulary Challenge - Tagalog
+                Easy Vocabulary Challenge - Bicolano
             </h2>
 
             {/* Progress Bar */}
