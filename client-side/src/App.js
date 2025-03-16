@@ -8,12 +8,16 @@ import BicolanoLearnPage from './components/pages/Bicolano/BicolanoLearnPage';
 import BicolanoPracticePage from './components/pages/Bicolano/BicolanoPracticePage';
 import CebuanoLearnPage from './components/pages/Cebuano/CebuanoLearnPage';
 import CebuanoPracticePage from './components/pages/Cebuano/CebuanoPracticePage';
+import IlocanoLearnPage from './components/pages/Ilocano/IlocanoLearnPage';
+import IlocanoPracticePage from './components/pages/Ilocano/IlocanoPracticePage';
 import { TagalogBasicWordsPage, TagalogCommonPhrasePage, TagalogPronouncePage, TagalogExpressionsPage, TagalogCulturalPage, TagalogVerbsTensesPage } from './components/pages/Tagalog/AllLearnTagalogPage';
 import { TagalogPronunciationEasyPage, TagalogVocabularyEasyPage, TagalogSentenceEasyPage, TagalogPhraseEasyPage, TagalogTranslationEasyPage } from './components/pages/Tagalog/AllPracticeTagalogPage';
 import { BicolanoBasicWordsPage, BicolanoCommonPhrasePage, BicolanoCulturalPage, BicolanoExpressionsPage, BicolanoPronouncePage, BicolanoVerbsTensesPage } from './components/pages/Bicolano/AllLearnBicolanoPage';
 import { BicolanoPronunciationEasyPage, BicolanoPhraseEasyPage, BicolanoSentenceEasyPage, BicolanoTranslationEasyPage, BicolanoVocabularyEasyPage } from './components/pages/Bicolano/AllPracticeBicolanoPage';
 import { CebuanoBasicWordsPage, CebuanoCommonPhrasePage, CebuanoCulturalPage, CebuanoExpressionsPage, CebuanoPronouncePage, CebuanoVerbsTensesPage } from './components/pages/Cebuano/AllLearnCebuanoPage';
 import { CebuanoPronunciationEasyPage, CebuanoPhraseEasyPage, CebuanoSentenceEasyPage, CebuanoTranslationEasyPage, CebuanoVocabularyEasyPage } from './components/pages/Cebuano/AllPracticeCebuanoPage';
+import { IlocanoBasicWordsPage, IlocanoCommonPhrasePage, IlocanoCulturalPage, IlocanoExpressionsPage, IlocanoPronouncePage, IlocanoVerbsTensesPage } from './components/pages/Ilocano/AllLearnIlocanoPage';
+import { IlocanoPronunciationEasyPage, IlocanoPhraseEasyPage, IlocanoSentenceEasyPage, IlocanoTranslationEasyPage, IlocanoVocabularyEasyPage } from './components/pages/Ilocano/AllPracticeIlocanoPage';
 
 function App() {
   return (
@@ -67,6 +71,19 @@ function App() {
           <Route path="/cebuanoPractice/translationChallenge/easy" element={<CebuanoTranslationEasyPage />} />
           <Route path="/cebuanoPractice/commonPhrasesChallenge/easy" element={<CebuanoPhraseEasyPage />} />
 
+          <Route path="/ilocanoLearn" element={<IlocanoLearnPage />} />
+          <Route path="/ilocanoLearn/basicWords" element={<IlocanoBasicWordsPage />} />
+          <Route path="/ilocanoLearn/commonPhrase" element={<IlocanoCommonPhrasePage />} />
+          <Route path="/ilocanoLearn/pronounce&sentence" element={<IlocanoPronouncePage />} />
+          <Route path="/ilocanoLearn/verbs&tenses" element={<IlocanoVerbsTensesPage />} />
+          <Route path="/ilocanoLearn/usefulExpressions" element={<IlocanoExpressionsPage />} />
+          <Route path="/ilocanoLearn/cultural" element={<IlocanoCulturalPage />} />
+          <Route path="/ilocanoPractice" element={<IlocanoPracticePage />} />
+          <Route path="/ilocanoPractice/vocabularyChallenge/easy" element={<IlocanoVocabularyEasyPage />} />
+          <Route path="/ilocanoPractice/pronunciationChallenge/easy" element={<IlocanoPronunciationEasyPage />} />
+          <Route path="/ilocanoPractice/sentenceChallenge/easy" element={<IlocanoSentenceEasyPage />} />
+          <Route path="/ilocanoPractice/translationChallenge/easy" element={<IlocanoTranslationEasyPage />} />
+          <Route path="/ilocanoPractice/commonPhrasesChallenge/easy" element={<IlocanoPhraseEasyPage />} />
         </Routes>
       </Router>
     </div>
