@@ -7,8 +7,8 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom'; 
 
 function DialectPickerComponent() {
-    const navigate = useNavigate(); // Initialize the navigate function
-    // If tagalog is clicked
+    const navigate = useNavigate();
+
     const tagalog = () => {
         navigate('/tagalogLearn'); 
     };
@@ -24,23 +24,28 @@ function DialectPickerComponent() {
     const ilocano = () => {
         navigate('/ilocanoLearn'); 
     };
+
     return (
-        <Container className="bg-white" style={{ width: '100%', maxWidth: '600px' }}>
+        <Container style={{ width: '100%', maxWidth: '600px' }}>
             <Row>
                 <Col md={6} className="my-3">
                     <Card>
-                        <Button variant="outline-dark" block onClick={tagalog}>
+                        <Button variant="light" block onClick={tagalog}>
                             <Card.Body>
-                                <Card.Title>Tagalog</Card.Title>
+                                <Card.Title style={{ fontSize: '1.5rem', fontWeight: 600 }}>
+                                    Tagalog
+                                </Card.Title>
                             </Card.Body>
                         </Button>
                     </Card>
                 </Col>
                 <Col md={6} className="my-3">
                     <Card>
-                        <Button variant="outline-dark" block onClick={bicolano}>
+                        <Button variant="light" block onClick={bicolano}>
                             <Card.Body>
-                                <Card.Title>Central Bikol</Card.Title>
+                                <Card.Title style={{ fontSize: '1.5rem', fontWeight: 600 }}>
+                                    Central Bikol
+                                </Card.Title>
                             </Card.Body>
                         </Button>
                     </Card>
@@ -49,18 +54,22 @@ function DialectPickerComponent() {
             <Row>
                 <Col md={6} className="my-3">
                     <Card>
-                        <Button variant="outline-dark" block onClick={cebuano}>
+                        <Button variant="light" block onClick={cebuano}>
                             <Card.Body>
-                                <Card.Title>Cebuano</Card.Title>
+                                <Card.Title style={{ fontSize: '1.5rem', fontWeight: 600 }}>
+                                    Cebuano
+                                </Card.Title>
                             </Card.Body>
                         </Button>
                     </Card>
                 </Col>
                 <Col md={6}>
                     <Card className="my-3">
-                        <Button variant="outline-dark" block onClick={ilocano}>
+                        <Button variant="light" block onClick={ilocano}>
                             <Card.Body>
-                                <Card.Title>Ilocano</Card.Title>
+                                <Card.Title style={{ fontSize: '1.5rem', fontWeight: 600 }}>
+                                    Ilocano
+                                </Card.Title>
                             </Card.Body>
                         </Button>
                     </Card>

@@ -21,7 +21,7 @@ import { IlocanoPronunciationEasyPage, IlocanoPhraseEasyPage, IlocanoSentenceEas
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Router>
         <Routes>
           <Route path="/" element={<DialectPage />} />
@@ -86,7 +86,7 @@ function App() {
           <Route path="/ilocanoPractice/commonPhrasesChallenge/easy" element={<IlocanoPhraseEasyPage />} />
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 
