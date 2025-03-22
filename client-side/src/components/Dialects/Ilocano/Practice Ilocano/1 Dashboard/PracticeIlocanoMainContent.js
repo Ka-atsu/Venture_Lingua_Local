@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
+import { SlStar } from "react-icons/sl";
 
 function PracticeIlocanoMainContent() {
     const navigate = useNavigate();
@@ -27,40 +29,22 @@ function PracticeIlocanoMainContent() {
         fontWeight: '600',
     };
 
-    const vocabularyStyle = {
-        borderRadius: '20px',
-        background: 'linear-gradient(135deg, #8b6d4b, #a67d47)',
-        borderColor: '#a18d6a',
-        color: '#fff',
+    const subHeaderStyle = {
+        textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+        fontFamily: 'Roboto, sans-serif',
+        fontWeight: '600',
+        color: '#697565',
     };
 
-    const pronunciationStyle = {
-        borderRadius: '20px',
-        background: 'linear-gradient(135deg, #608c8a, #4d7469)',
-        borderColor: '#53745d',
-        color: '#fff',
-    };
+    const iconSize = 30; // Size of the icons in the buttons
 
-    const sentenceStyle = {
-        borderRadius: '20px',
-        background: 'linear-gradient(135deg, #c9a854, #b38f2d)',
-        borderColor: '#e2b752',
-        color: '#fff',
+    const challengeButtonStyle = {
+        borderRadius: '50%', // Makes the button circular
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.5)', // Shadow for 3D effect
+        border: 'none', // Remove default border
     };
-
-    const translationStyle = {
-        borderRadius: '20px',
-        background: 'linear-gradient(135deg, #d4985d, #e7a25c)',
-        borderColor: '#d18c51',
-        color: '#fff',
-    };
-
-    const phraseStyle = {
-        borderRadius: '20px',
-        background: 'linear-gradient(135deg, #d94b3b, #db4433)',
-        borderColor: '#c34a40',
-        color: '#fff',
-    }; 
 
     return (
         <Container fluid className="d-flex flex-column bg-dark p-5">
@@ -71,229 +55,320 @@ function PracticeIlocanoMainContent() {
             </Row>
 
             {/* Vocabulary Challenge */}
-            <Row className="mb-4 justify-content-center">
-                <Col sm={12} md={6} className="text-center mb-4 w-100">
-                    <h4 className="text-white  mb-5">Vocabulary Challenge</h4>
-                    <Row className="justify-content-center">
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="primary"
-                                className="w-100 py-4 shadow-lg"
-                                style={vocabularyStyle}
-                                onClick={() => gotoChallenge('vocabularyChallenge', 'easy')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Easy</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="primary"
-                                className="w-100 py-4 shadow-lg"
-                                style={vocabularyStyle}
-                                onClick={() => gotoChallenge('vocabularyChallenge', 'medium')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Medium</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="primary"
-                                className="w-100 py-4 shadow-lg"
-                                style={vocabularyStyle}
-                                onClick={() => gotoChallenge('vocabularyChallenge', 'hard')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Hard</h6>
-                            </Button>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-
-            {/* Pronunciation Challenge */}
-            <Row className="mb-4 justify-content-center">
-                <Col sm={12} md={6} className="text-center mb-4 w-100">
-                    <h4 className="text-white  mb-5">Pronunciation Challenge</h4>
-                    <Row className="justify-content-center">
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="primary"
-                                className="w-100 py-4 shadow-lg"
-                                style={pronunciationStyle}
-                                onClick={() => gotoChallenge('pronunciationChallenge', 'easy')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Easy</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="primary"
-                                className="w-100 py-4 shadow-lg"
-                                style={pronunciationStyle}
-                                onClick={() => gotoChallenge('pronunciationChallenge', 'medium')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Medium</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="primary"
-                                className="w-100 py-4 shadow-lg"
-                                style={pronunciationStyle}
-                                onClick={() => gotoChallenge('pronunciationChallenge', 'hard')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Hard</h6>
-                            </Button>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-
-            {/* Sentence Construction Challenge */}
-            <Row className="mb-4 justify-content-center">
-                <Col sm={12} md={6} className="text-center mb-4 w-100">
-                    <h4 className="text-white  mb-5">Sentence Construction Challenge</h4>
-                    <Row className="justify-content-center">
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="warning"
-                                className="w-100 py-4 shadow-lg"
-                                style={sentenceStyle}
-                                onClick={() => gotoChallenge('sentenceChallenge', 'easy')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Easy</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="warning"
-                                className="w-100 py-4 shadow-lg"
-                                style={sentenceStyle}
-                                onClick={() => gotoChallenge('sentenceChallenge', 'medium')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Medium</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="warning"
-                                className="w-100 py-4 shadow-lg"
-                                style={sentenceStyle}
-                                onClick={() => gotoChallenge('sentenceChallenge', 'hard')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Hard</h6>
-                            </Button>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-
-            {/* Translation Challenge */}
-            <Row className="mb-4 justify-content-center">
-                <Col sm={12} md={6} className="text-center mb-4 w-100">
-                    <h4 className="text-white mb-5">Translation Challenge</h4>
-                    <Row className="justify-content-center">
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="warning"
-                                className="w-100 py-4 shadow-lg"
-                                style={translationStyle}
-                                onClick={() => gotoChallenge('translationChallenge', 'easy')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Easy</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="warning"
-                                className="w-100 py-4 shadow-lg"
-                                style={translationStyle}
-                                onClick={() => gotoChallenge('translationChallenge', 'medium')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Medium</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="warning"
-                                className="w-100 py-4 shadow-lg"
-                                style={translationStyle}
-                                onClick={() => gotoChallenge('translationChallenge', 'hard')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Hard</h6>
-                            </Button>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-
-            {/* Common Phrases Challenge */}
-            <Row className="justify-content-center">
-                <Col sm={12} md={6} className="text-center mb-4 w-100">
-                    <h4 className="text-white mb-5">Common Phrases Challenge</h4>
-                    <Row className="justify-content-center">
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="danger"
-                                className="w-100 py-4 shadow-lg"
-                                style={phraseStyle}
-                                onClick={() => gotoChallenge('commonPhrasesChallenge', 'easy')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Easy</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="danger"
-                                className="w-100 py-4 shadow-lg"
-                                style={phraseStyle}
-                                onClick={() => gotoChallenge('commonPhrasesChallenge', 'medium')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Medium</h6>
-                            </Button>
-                        </Col>
-                        <Col xs={4} className="mb-2">
-                            <Button
-                                variant="danger"
-                                className="w-100 py-4 shadow-lg"
-                                style={phraseStyle}
-                                onClick={() => gotoChallenge('commonPhrasesChallenge', 'hard')}
-                                onMouseOver={handleMouseOver}
-                                onMouseOut={handleMouseOut}
-                            >
-                                <h6>Hard</h6>
-                            </Button>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
+                        <Row className="mb-4 justify-content-center">
+                            <Col sm={12} md={6} className="text-center mb-4 w-100">
+                                <h4 className="mb-5" style={subHeaderStyle}>Vocabulary Challenge</h4>
+                                <Row className="mb-4 justify-content-center d-flex flex-column">
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="primary"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#E17564',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('vocabularyChallenge', 'easy')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <FaStar size={iconSize} />
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="primary"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#E17564',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            
+                                            onClick={() => gotoChallenge('vocabularyChallenge', 'medium')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <FaStar size={iconSize} />
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="primary"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#E17564',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('vocabularyChallenge', 'hard')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <FaStar size={iconSize} />
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+            
+                        {/* Pronunciation Challenge */}
+                        <Row className="mb-4 justify-content-center">
+                            <Col sm={12} md={6} className="text-center mb-4 w-100">
+                                <h4 className="mb-5" style={subHeaderStyle}>Pronunciation Challenge</h4>
+                                <Row className="mb-4 justify-content-center d-flex flex-column">
+                                    <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="primary"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#872341',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('pronunciationChallenge', 'easy')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="primary"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#872341',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('pronunciationChallenge', 'medium')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="primary"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#872341',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('pronunciationChallenge', 'hard')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+            
+                        {/* Sentence Construction Challenge */}
+                        <Row className="mb-4 justify-content-center">
+                            <Col sm={12} md={6} className="text-center mb-4 w-100">
+                                <h4 className="mb-5" style={subHeaderStyle}>Sentence Construction Challenge</h4>
+                                <Row className="mb-4 justify-content-center d-flex flex-column">
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="warning"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#BE3144',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('sentenceChallenge', 'easy')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="warning"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#BE3144',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('sentenceChallenge', 'medium')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="warning"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#BE3144',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('sentenceChallenge', 'hard')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+            
+                        {/* Translation Challenge */}
+                        <Row className="mb-4 justify-content-center">
+                            <Col sm={12} md={6} className="text-center mb-4 w-100">
+                                <h4 className="mb-5" style={subHeaderStyle}>Translation Challenge</h4>
+                                <Row className="mb-4 justify-content-center d-flex flex-column">
+                                    <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="warning"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#0A5EB0',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('translationChallenge', 'easy')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="warning"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#0A5EB0',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('translationChallenge', 'medium')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="warning"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#0A5EB0',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('translationChallenge', 'hard')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+            
+                        {/* Common Phrases Challenge */}
+                        <Row className="justify-content-center">
+                            <Col sm={12} md={6} className="text-center mb-4 w-100">
+                                <h4 className="mb-5" style={subHeaderStyle}>Common Phrases Challenge</h4>
+                                <Row className="mb-4 justify-content-center d-flex flex-column">
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="danger"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#A5158C',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('commonPhrasesChallenge', 'easy')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="danger"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#A5158C',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('commonPhrasesChallenge', 'medium')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
+                                        <Button
+                                            variant="danger"
+                                            className="w-100 py-4 shadow-lg"
+                                            style={{
+                                                ...challengeButtonStyle,
+                                                margin: '20px',
+                                                background: '#A5158C',
+                                                color: '#fff',
+                                                maxWidth: '5rem', // Ensures the button doesn't grow too large
+                                            }}
+                                            onClick={() => gotoChallenge('commonPhrasesChallenge', 'hard')}
+                                            onMouseOver={handleMouseOver}
+                                            onMouseOut={handleMouseOut}
+                                        >
+                                            <SlStar size={iconSize}/>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
 
         </Container>
     );

@@ -17,6 +17,12 @@ function IlocanoSideComponent() {
 
     const isActive = (path) => location.pathname === path;
 
+    const button = {
+        borderRadius: '20px', 
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+        fontWeight: '600',
+    }
+
     return (
         <Navbar
         bg="dark"
@@ -27,27 +33,27 @@ function IlocanoSideComponent() {
              {/* Learn and Practice buttons */}
             <Container className="flex-column">
                 <Navbar.Brand className="text-white mb-4" style={{ fontSize: '2rem', fontWeight: 'bold' }}>
-                    Lingua Local
+                    Lingualocal
                 </Navbar.Brand>
 
                 <Button
                     variant={isActive('/ilocanoLearn') ? 'primary' : 'light'}
                     className={`w-100 mb-3 py-3 d-flex align-items-center justify-content-start ${isActive('/ilocanoLearn') ? 'active' : ''}`} 
                     onClick={() => navigate('/ilocanoLearn')}
-                    style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
+                    style={button}
                 >
                     <FaBook className="me-3" />
-                    Learn
+                    LEARN
                 </Button>
 
                 <Button
                     variant={isActive('/ilocanoPractice') ? 'primary' : 'light'}
                     className={`w-100 mb-3 py-3 d-flex align-items-center justify-content-start ${isActive('/ilocanoPractice') ? 'active' : ''}`} 
                     onClick={() => navigate('/ilocanoPractice')}
-                    style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
+                    style={button}
                 >
                     <FaPencilAlt className="me-3" />
-                    Practice
+                    PRACTICE
                 </Button>
             </Container>
 
@@ -57,29 +63,29 @@ function IlocanoSideComponent() {
                     variant="light"
                     className="w-100 mb-3 py-3 d-flex align-items-center justify-content-start"
                     onClick={() => navigate('/dialectSelector')}
-                    style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
+                    style={button}
                 >
                     <FaDiceD6 className="me-3" />
-                    Change Dialect
+                    DIALECT
                 </Button>
                 <Button
                     variant="light"
                     className="w-100 mb-3 py-3 d-flex align-items-center justify-content-start"
                     onClick={handleSettingsClick}
-                    style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
+                    style={button}
                 >
                     <FaCog className="me-3" />
-                    Settings
+                    PROFILE
                 </Button>
 
                 <Button
                     variant="outline-light"
                     className="w-100 py-3 d-flex align-items-center justify-content-start"
                     onClick={handleLogoutClick}
-                    style={{ borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
+                    style={button}
                 >
                     <FaSignOutAlt className="me-3" />
-                    Logout
+                    LOGOUT
                 </Button>
             </Container>
             
