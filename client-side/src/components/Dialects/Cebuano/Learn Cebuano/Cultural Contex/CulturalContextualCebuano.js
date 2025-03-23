@@ -3,6 +3,9 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Cebuano.css';
+import Kuradang from '../2 Images/Kuradang.jpg';
+import Sinulog from '../2 Images/Sinulog.jpg';
+import Lechon from '../2 Images/Lechon.jpg';
 
 function CulturalContextualCebuano() {
 
@@ -23,44 +26,28 @@ function CulturalContextualCebuano() {
   // Sample cultural expressions with images and general information
   const culturalExpressions = [
     {
-      english: "The concept of 'Bayanihan' (Community spirit)",
-      cebuano: "Bayanihan",
-      example: "Sa Bayanihan, nagtutulungan ang mga tao para sa kapakanan ng iba. (In Bayanihan, people help each other for the welfare of others.)",
-      explanation: "Bayanihan refers to the Filipino culture of helping one another, especially in times of need. It embodies the concept of community cooperation and solidarity.",
-      usageTips: "Use 'Bayanihan' to describe any form of community spirit or cooperation, whether it's in a rural or urban setting.",
-      commonMistakes: "A common mistake is using 'Bayanihan' as just a physical activity. It also represents a deeper cultural value of solidarity and mutual aid.",
-      synonyms: "Similar concepts include 'tulong-tulong' (helping each other), 'kapwa' (shared identity), or 'komunidad' (community).",
-      image: ""
+      english: "The Sinulog Festival",
+      cebuano: "Sinulog",
+      definiton: "During Sinulog, people perform in the streets to the rhythm of drums.",
+      explanation: "The Sinulog Festival is an annual cultural and religious festival held on the third Sunday of January in Cebu City. It is one of the most attended festivals in the Philippines, celebrating the Filipino people's conversion from paganism to Christianity, particularly honoring the Santo Niño, or the Child Jesus.",
+      commonMistakes: "A common mistake is to think of the Sinulog as purely a dance festival. While dance is a major component, Sinulog is fundamentally a religious celebration that includes a grand parade, street dancing competitions, and a religious procession.",
+      image: Sinulog
     },
     {
-      english: "Respect for elders ('Po' and 'Opo')",
-      cebuano: "Paggalang sa matatanda",
-      example: "'Po' and 'Opo' are commonly used to show respect. For instance, 'Opo, lolo, masarap po ang pagkain.' (Yes, grandpa, the food is delicious.)",
-      explanation: "Filipino culture places great importance on respecting elders. The words 'po' and 'opo' are added when addressing older people as a sign of respect.",
-      usageTips: "'Po' and 'Opo' are essential in daily conversations when speaking to someone older or in authority. They should be used in formal and respectful contexts.",
-      commonMistakes: "A common mistake is forgetting to use 'po' and 'opo' when addressing elders or people of higher authority, which might be seen as impolite.",
-      synonyms: "Respect can also be shown through body language, like the 'mano' gesture where younger people take the hand of an elder and press it to their forehead.",
-      image: ""
+      english: "Folk dance",
+      cebuano: "Kuradang",
+      definiton: "Kuradang is often performed at local festivals and weddings in Cebuano-speaking areas. For example, dancers might say, 'Let's dance the Kuradang to celebrate our community’s traditions.",
+      explanation: "Kuradang is a traditional Filipino dance that is particularly popular in Cebuano-speaking areas. It features energetic and intricate steps, typically performed in pairs, reflecting themes of courtship and local celebration. The dance is a vibrant expression of Cebuano cultural identity and community spirit.",
+      commonMistakes: "A common mistake is confusing Kuradang with other traditional Filipino dances like the Cariñosa or Balitaw, especially due to their shared festive nature and use in social gatherings.",
+      image: Kuradang
     },
     {
-      english: "Filipino hospitality",
-      cebuano: "Hospitalidad ng Pilipino",
-      example: "'Please come in! We have food, stay as long as you like!' (Common Filipino hospitality to visitors.)",
-      explanation: "Filipino hospitality is known for its warm welcome. When visitors arrive, Filipinos go out of their way to make them feel at home, offering food, drinks, and even their bed.",
-      usageTips: "When visiting a Filipino home, it's customary to accept offers of food or drinks as a sign of respect to the host.",
-      commonMistakes: "A common mistake is refusing offers of food or drinks, as it may be considered rude in Filipino culture.",
-      synonyms: "Filipino hospitality can be described as 'malasakit' (compassion) or 'pag-aalaga' (care).",
-      image: "https://example.com/hospitality.jpg" // Add your image URL here
-    },
-    {
-      english: "Fiestas and celebrations",
-      cebuano: "Pista at pagdiriwang",
-      example: "Ang Pista ng Quiapo ay isang halimbawa ng malaking pagtitipon ng mga tao sa Maynila. (The Quiapo Fiesta is an example of a major gathering of people in Manila.)",
-      explanation: "Fiestas are an important part of Filipino culture, celebrating patron saints, historical events, or other cultural traditions. These celebrations are marked by street parades, music, dancing, and food.",
-      usageTips: "Use 'fiesta' when referring to any local or religious celebration. It is often followed by the name of the place or the saint it honors, such as 'Pista ng Santo Niño.'",
-      commonMistakes: "A common mistake is thinking that fiestas are only religious; many are secular celebrations that bring people together for various causes.",
-      synonyms: "Other terms include 'salubong' (gathering), 'patronal fiesta' (feast day), or 'pagdiriwang' (celebration).",
-      image: "https://example.com/fiesta.jpg" // Add your image URL here
+      english: "Roast Pork",
+      cebuano: "Lechon",
+      definiton: "Lechon Cebu is a renowned dish from Cebu known for its savory, crispy skin and tender, flavorful meat, typically prepared by roasting an entire pig over charcoal. This dish is a centerpiece at major Filipino celebrations and gatherings, epitomizing the festive spirit and culinary pride of Cebuano culture.",
+      explanation: "The distinctiveness of Lechon Cebu comes from the herbs and spices used in stuffing the pig, such as lemongrass, onions, garlic, and salt, which are all native to the region. This preparation infuses the meat with flavors that are deeply aromatic and satisfying, setting it apart from other variations of lechon found in the Philippines.",
+      commonMistakes: "A common mistake is to confuse Lechon Cebu with other regional styles of lechon, which may not feature the same herbs and preparation method that gives Lechon Cebu its distinct taste.",
+      image: Lechon
     }
   ];
 
@@ -105,13 +92,11 @@ function CulturalContextualCebuano() {
                     <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
                         Cebuano: {currentExpression.cebuano}
                     </h5>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Example:</strong> {currentExpression.example}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Definition:</strong> {currentExpression.definiton}</p>
                     <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Explanation:</strong> {currentExpression.explanation}</p>
 
                     {/* Additional Information */}
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Usage Tips:</strong> {currentExpression.usageTips}</p>
                     <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Common Mistakes:</strong> {currentExpression.commonMistakes}</p>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Synonyms:</strong> {currentExpression.synonyms}</p>
                     </Card.Body>
                 </Card>
             </Col>

@@ -137,7 +137,7 @@ function LearnBicolanoMainContent() {
           >
             <strong className="text-dark">Cultural and Contextual Learning</strong>
             <p className="text-body">
-              Understand Filipino culture and the contextual use of language in different settings.
+              Understand Bicolano culture and the contextual use of language in different settings.
             </p>
           </Button>
         </Col>

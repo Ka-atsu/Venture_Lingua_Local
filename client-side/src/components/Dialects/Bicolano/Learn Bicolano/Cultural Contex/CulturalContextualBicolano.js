@@ -3,6 +3,9 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Bicolano.css';
+import Mayon from '../2 Images/Mayon.jpg';
+import Pantomina from '../2 Images/Pantomina.jpg';
+import Penafrancia from '../2 Images/Penafrancia.jpg';
 
 function CulturalContextualBicolano() {
   const navigate = useNavigate();
@@ -21,44 +24,28 @@ function CulturalContextualBicolano() {
   // Sample cultural expressions with images and general information
   const culturalExpressions = [
     {
-      english: "The concept of 'Bayanihan' (Community spirit)",
-      bicolano: "Bayanihan",
-      example: "Sa Bayanihan, nagtutabang an mga tawo para sa kayuhan kan gabos. (In Bayanihan, people help each other for everyone's benefit.)",
-      explanation: "An Bayanihan nagtutudok kan kultura nin pagbuligay, labi na kun may kinahangan. Iton nagpapahayag nin kooperasyon asin pagkakaisa kan komunidad.",
-      usageTips: "Gamiton an 'Bayanihan' para ilarawan an bisan ano na porma nin espiritu kan komunidad o pagbuligay, sa baryo man o syudad.",
-      commonMistakes: "An komon na sayop iyo an paggamit nin 'Bayanihan' bilang pisikal na buruhaton lamang. Iton nagpapahayag man nin halangkaw na kahalagahan nin pagkakaisa asin pagtutulungan.",
-      synonyms: "Mga kasiring konsepto iyo an 'buligay' (mutual help), 'sarong pagkakakilanlan' (shared identity), o 'komunidad' (community).",
-      image: ""
+      english: "Mayon Volcano",
+      bicolano: "Bulkang Mayon",
+      definiton: "The Mayon Volcano is a symbol of strength and culture for the Bicolanos.",
+      explanation: "The Mayon Volcano, known for its perfect symmetrical shape, is an important part of the culture and beliefs of the people in Albay. It represents the strength and resilience of the locals as they live around an active volcano.",
+      commonMistakes: "A common mistake is to think of the Mayon Volcano only as a tourist attraction, but it is much more than that. It is a cultural treasure that plays a large part in the identity of the Bicolano people.",
+      image: Mayon
     },
     {
-      english: "Respect for elders ('Po' and 'Opo')",
-      bicolano: "Pagrespeto sa mga matong",
-      example: "An 'Po' asin 'Opo' ginagamit para magpakita nin respeto. Halimbawa, 'Opo, Lolo, namamanamit po an kalan-on.' (Yes, grandpa, the food is delicious.)",
-      explanation: "An kultura nin Bikol nagpapahiling nin dakulang importansya sa pagrespeto sa mga matong. An 'Po' asin 'Opo' ginagamit bilang tanda nin pagrespeto sa mga nakatatang.",
-      usageTips: "Importante an 'Po' asin 'Opo' sa aldaw-araw na estorya kapag nakikipag-istorya sa mga matong o may otoridad. Gamiton ini sa pormal asin respetadong mga konteksto.",
-      commonMistakes: "An komon na sayop iyo an pagkalipat gamiton an 'Po' asin 'Opo' kapag nakikipag-istorya sa mga matong o may otoridad, na pwedeng ikonsiderar na kawaray respeto.",
-      synonyms: "An pagrespeto pwede man ipahiling pinaagi kan body language, sugad kan 'mano' na hinalo an kamot kan matong at pinipiga sa noo.",
-      image: ""
+      english: "Courtship Dance",
+      bicolano: "pantomina",
+      definiton: "Pantomina is a traditional dance from the Bicol region, often performed at weddings and festivals.",
+      explanation: "Pantomina is part of the Bicolano's rich cultural heritage, mimicking the courtship movements of doves, which symbolizes love and affection between couples. It is typically performed during major festivities and particularly at weddings, celebrating new beginnings and the union of families.",
+      commonMistakes: "A common mistake is to confuse pantomina with other Philippine folk dances that are faster paced. Pantomina is distinct for its smooth, flowing movements and romantic undertones.",
+      image: Pantomina
     },
     {
-      english: "Filipino hospitality",
-      bicolano: "Hospitalidad kan Bikol",
-      example: "Paki-sulod! Igwa kami nin kalan-on; pwedeng magpabilin ka kutob san gusto mo! (Common Bikol hospitality to visitors.)",
-      explanation: "An hospitalidad kan Bikol kilala sa mainit na pag-abot. Kun may bisita, naglalaom an mga Bikolano na mararamdaman ninda na iyo ninda an sarong matukdo na tahanan, nagpapahiling nin kalan-on, ilimnon, asin lugar para pahingaan.",
-      usageTips: "Kun bibisita ka sa sarong Bikol na balay, kinakaipuhan na batonon an mga alok nin kalan-on o ilimnon bilang tanda nin respeto sa host.",
-      commonMistakes: "An komon na sayop iyo an pagtanggi sa mga alok nin kalan-on o ilimnon, kay pwedeng ikonsiderar na kawaray respeto.",
-      synonyms: "An hospitalidad nin Bikol pwede man ilarawan bilang 'pagkamoot' (compassion) o 'pag-aalaga' (care).",
-      image: "https://example.com/hospitality.jpg"
-    },
-    {
-      english: "Fiestas and celebrations",
-      bicolano: "Pista asin pagdiriwang",
-      example: "An Pista kan Quiapo sarong halimbawa nin dakulang pagtitipon kan mga tawo sa Maynila. (The Quiapo Fiesta is an example of a major gathering in Manila.)",
-      explanation: "An mga pista dakula an parte kan kultura nin Bikol, igwang pagselebrar sa patron saints, historikal na pangyayari, o iba pang tradisyones. Iton minamarkahan nin parada sa dalan, musika, sayawan, asin kalan-on.",
-      usageTips: "Gamiton an 'pista' pagre-refer sa bisan ano na lokal o relihiyosong selebrasyon. Kadalasan, sinusundan ini nin ngaran kan lugar o santo na pinapahalagahan, sugad kan 'Pista kan Santo Niño.'",
-      commonMistakes: "An komon na sayop iyo an pag-isip na an mga pista relihiyoso lamang; dakula an mga sekular na selebrasyon na nagdadara nin mga tawo para sa magkaibang kadahilanan.",
-      synonyms: "Iba pang termino iyo an 'salubong' (pagtitipon), 'patronal na pista' (feast day), o 'pagdiriwang' (selebrasyon).",
-      image: "https://example.com/fiesta.jpg"
+      english: "The feast of Our Lady of Peñafrancia",
+      bicolano: "The Penafrancia Festival",
+      definiton: "This is a religious festival held every September in Naga City, where thousands of devotees gather to honor the Our Lady of Penafrancia, the patroness of Bicol.",
+      explanation: "The festival is known for its vibrant celebrations, which include a fluvial procession of the image of Our Lady of Peñafrancia on the Naga River, various religious events, and cultural performances. It reflects the deep devotion of the Bicolano people and their strong sense of community and faith.",
+      commonMistakes: "A common mistake is to overlook the religious significance of the festival by focusing only on the festivities and entertainment aspects. It's important to recognize and respect that it is primarily a devotional event.",
+      image: Penafrancia
     }
   ];
 
@@ -97,28 +84,28 @@ function CulturalContextualBicolano() {
         <Col md={6}>
           <Card className="bg-light text-dark p-4 shadow-lg rounded">
             <Card.Body>
-              <h3 className="mb-3" style={{ fontWeight: 500, fontSize: '1.8rem' }}>
+              <h3 className="mb-3 text-center" style={{ fontWeight: 500, fontSize: '1.8rem' }}>
                 {currentExpression.english}
               </h3>
-              <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
+              <h5 className="mb-3 text-center" style={{ color: '#731768', fontSize: '1.5rem' }}>
                 Bikol: {currentExpression.bicolano}
               </h5>
               <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
-                <strong>Example:</strong> {currentExpression.example}
+                <strong>Definiton:</strong> {currentExpression.definiton}
               </p>
               <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
                 <strong>Explanation:</strong> {currentExpression.explanation}
               </p>
               {/* Additional Information */}
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
+              {/* <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
                 <strong>Usage Tips:</strong> {currentExpression.usageTips}
-              </p>
+              </p> */}
               <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
                 <strong>Common Mistakes:</strong> {currentExpression.commonMistakes}
               </p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
+              {/* <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
                 <strong>Synonyms:</strong> {currentExpression.synonyms}
-              </p>
+              </p> */}
             </Card.Body>
           </Card>
         </Col>

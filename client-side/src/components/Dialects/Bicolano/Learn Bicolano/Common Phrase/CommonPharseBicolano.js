@@ -33,7 +33,7 @@ function CommonPharseBicolano() {
           ]
         },
         {
-          group: 'Introductions',
+          group: 'Initial Encounters',
           phrases: [
             { english: 'What’s your name?', bicolano: 'Ano an ngaran mo?', example: 'Ano an ngaran mo? (What’s your name?)' },
             { english: 'My name is ...', bicolano: 'Ako si ... / An ngaran ko si ...', example: 'Ako si Maria. (My name is Maria.)' },
