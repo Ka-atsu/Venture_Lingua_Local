@@ -21,33 +21,35 @@ function CulturalContextualBicolano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Sample cultural expressions with images and general information
   const culturalExpressions = [
     {
       english: "Mayon Volcano",
       bicolano: "Bulkang Mayon",
-      definiton: "The Mayon Volcano is a symbol of strength and culture for the Bicolanos.",
-      explanation: "The Mayon Volcano, known for its perfect symmetrical shape, is an important part of the culture and beliefs of the people in Albay. It represents the strength and resilience of the locals as they live around an active volcano.",
-      commonMistakes: "A common mistake is to think of the Mayon Volcano only as a tourist attraction, but it is much more than that. It is a cultural treasure that plays a large part in the identity of the Bicolano people.",
+      description: "Mayon Volcano is famed for its nearly perfect cone shape and stands as a powerful symbol of pride and resilience for Bicolanos.",
+      culturalNote: "Beyond being a natural landmark, Mayon embodies the strength, beauty, and enduring spirit of the Bicolano people who live in its shadow.",
+      historicalBackground: "Formed over thousands of years, Mayon has been central to local folklore most famously the legend of Daragang Magayon and has shaped settlement patterns in Albay since pre‑colonial times.",
+      modernRelevance: "Today it draws eco‑tourists and pilgrims alike, reinforcing regional identity and fueling Bicol’s economy through tourism and agriculture.",
       image: Mayon
     },
     {
       english: "Courtship Dance",
-      bicolano: "pantomina",
-      definiton: "Pantomina is a traditional dance from the Bicol region, often performed at weddings and festivals.",
-      explanation: "Pantomina is part of the Bicolano's rich cultural heritage, mimicking the courtship movements of doves, which symbolizes love and affection between couples. It is typically performed during major festivities and particularly at weddings, celebrating new beginnings and the union of families.",
-      commonMistakes: "A common mistake is to confuse pantomina with other Philippine folk dances that are faster paced. Pantomina is distinct for its smooth, flowing movements and romantic undertones.",
+      bicolano: "Pantomina",
+      description: "Pantomina is a graceful Bicolano folk dance that mimics the courtship rituals of doves, symbolizing love and harmony.",
+      culturalNote: "Performed at weddings and fiestas, it celebrates new beginnings and the union of families through gentle, flowing movements.",
+      historicalBackground: "Developed during Spanish colonial rule, pantomina blends indigenous dance traditions with European influences as a social dance of courtship.",
+      modernRelevance: "It remains a staple in Bicol cultural showcases, school programs, and community celebrations keeping local heritage alive.",
       image: Pantomina
     },
     {
-      english: "The feast of Our Lady of Peñafrancia",
-      bicolano: "The Penafrancia Festival",
-      definiton: "This is a religious festival held every September in Naga City, where thousands of devotees gather to honor the Our Lady of Penafrancia, the patroness of Bicol.",
-      explanation: "The festival is known for its vibrant celebrations, which include a fluvial procession of the image of Our Lady of Peñafrancia on the Naga River, various religious events, and cultural performances. It reflects the deep devotion of the Bicolano people and their strong sense of community and faith.",
-      commonMistakes: "A common mistake is to overlook the religious significance of the festival by focusing only on the festivities and entertainment aspects. It's important to recognize and respect that it is primarily a devotional event.",
+      english: "The Feast of Our Lady of Peñafrancia",
+      bicolano: "Penafrancia Festival",
+      description: "The Penafrancia Festival is Bicol’s largest religious event, honoring Our Lady of Peñafrancia each September with processions, masses, and cultural performances.",
+      culturalNote: "It exemplifies the deep faith and communal devotion of Bicolanos, uniting thousands in pilgrimage and celebration.",
+      historicalBackground: "Dating back to 1710, the festival began when Spanish missionaries introduced the devotion to Our Lady of Peñafrancia, blending Catholic rites with local traditions.",
+      modernRelevance: "Today it attracts over a million devotees and tourists annually, reinforcing Bicol’s spiritual identity and boosting the regional economy.",
       image: Penafrancia
     }
-  ];
+  ];  
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -88,24 +90,12 @@ function CulturalContextualBicolano() {
                 {currentExpression.english}
               </h3>
               <h5 className="mb-3 text-center" style={{ color: '#731768', fontSize: '1.5rem' }}>
-                Bikol: {currentExpression.bicolano}
+                {currentExpression.bicolano}
               </h5>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
-                <strong>Definiton:</strong> {currentExpression.definiton}
-              </p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
-                <strong>Explanation:</strong> {currentExpression.explanation}
-              </p>
-              {/* Additional Information */}
-              {/* <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
-                <strong>Usage Tips:</strong> {currentExpression.usageTips}
-              </p> */}
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
-                <strong>Common Mistakes:</strong> {currentExpression.commonMistakes}
-              </p>
-              {/* <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}>
-                <strong>Synonyms:</strong> {currentExpression.synonyms}
-              </p> */}
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Description:</strong> {currentExpression.description}</p>
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Cultural Note:</strong> {currentExpression.culturalNote}</p>
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Historical Background:</strong> {currentExpression.historicalBackground}</p>
+              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Modern Relevance:</strong> {currentExpression.modernRelevance}</p>
             </Card.Body>
           </Card>
         </Col>

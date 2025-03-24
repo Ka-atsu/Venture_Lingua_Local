@@ -3,6 +3,9 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Ilocano.css';
+import Atang from '../2 Images/Atang.jpg';
+import GulGul from '../2 Images/GulGul.jpg';
+import Pinakbet from '../2 Images/Pinakbet.jpeg';
 
 function CulturalContextualIlocano() {
 
@@ -23,46 +26,33 @@ function CulturalContextualIlocano() {
   // Sample cultural expressions with images and general information
   const culturalExpressions = [
     {
-      english: "The concept of 'Bayanihan' (Community spirit)",
-      ilocano: "Bayanihan",
-      example: "Sa Bayanihan, nagtutulungan ang mga tao para sa kapakanan ng iba. (In Bayanihan, people help each other for the welfare of others.)",
-      explanation: "Bayanihan refers to the Filipino culture of helping one another, especially in times of need. It embodies the concept of community cooperation and solidarity.",
-      usageTips: "Use 'Bayanihan' to describe any form of community spirit or cooperation, whether it's in a rural or urban setting.",
-      commonMistakes: "A common mistake is using 'Bayanihan' as just a physical activity. It also represents a deeper cultural value of solidarity and mutual aid.",
-      synonyms: "Similar concepts include 'tulong-tulong' (helping each other), 'kapwa' (shared identity), or 'komunidad' (community).",
-      image: ""
+      english: "Community Offering",
+      ilocano: "Atang",
+      description: "Atang in Ilocano culture refers to the traditional practice of offering food or gifts as a gesture of gratitude and unity.",
+      culturalNote: "This ritual reinforces social bonds by showing hospitality and respect, fostering a strong sense of community among neighbors and family.",
+      historicalBackground: "Rooted in indigenous traditions, atang has been passed down through generations as a way to honor both guests and deities in ceremonial gatherings.",
+      modernRelevance: "Today, atang is integrated into various cultural festivals and family celebrations, preserving an age‑old custom in a modern setting.",
+      image: Atang
     },
     {
-      english: "Respect for elders ('Po' and 'Opo')",
-      ilocano: "Paggalang sa matatanda",
-      example: "'Po' and 'Opo' are commonly used to show respect. For instance, 'Opo, lolo, masarap po ang pagkain.' (Yes, grandpa, the food is delicious.)",
-      explanation: "Filipino culture places great importance on respecting elders. The words 'po' and 'opo' are added when addressing older people as a sign of respect.",
-      usageTips: "'Po' and 'Opo' are essential in daily conversations when speaking to someone older or in authority. They should be used in formal and respectful contexts.",
-      commonMistakes: "A common mistake is forgetting to use 'po' and 'opo' when addressing elders or people of higher authority, which might be seen as impolite.",
-      synonyms: "Respect can also be shown through body language, like the 'mano' gesture where younger people take the hand of an elder and press it to their forehead.",
-      image: ""
-    },
+      english: "Ritual cleansing after bereavement",
+      ilocano: "Gulgul",
+      description: "Gulgul is the Ilocano tradition where family members wash their heads in a river or the sea after a loved one’s burial, symbolically cleansing away sickness, bad luck, and grief.",
+      culturalNote: "This ritual helps survivors process loss, believe they’re purified of negative energies, and supports emotional healing within the family.",
+      historicalBackground: "Rooted in pre‑colonial Ilocano beliefs about death and spiritual purification, gulgul has long served as a communal practice of mourning and renewal.",
+      modernRelevance: "Today it continues in many Ilocano communities as a meaningful way to honor the deceased and promote collective healing after loss.",
+      image: GulGul
+    },    
     {
-      english: "Filipino hospitality",
-      ilocano: "Hospitalidad ng Pilipino",
-      example: "'Please come in! We have food, stay as long as you like!' (Common Filipino hospitality to visitors.)",
-      explanation: "Filipino hospitality is known for its warm welcome. When visitors arrive, Filipinos go out of their way to make them feel at home, offering food, drinks, and even their bed.",
-      usageTips: "When visiting a Filipino home, it's customary to accept offers of food or drinks as a sign of respect to the host.",
-      commonMistakes: "A common mistake is refusing offers of food or drinks, as it may be considered rude in Filipino culture.",
-      synonyms: "Filipino hospitality can be described as 'malasakit' (compassion) or 'pag-aalaga' (care).",
-      image: "https://example.com/hospitality.jpg" // Add your image URL here
-    },
-    {
-      english: "Fiestas and celebrations",
-      ilocano: "Pista at pagdiriwang",
-      example: "Ang Pista ng Quiapo ay isang halimbawa ng malaking pagtitipon ng mga tao sa Maynila. (The Quiapo Fiesta is an example of a major gathering of people in Manila.)",
-      explanation: "Fiestas are an important part of Filipino culture, celebrating patron saints, historical events, or other cultural traditions. These celebrations are marked by street parades, music, dancing, and food.",
-      usageTips: "Use 'fiesta' when referring to any local or religious celebration. It is often followed by the name of the place or the saint it honors, such as 'Pista ng Santo Niño.'",
-      commonMistakes: "A common mistake is thinking that fiestas are only religious; many are secular celebrations that bring people together for various causes.",
-      synonyms: "Other terms include 'salubong' (gathering), 'patronal fiesta' (feast day), or 'pagdiriwang' (celebration).",
-      image: "https://example.com/fiesta.jpg" // Add your image URL here
+      english: "Traditional Dish",
+      ilocano: "Pinakbet",
+      description: "Pinakbet is a celebrated Ilocano vegetable dish, symbolizing the region’s rich culinary tradition and the warmth of sharing a meal.",
+      culturalNote: "More than just food, pinakbet represents the spirit of Ilocano hospitality—where preparing and sharing a meal is an expression of care and community.",
+      historicalBackground: "Originating from resourceful local cooking methods, pinakbet has evolved over generations, highlighting native produce and traditional flavors.",
+      modernRelevance: "Today, pinakbet is enjoyed in homes and featured at food festivals, serving as a delicious reminder of Ilocano heritage and togetherness.",
+      image: Pinakbet
     }
-  ];
+  ];  
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -103,15 +93,12 @@ function CulturalContextualIlocano() {
                         {currentExpression.english}
                     </h3>
                     <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
-                    Ilocano: {currentExpression.ilocano}
+                    {currentExpression.ilocano}
                     </h5>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Example:</strong> {currentExpression.example}</p>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Explanation:</strong> {currentExpression.explanation}</p>
-
-                    {/* Additional Information */}
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Usage Tips:</strong> {currentExpression.usageTips}</p>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Common Mistakes:</strong> {currentExpression.commonMistakes}</p>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Synonyms:</strong> {currentExpression.synonyms}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Description:</strong> {currentExpression.description}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Cultural Note:</strong> {currentExpression.culturalNote}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Historical Background:</strong> {currentExpression.historicalBackground}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Modern Relevance:</strong> {currentExpression.modernRelevance}</p>
                     </Card.Body>
                 </Card>
             </Col>

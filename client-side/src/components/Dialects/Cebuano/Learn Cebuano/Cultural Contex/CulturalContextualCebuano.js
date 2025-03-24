@@ -23,33 +23,35 @@ function CulturalContextualCebuano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Sample cultural expressions with images and general information
   const culturalExpressions = [
     {
       english: "The Sinulog Festival",
       cebuano: "Sinulog",
-      definiton: "During Sinulog, people perform in the streets to the rhythm of drums.",
-      explanation: "The Sinulog Festival is an annual cultural and religious festival held on the third Sunday of January in Cebu City. It is one of the most attended festivals in the Philippines, celebrating the Filipino people's conversion from paganism to Christianity, particularly honoring the Santo Niño, or the Child Jesus.",
-      commonMistakes: "A common mistake is to think of the Sinulog as purely a dance festival. While dance is a major component, Sinulog is fundamentally a religious celebration that includes a grand parade, street dancing competitions, and a religious procession.",
+      description: "Sinulog is Cebu’s biggest religious and cultural festival, held every third Sunday of January to honor the Santo Niño (Child Jesus).",
+      culturalNote: "More than a street dance, Sinulog is a heartfelt expression of faith — thousands join in procession and dance as an act of devotion.",
+      historicalBackground: "Originating in the 16th century after the arrival of Magellan, Sinulog blends pre‑colonial dance rituals with Catholic worship introduced by Spanish missionaries.",
+      modernRelevance: "Today it draws over a million pilgrims and tourists annually, boosting Cebu’s economy and preserving its unique cultural identity.",
       image: Sinulog
     },
     {
       english: "Folk dance",
       cebuano: "Kuradang",
-      definiton: "Kuradang is often performed at local festivals and weddings in Cebuano-speaking areas. For example, dancers might say, 'Let's dance the Kuradang to celebrate our community’s traditions.",
-      explanation: "Kuradang is a traditional Filipino dance that is particularly popular in Cebuano-speaking areas. It features energetic and intricate steps, typically performed in pairs, reflecting themes of courtship and local celebration. The dance is a vibrant expression of Cebuano cultural identity and community spirit.",
-      commonMistakes: "A common mistake is confusing Kuradang with other traditional Filipino dances like the Cariñosa or Balitaw, especially due to their shared festive nature and use in social gatherings.",
+      description: "Kuradang is an energetic pair dance from Cebu, traditionally performed at weddings, fiestas, and community gatherings.",
+      culturalNote: "It symbolizes courtship, camaraderie, and communal celebration — dancers often improvise steps to show skill and respect.",
+      historicalBackground: "Developed during Spanish rule as a social dance, Kuradang incorporates indigenous rhythms with European folk‑dance patterns.",
+      modernRelevance: "Kuradang remains a staple in Cebuano cultural shows, school programs, and festival competitions, keeping local heritage alive.",
       image: Kuradang
     },
     {
       english: "Roast Pork",
       cebuano: "Lechon",
-      definiton: "Lechon Cebu is a renowned dish from Cebu known for its savory, crispy skin and tender, flavorful meat, typically prepared by roasting an entire pig over charcoal. This dish is a centerpiece at major Filipino celebrations and gatherings, epitomizing the festive spirit and culinary pride of Cebuano culture.",
-      explanation: "The distinctiveness of Lechon Cebu comes from the herbs and spices used in stuffing the pig, such as lemongrass, onions, garlic, and salt, which are all native to the region. This preparation infuses the meat with flavors that are deeply aromatic and satisfying, setting it apart from other variations of lechon found in the Philippines.",
-      commonMistakes: "A common mistake is to confuse Lechon Cebu with other regional styles of lechon, which may not feature the same herbs and preparation method that gives Lechon Cebu its distinct taste.",
+      description: "Lechon Cebu is famed for its crackling skin and aromatic, herb‑stuffed meat — the centerpiece of any major Filipino feast.",
+      culturalNote: "Serving lechon signifies abundance, generosity, and hospitality; it’s the ultimate symbol of celebration in Cebuano culture.",
+      historicalBackground: "Introduced by Spanish colonizers, Cebuano cooks perfected their own version by stuffing pigs with native spices like lemongrass and garlic.",
+      modernRelevance: "Lechon Cebu is a must‑try for visitors, exported nationwide, and proudly represents Cebuano culinary craftsmanship.",
       image: Lechon
     }
-  ];
+  ];  
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -90,13 +92,12 @@ function CulturalContextualCebuano() {
                         {currentExpression.english}
                     </h3>
                     <h5 className="mb-3" style={{ color: '#731768', fontSize: '1.5rem' }}>
-                        Cebuano: {currentExpression.cebuano}
+                        {currentExpression.cebuano}
                     </h5>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Definition:</strong> {currentExpression.definiton}</p>
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Explanation:</strong> {currentExpression.explanation}</p>
-
-                    {/* Additional Information */}
-                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Common Mistakes:</strong> {currentExpression.commonMistakes}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Description:</strong> {currentExpression.description}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Cultural Note:</strong> {currentExpression.culturalNote}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Historical Background:</strong> {currentExpression.historicalBackground}</p>
+                    <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Modern Relevance:</strong> {currentExpression.modernRelevance}</p>
                     </Card.Body>
                 </Card>
             </Col>
