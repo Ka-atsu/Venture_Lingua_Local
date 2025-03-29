@@ -16,6 +16,7 @@ import Taga from './common phrase sounds/Taga saan.mp3';
 import umaga from './common phrase sounds/Umaga.mp3';
 import Mabuhay from './common phrase sounds/Mabuhay.mp3';
 import Manila from './common phrase sounds/Manila.mp3';
+import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function CommonPharseTagalog() {
     const navigate = useNavigate();
@@ -73,8 +74,10 @@ function CommonPharseTagalog() {
         const newFlippedIndices = new Set(flippedIndices);
         if (newFlippedIndices.has(index)) {
             newFlippedIndices.delete(index); // Unflip
+            new Audio(CardSound).play();
         } else {
             newFlippedIndices.add(index); // Flip
+            new Audio(CardSound).play();
         }
         setFlippedIndices(newFlippedIndices); // Update state
     };

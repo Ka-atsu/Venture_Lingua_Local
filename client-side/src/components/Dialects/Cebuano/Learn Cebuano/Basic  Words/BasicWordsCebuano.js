@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Cebuano.css';
+import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function BasicWordsCebuano() {
     const navigate = useNavigate(); 
@@ -80,8 +81,10 @@ function BasicWordsCebuano() {
         const newFlippedIndices = new Set(flippedIndices);
         if (newFlippedIndices.has(index)) {
             newFlippedIndices.delete(index); // Unflip the card
+            new Audio(CardSound).play();
         } else {
             newFlippedIndices.add(index); // Flip the card
+            new Audio(CardSound).play();
         }
         setFlippedIndices(newFlippedIndices); // Update flipped state
     };

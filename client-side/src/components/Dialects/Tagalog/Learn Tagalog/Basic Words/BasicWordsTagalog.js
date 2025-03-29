@@ -24,6 +24,7 @@ import pito from './basic word sounds/Pito.mp3';
 import walo from './basic word sounds/Walo.mp3';
 import siyam from './basic word sounds/Siyam.mp3';
 import sampu from './basic word sounds/Sampu.mp3';
+import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function BasicWordsTagalog() {
     const navigate = useNavigate(); 
@@ -101,8 +102,10 @@ function BasicWordsTagalog() {
         const newFlippedIndices = new Set(flippedIndices);
         if (newFlippedIndices.has(index)) {
             newFlippedIndices.delete(index); // Unflip the card
+            new Audio(CardSound).play();
         } else {
             newFlippedIndices.add(index); // Flip the card
+            new Audio(CardSound).play();
         }
         setFlippedIndices(newFlippedIndices); // Update flipped state
     };

@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Tagalog.css';
+import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function PronounceSentenceTagalog() {
     const navigate = useNavigate();
@@ -146,8 +147,10 @@ function PronounceSentenceTagalog() {
         const newFlippedIndices = new Set(flippedIndices);
         if (newFlippedIndices.has(index)) {
             newFlippedIndices.delete(index); // Unflip
+            new Audio(CardSound).play();
         } else {
             newFlippedIndices.add(index); // Flip
+            new Audio(CardSound).play();
         }
         setFlippedIndices(newFlippedIndices); // Update state
     };

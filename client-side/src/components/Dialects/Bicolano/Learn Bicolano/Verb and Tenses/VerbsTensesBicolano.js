@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Bicolano.css';
+import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function VerbsTensesBicolano() {
   const navigate = useNavigate();
@@ -98,6 +99,7 @@ function VerbsTensesBicolano() {
 
   const handleFlip = (tense) => {
     setFlippedIndices(prev => ({ ...prev, [tense]: !prev[tense] }));
+    new Audio(CardSound).play();
   };
 
   // Flip all cards back when switching groups
