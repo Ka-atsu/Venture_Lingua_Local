@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3';
 
 function EasyVocabularyChallengeCebuano() {
     const navigate = useNavigate();
@@ -54,6 +55,7 @@ function EasyVocabularyChallengeCebuano() {
         if (selectedAnswer === questions[questionIndex].correctAnswer) {
             setScore(score + 1); // Increment the score for correct answers
             setResultMessage('Correct!');
+            new Audio(CorrectBuzzer).play();
         } else {
             const remainingLives = lives - 1;
             setLives(remainingLives);

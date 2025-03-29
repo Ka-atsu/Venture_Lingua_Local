@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3';
 
 function EasySentenceChallengeTagalog() {
     const navigate = useNavigate();
@@ -50,6 +51,7 @@ function EasySentenceChallengeTagalog() {
         if (selectedAnswer.trim().toLowerCase() === questions[questionIndex].correctAnswer.toLowerCase()) {
             setScore(score + 1);
             setResultMessage('Correct!');
+            new Audio(CorrectBuzzer).play();
         } else {
             const remainingLives = lives - 1;
             setLives(remainingLives);

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3';
 
 function EasyTranslationChallengeCebuano() {
     const navigate = useNavigate();
@@ -60,6 +61,7 @@ function EasyTranslationChallengeCebuano() {
         if (JSON.stringify(selectedWords) === JSON.stringify(sentences[questionIndex].correctAnswer)) {
             setScore(score + 1);
             setResultMessage('Correct!');
+            new Audio(CorrectBuzzer).play();
         } else {
             const remainingLives = lives - 1;
             setLives(remainingLives);
