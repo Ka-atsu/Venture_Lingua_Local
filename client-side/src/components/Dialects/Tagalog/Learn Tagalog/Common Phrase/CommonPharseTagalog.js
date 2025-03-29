@@ -133,7 +133,7 @@ function CommonPharseTagalog() {
                                     <h3 className="word">{phrase.english}</h3>
                                     <p><strong>Tagalog:</strong> {phrase.tagalog}</p>
                                 </div>
-                                <div className="flashcard-back flex-column" style={{ alignItems: 'center' }}>
+                                <div className="flashcard-back flex-column align-items-center">
                                     <h3 className="word">{phrase.tagalog}</h3>
                                     <p> {phrase.example}</p>
                                     <button 
@@ -145,7 +145,6 @@ function CommonPharseTagalog() {
                                     >
                                         🔊
                                     </button>
-
                                 </div>
                             </div>
                         </div>

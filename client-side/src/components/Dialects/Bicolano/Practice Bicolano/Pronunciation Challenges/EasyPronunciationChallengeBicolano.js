@@ -121,12 +121,12 @@ function EasyPronunciationChallengeBicolano() {
 
     return (
         <Container fluid className="d-flex flex-column align-items-center bg-dark vh-100">
-            <div className="bikol-go-back-icon">
+            <div className="go-back-icon">
                 <FaArrowLeft
                     size={30}
                     color="#fff"
                     onClick={goBack}
-                    className="bikol-go-back-arrow"
+                    className="go-back-arrow"
                 />
             </div>
 

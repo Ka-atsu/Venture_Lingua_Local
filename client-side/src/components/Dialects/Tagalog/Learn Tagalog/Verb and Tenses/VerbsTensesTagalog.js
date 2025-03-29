@@ -4,6 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
+import babasahin from './verb sounds/babasahin.mp3';
+import kakain from './verb sounds/kakain.mp3';
+import kumain from './verb sounds/kumain.mp3';
+import kumakain from './verb sounds/kumakain.mp3';
+import nagbabasa from './verb sounds/nagbabasa.mp3';
+import nagbasa from './verb sounds/nagbasa.mp3';
+import pumunta from './verb sounds/pumunta.mp3';
+import pumupunta from './verb sounds/pumupunta.mp3';
+import pupunta from './verb sounds/pupunta.mp3';
 
 function VerbsTensesTagalog() {
   const navigate = useNavigate();
@@ -31,19 +40,22 @@ function VerbsTensesTagalog() {
           tense: 'Past Tense',
           conjugated: 'kumain',
           example: 'Kumain siya ng mangga kahapon.',
-          explanation: 'Indicates a completed action in the past.'
+          explanation: 'Indicates a completed action in the past.',
+          sound: kumain
         },
         {
           tense: 'Present Tense',
           conjugated: 'kumakain',
           example: 'Kumakain siya ng almusal ngayon.',
-          explanation: 'Describes an action that is currently in progress.'
+          explanation: 'Describes an action that is currently in progress.',
+          sound: kumakain
         },
         {
           tense: 'Future Tense',
           conjugated: 'kakain',
           example: 'Kakain siya ng hapunan mamaya.',
-          explanation: 'Indicates that the action will happen in the future.'
+          explanation: 'Indicates that the action will happen in the future.',
+          sound: kakain
         }
       ]
     },
@@ -54,19 +66,22 @@ function VerbsTensesTagalog() {
           tense: 'Past Tense',
           conjugated: 'pumunta',
           example: 'Pumunta sila sa simbahan noong nakaraang linggo.',
-          explanation: 'Describes a movement that has been completed.'
+          explanation: 'Describes a movement that has been completed.',
+          sound: pumunta
         },
         {
           tense: 'Present Tense',
           conjugated: 'pumupunta',
           example: 'Pumupunta sila sa trabaho sa kasalukuyan.',
-          explanation: 'Indicates an action that is happening at the moment.'
+          explanation: 'Indicates an action that is happening at the moment.',
+          sound: pumupunta
         },
         {
           tense: 'Future Tense',
           conjugated: 'pupunta',
           example: 'Pupunta sila sa paaralan bukas.',
-          explanation: 'Indicates an upcoming movement or action.'
+          explanation: 'Indicates an upcoming movement or action.',
+          sound: pupunta
         }
       ]
     },
@@ -77,19 +92,22 @@ function VerbsTensesTagalog() {
           tense: 'Past Tense',
           conjugated: 'nagbasa',
           example: 'Nagbasa siya ng libro kagabi.',
-          explanation: 'Shows that the action of reading was completed in the past.'
+          explanation: 'Shows that the action of reading was completed in the past.',
+          sound: nagbasa
         },
         {
           tense: 'Present Tense',
           conjugated: 'nagbabasa',
           example: 'Nagbabasa siya ng pahayagan tuwing umaga.',
-          explanation: 'Describes an action that is currently taking place.'
+          explanation: 'Describes an action that is currently taking place.',
+          sound: nagbabasa
         },
         {
           tense: 'Future Tense',
-          conjugated: 'babasa',
+          conjugated: 'babasahin',
           example: 'Babasa siya ng bagong nobela sa susunod na linggo.',
-          explanation: 'Indicates that the action is planned for the future.'
+          explanation: 'Indicates that the action is planned for the future.',
+          sound: babasahin
         }
       ]
     }
@@ -158,10 +176,20 @@ function VerbsTensesTagalog() {
                     <strong>Base Form:</strong> {verbTenseGroups[currentSet].group.split('(')[1].replace(')', '')}
                   </p>
                 </div>
-                <div className="flashcard-back flex-column">
+                <div className="flashcard-back flex-column align-items-center">
                   <h3 className="word">{item.conjugated}</h3>
-                  <p className="text-start"><strong>Example:</strong> {item.example}</p>
-                  <p className="text-start"><strong>Explanation:</strong> {item.explanation}</p>
+                  {/* just add w-100 to over write the align items center and text-start */}
+                  <p className="text-start w-100"><strong>Example:</strong> {item.example}</p>
+                  <p className="text-start w-100"><strong>Explanation:</strong> {item.explanation}</p>
+                  <button 
+                      onClick={(e) => { 
+                          e.stopPropagation(); // Prevent flipping the card when clicking the button
+                          new Audio(item.sound).play();
+                      }} 
+                      className="btn btn-sm btn-light mt-2"
+                  >
+                      🔊
+                  </button>
                 </div>
               </div>
             </div>

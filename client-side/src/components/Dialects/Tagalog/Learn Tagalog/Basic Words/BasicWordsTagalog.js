@@ -155,10 +155,10 @@ function BasicWordsTagalog() {
                     <Col md={4} sm={6} key={index}>
                         <div className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`} onClick={() => handleFlip(index)}>
                             <div className="flashcard-inner">
-                                <div className="flashcard-front" style={{ alignItems: 'center' }}>
+                                <div className="flashcard-front align-items-center">
                                     <h2 className="word">{word.english}</h2>
                                 </div>
-                                <div className="flashcard-back flex-column" style={{ alignItems: 'center' }}>
+                                <div className="flashcard-back flex-column align-items-center">
                                     <h2 className="word">{word.tagalog}</h2>
                                     <button 
                                         onClick={(e) => { 

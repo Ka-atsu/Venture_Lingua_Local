@@ -4,6 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
+import Ang from './pronouns sounds/Ang pangalan ko ay.mp3';
+import Anong from './pronouns sounds/Anong pangalan mo.mp3';
+import Ikinalulugod from './pronouns sounds/Ikinalulugod kong makilala ka.mp3';
+import Ingat from './pronouns sounds/Ingat Ka.mp3';
+import Kamusta from './pronouns sounds/Kamusta.mp3';
+import gabi from './pronouns sounds/Magandang gabi.mp3';
+import mamaya from './pronouns sounds/Magkita tayo mamaya.mp3';
+import umaga from './pronouns sounds/Magandang umaga.mp3';
+import Paalam from './pronouns sounds/Paalam.mp3';
+import Taga from './pronouns sounds/Taga Manila ako.mp3';
+import Tagasaan from './pronouns sounds/Tagasaan ka.mp3';
+import bukas from './pronouns sounds/Magkita tayo bukas.mp3';
 
 function PronounceSentenceTagalog() {
     const navigate = useNavigate();
@@ -34,6 +46,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Ka-mus-ta',
                     sentence: 'Kamusta ka? (Hello! How are you?)',
                     explanation: 'This is a greeting you use when meeting someone or when checking in with someone to see how they are doing.',
+                    sound: Kamusta
                 },
                 {
                     english: 'Good morning',
@@ -41,6 +54,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Mah-gan-dang oo-mah-ga',
                     sentence: 'Magandang umaga! Kamusta ka at ang iyong pamilya? (Good morning! How are you and your family?)',
                     explanation: 'This is used to greet someone in the morning and inquire about their well-being.',
+                    sound: umaga
                 },
                 {
                     english: 'Good evening',
@@ -48,6 +62,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Mah-gan-dang gah-bee',
                     sentence: 'Magandang gabi, paano ka? Matagal na kitang hindi nakita! (Good evening, how are you? It’s been a while since I last saw you!)',
                     explanation: 'This is a greeting used in the evening to ask how someone is doing after the day has passed.',
+                    sound: gabi
                 }
             ]
         },
@@ -62,6 +77,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'A-nong pahng-ah-lahn mo?',
                     sentence: 'Anong pangalan mo? Ako si Maria, at ikaw? (What’s your name? I’m Maria, and you?)',
                     explanation: 'This phrase is used when meeting someone for the first time and asking for their name.',
+                    sound: Anong
                 },
                 {
                     english: 'My name is ...',
@@ -69,6 +85,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Ang pahng-ah-lahn ko ay ...',
                     sentence: 'Ang pangalan ko ay Maria, at ako ay taga Maynila. (My name is Maria, and I’m from Manila.)',
                     explanation: 'This is how you introduce yourself and tell others your name and where you\'re from.',
+                    sound: Ang
                 },
                 {
                     english: 'Where are you from?',
@@ -76,6 +93,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Tah-gah-sah-ahn kah?',
                     sentence: 'Tagasaan ka? Ako ay taga Bicol, ikaw? (Where are you from? I’m from Bicol, how about you?)',
                     explanation: 'This question is used when you want to know where someone is from.',
+                    sound: Tagasaan
                 },
                 {
                     english: 'I’m from ...',
@@ -83,13 +101,15 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Tah-gah... ah-ko',
                     sentence: 'Taga Manila ako. Nais kong matutunan ang Tagalog nang mas maayos. (I’m from Manila. I want to learn Tagalog more fluently.)',
                     explanation: 'This is used when you are telling someone where you are from.',
+                    sound: Taga
                 },
                 {
                     english: 'Nice to meet you',
                     tagalog: 'Ikinalulugod kong makilala ka',
-                    pronunciation: 'I-kee-nah-loo-loo-god kong mah-kee-lah-lah kah',
+                    pronunciation: 'I-kee-nah-loo-loo-gohd kong mah-kee-lah-lah kah',
                     sentence: 'Ikinalulugod kong makilala ka. Sana ay maging magkaibigan tayo. (Nice to meet you, I hope we can become friends.)',
                     explanation: 'This is a polite way of expressing happiness when meeting someone for the first time.',
+                    sound: Ikinalulugod
                 }
             ]
         },
@@ -104,6 +124,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Pah-ah-lahm',
                     sentence: 'Paalam, magkita tayo muli sa susunod na linggo. (Goodbye, see you again next week.)',
                     explanation: 'This is the standard way to say goodbye when you expect to see someone again soon.',
+                    sound: Paalam
                 },
                 {
                     english: 'See you later',
@@ -111,6 +132,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Mag-kee-tah tah-yo mah-mah-yah',
                     sentence: 'Magkita tayo mamaya pagkatapos ng trabaho. (See you later after work.)',
                     explanation: 'This is used when you are planning to meet someone later in the day after a specific activity.',
+                    sound: mamaya
                 },
                 {
                     english: 'Take care',
@@ -118,13 +140,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Eeng-aht kah',
                     sentence: 'Ingat ka sa daan, mag-ingat sa mga sasakyan. (Take care on the road, be careful with the vehicles.)',
                     explanation: 'This is used when you want to show concern for someone\'s safety as they leave.',
-                },
-                {
-                    english: 'Good night',
-                    tagalog: 'Magandang gabi',
-                    pronunciation: 'Mah-gan-dang gah-bee',
-                    sentence: 'Magandang gabi, matulog ka ng mahimbing at magpahinga. (Good night, sleep well and rest.)',
-                    explanation: 'This is used when saying goodbye before someone goes to bed.',
+                    sound: Ingat
                 },
                 {
                     english: 'See you tomorrow',
@@ -132,6 +148,7 @@ function PronounceSentenceTagalog() {
                     pronunciation: 'Mag-kee-tah tah-yo boo-kahs',
                     sentence: 'Magkita tayo bukas sa mga 10:00 AM. (See you tomorrow at around 10:00 AM.)',
                     explanation: 'This phrase is used when confirming plans to meet someone the following day.',
+                    sound: bukas
                 }
             ]
         }
@@ -201,10 +218,19 @@ function PronounceSentenceTagalog() {
                             onClick={() => handleFlip(index)}
                         >
                             <div className="flashcard-inner">
-                                <div className="flashcard-front flex-column">
+                                <div className="flashcard-front flex-column align-items-center">
                                     <h3 className="word">{phrase.english}</h3>
+                                    <p>{phrase.tagalog}</p>
                                     <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
-                                    <p><strong>Tagalog:</strong> {phrase.tagalog}</p>
+                                    <button 
+                                        onClick={(e) => { 
+                                            e.stopPropagation(); // Prevent flipping the card when clicking the button
+                                            new Audio(phrase.sound).play();
+                                        }} 
+                                        className="btn btn-sm btn-dark mt-2"
+                                    >
+                                        🔊
+                                    </button>
                                 </div>
                                 <div className="flashcard-back flex-column">
                                     <h1 className="word">{phrase.tagalog}</h1>
