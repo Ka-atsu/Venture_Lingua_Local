@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Ilocano.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function BasicWordsIlocano() {
@@ -118,9 +118,9 @@ function BasicWordsIlocano() {
 
     return (
         <Container fluid className="bg-dark p-5 vh-100">
-            <div className="ilocano-go-back-icon">
+            <div className="go-back-icon">
                 {/* Go back icon */}
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="ilocano-go-back-arrow" />
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
             <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Ilocano Words</h1>
@@ -134,15 +134,15 @@ function BasicWordsIlocano() {
                 {wordGroups[currentSet].words.map((word, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
-                            className={`ilocano-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+                            className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)} // Flip the card on click
                         >
-                            <div className="ilocano-flashcard-inner">
-                                <div style={{ alignItems: 'center' }} className="ilocano-flashcard-front">
-                                    <h2 className="ilocano-word">{word.english}</h2>
+                            <div className="flashcard-inner">
+                                <div style={{ alignItems: 'center' }} className="flashcard-front">
+                                    <h2 className="word">{word.english}</h2>
                                 </div>
-                                <div style={{ alignItems: 'center' }} className="ilocano-flashcard-back">
-                                    <h2 className="ilocano-word">{word.ilocano}</h2>
+                                <div style={{ alignItems: 'center' }} className="flashcard-back">
+                                    <h2 className="word">{word.ilocano}</h2>
                                 </div>
                             </div>
                         </div>

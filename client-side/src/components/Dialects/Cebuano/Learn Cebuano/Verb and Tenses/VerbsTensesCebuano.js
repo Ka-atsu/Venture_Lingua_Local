@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Cebuano.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function VerbsTensesCebuano() {
@@ -129,12 +129,12 @@ function VerbsTensesCebuano() {
 
   return (
     <Container fluid className="bg-dark p-5 vh-100">
-      <div className="cebuano-go-back-icon">
+      <div className="go-back-icon">
         <FaArrowLeft
           size={30}
           color="#fff"
           onClick={goBack}
-          className="cebuano-go-back-arrow"
+          className="go-back-arrow"
         />
       </div>
 
@@ -148,18 +148,18 @@ function VerbsTensesCebuano() {
         {verbTenseGroups[currentSet].tenses.map((item, index) => (
           <Col md={4} sm={6} key={item.tense}>
             <div
-              className={`cebuano-flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
+              className={`flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
               onClick={() => handleFlip(item.tense)}
             >
-              <div className="cebuano-flashcard-inner">
-                <div className="cebuano-flashcard-front flex-column">
-                  <h3 className="cebuano-word">{item.tense}</h3>
+              <div className="flashcard-inner">
+                <div className="flashcard-front flex-column">
+                  <h3 className="word">{item.tense}</h3>
                   <p>
                     <strong>Base Form:</strong> {verbTenseGroups[currentSet].group.split('(')[1].replace(')', '')}
                   </p>
                 </div>
-                <div className="cebuano-flashcard-back flex-column">
-                  <h3 className="cebuano-word">{item.conjugated}</h3>
+                <div className="flashcard-back flex-column">
+                  <h3 className="word">{item.conjugated}</h3>
                   <p className="text-start"><strong>Example:</strong> {item.example}</p>
                   <p className="text-start"><strong>Explanation:</strong> {item.explanation}</p>
                 </div>

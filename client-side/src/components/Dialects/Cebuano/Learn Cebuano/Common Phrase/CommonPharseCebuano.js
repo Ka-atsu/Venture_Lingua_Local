@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Cebuano.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function CommonPharseCebuano() {
@@ -95,8 +95,8 @@ function CommonPharseCebuano() {
 
     return (
         <Container fluid className="bg-dark p-5 vh-100">
-            <div className="cebuano-go-back-icon">
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="cebuano-go-back-arrow" />
+            <div className="go-back-icon">
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
             <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: '2.5rem' }}>
@@ -113,16 +113,16 @@ function CommonPharseCebuano() {
                 {phraseGroups[currentSet].phrases.map((phrase, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
-                            className={`cebuano-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+                            className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
                         >
-                            <div className="cebuano-flashcard-inner">
-                                <div className="cebuano-flashcard-front flex-column">
-                                    <h3 className="cebuano-word">{phrase.english}</h3>
+                            <div className="flashcard-inner">
+                                <div className="flashcard-front flex-column">
+                                    <h3 className="word">{phrase.english}</h3>
                                     <p><strong>Cebuano:</strong> {phrase.cebuano}</p>
                                 </div>
-                                <div className="cebuano-flashcard-back flex-column">
-                                    <h3 className="cebuano-word">{phrase.cebuano}</h3>
+                                <div className="flashcard-back flex-column">
+                                    <h3 className="word">{phrase.cebuano}</h3>
                                     <p><strong>Example:</strong> {phrase.example}</p>
                                 </div>
                             </div>

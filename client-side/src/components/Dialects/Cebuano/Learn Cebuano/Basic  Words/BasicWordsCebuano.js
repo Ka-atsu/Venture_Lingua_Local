@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Cebuano.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function BasicWordsCebuano() {
@@ -117,9 +117,9 @@ function BasicWordsCebuano() {
 
     return (
         <Container fluid className="bg-dark p-5 vh-100">
-            <div className="cebuano-go-back-icon">
+            <div className="go-back-icon">
                 {/* Go back icon */}
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="cebuano-go-back-arrow" />
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
             <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Cebuano Words</h1>
@@ -133,15 +133,15 @@ function BasicWordsCebuano() {
                 {wordGroups[currentSet].words.map((word, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
-                            className={`cebuano-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+                            className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)} // Flip the card on click
                         >
-                            <div className="cebuano-flashcard-inner">
-                                <div style={{ alignItems: 'center' }} className="cebuano-flashcard-front">
-                                    <h2 className="cebuano-word">{word.english}</h2>
+                            <div className="flashcard-inner">
+                                <div style={{ alignItems: 'center' }} className="flashcard-front">
+                                    <h2 className="word">{word.english}</h2>
                                 </div>
-                                <div style={{ alignItems: 'center' }} className="cebuano-flashcard-back">
-                                    <h2 className="cebuano-word">{word.cebuano}</h2>
+                                <div style={{ alignItems: 'center' }} className="flashcard-back">
+                                    <h2 className="word">{word.cebuano}</h2>
                                 </div>
                             </div>
                         </div>

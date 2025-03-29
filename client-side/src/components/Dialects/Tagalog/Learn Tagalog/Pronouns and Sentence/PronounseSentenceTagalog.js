@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Tagalog.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function PronounceSentenceTagalog() {
@@ -183,8 +183,8 @@ function PronounceSentenceTagalog() {
 
     return (
         <Container fluid className="bg-dark p-5 vh-100">
-            <div className="tagalog-go-back-icon">
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="tagalog-go-back-arrow" />
+            <div className="go-back-icon">
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
             <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Tagalog Pronunciation and Example Sentences</h1>
@@ -197,17 +197,17 @@ function PronounceSentenceTagalog() {
                 {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
-                            className={`tagalog-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+                            className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
                         >
-                            <div className="tagalog-flashcard-inner">
-                                <div className="tagalog-flashcard-front flex-column">
-                                    <h3 className="tagalog-word">{phrase.english}</h3>
+                            <div className="flashcard-inner">
+                                <div className="flashcard-front flex-column">
+                                    <h3 className="word">{phrase.english}</h3>
                                     <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
                                     <p><strong>Tagalog:</strong> {phrase.tagalog}</p>
                                 </div>
-                                <div className="tagalog-flashcard-back flex-column">
-                                    <h1 className="tagalog-word">{phrase.tagalog}</h1>
+                                <div className="flashcard-back flex-column">
+                                    <h1 className="word">{phrase.tagalog}</h1>
                                     <p className='text-start'><strong>Example:</strong> {phrase.sentence}</p>
                                     <p className='text-start'><strong>Explanation:</strong> {phrase.explanation}</p>
                                 </div>

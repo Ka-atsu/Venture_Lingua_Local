@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Bicolano.css';
+import '../../../zCSS/learn.css';
 import Mayon from '../2 Images/Mayon.jpg';
 import Pantomina from '../2 Images/Pantomina.jpg';
 import Penafrancia from '../2 Images/Penafrancia.jpg';
@@ -70,8 +70,8 @@ function CulturalContextualBicolano() {
 
   return (
     <Container fluid className="bg-dark p-5 vh-100">
-      <div className="bikol-go-back-icon">
-        <FaArrowLeft size={30} color="#fff" onClick={goBack} className="bikol-go-back-arrow" />
+      <div className="go-back-icon">
+        <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
       </div>
 
       <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: '2.5rem' }}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Bicolano.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function BasicWordsBicolano() {
@@ -116,9 +116,9 @@ function BasicWordsBicolano() {
 
     return (
         <Container fluid className="bg-dark p-5 vh-100">
-            <div className="bikol-go-back-icon">
+            <div className="go-back-icon">
                 {/* Go back icon */}
-                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="bikol-go-back-arrow" />
+                <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
             <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Bicolano Words</h1>
@@ -132,15 +132,15 @@ function BasicWordsBicolano() {
                 {wordGroups[currentSet].words.map((word, index) => (
                     <Col md={4} sm={6} key={index}>
                         <div
-                            className={`bikol-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+                            className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)} // Flip the card on click
                         >
-                            <div className="bikol-flashcard-inner">
-                                <div style={{ alignItems: 'center' }} className="bikol-flashcard-front">
-                                    <h2 className="bikol-word">{word.english}</h2>
+                            <div className="flashcard-inner">
+                                <div style={{ alignItems: 'center' }} className="flashcard-front">
+                                    <h2 className="word">{word.english}</h2>
                                 </div>
-                                <div style={{ alignItems: 'center' }} className="bikol-flashcard-back">
-                                    <h2 className="bikol-word">{word.bicolano}</h2>
+                                <div style={{ alignItems: 'center' }} className="flashcard-back">
+                                    <h2 className="word">{word.bicolano}</h2>
                                 </div>
                             </div>
                         </div>

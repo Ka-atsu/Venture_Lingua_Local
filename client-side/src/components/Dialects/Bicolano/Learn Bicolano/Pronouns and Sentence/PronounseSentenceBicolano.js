@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Bicolano.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function PronounseSentenceBicolano() {
@@ -191,8 +191,8 @@ function PronounseSentenceBicolano() {
 
   return (
     <Container fluid className="bg-dark p-5 vh-100">
-      <div className="bikol-go-back-icon">
-        <FaArrowLeft size={30} color="#fff" onClick={goBack} className="bikol-go-back-arrow" />
+      <div className="go-back-icon">
+        <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
       </div>
 
       <h1
@@ -214,17 +214,17 @@ function PronounseSentenceBicolano() {
         {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
           <Col md={4} sm={6} key={index}>
             <div
-              className={`bikol-flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
+              className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
               onClick={() => handleFlip(index)}
             >
-              <div className="bikol-flashcard-inner">
-                <div className="bikol-flashcard-front flex-column">
-                  <h3 className="bikol-word">{phrase.english}</h3>
+              <div className="flashcard-inner">
+                <div className="flashcard-front flex-column">
+                  <h3 className="word">{phrase.english}</h3>
                   <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
                   <p><strong>Bikol:</strong> {phrase.bicolano}</p>
                 </div>
-                <div className="bikol-flashcard-back flex-column">
-                  <h1 className="bikol-word">{phrase.bicolano}</h1>
+                <div className="flashcard-back flex-column">
+                  <h1 className="word">{phrase.bicolano}</h1>
                   <p className='text-start'><strong>Example:</strong> {phrase.sentence}</p>
                   <p className='text-start'><strong>Explanation:</strong> {phrase.explanation}</p>
                 </div>

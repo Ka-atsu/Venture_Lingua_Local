@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import '../Bicolano.css';
+import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
 function VerbsTensesBicolano() {
@@ -127,12 +127,12 @@ function VerbsTensesBicolano() {
 
   return (
     <Container fluid className="bg-dark p-5 vh-100">
-      <div className="bikol-go-back-icon">
+      <div className="go-back-icon">
         <FaArrowLeft
           size={30}
           color="#fff"
           onClick={goBack}
-          className="bikol-go-back-arrow"
+          className="go-back-arrow"
         />
       </div>
 
@@ -146,18 +146,18 @@ function VerbsTensesBicolano() {
         {verbTenseGroups[currentSet].tenses.map((item, index) => (
           <Col md={4} sm={6} key={item.tense}>
             <div
-              className={`bikol-flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
+              className={`flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
               onClick={() => handleFlip(item.tense)}
             >
-              <div className="bikol-flashcard-inner">
-                <div className="bikol-flashcard-front flex-column">
-                  <h3 className="bikol-word">{item.tense}</h3>
+              <div className="flashcard-inner">
+                <div className="flashcard-front flex-column">
+                  <h3 className="word">{item.tense}</h3>
                   <p>
                     <strong>Base Form:</strong> {verbTenseGroups[currentSet].group.split('(')[1].replace(')', '')}
                   </p>
                 </div>
-                <div className="bikol-flashcard-back flex-column">
-                  <h3 className="bikol-word">{item.conjugated}</h3>
+                <div className="flashcard-back flex-column">
+                  <h3 className="word">{item.conjugated}</h3>
                   <p className="text-start"><strong>Example:</strong> {item.example}</p>
                   <p className="text-start"><strong>Explanation:</strong> {item.explanation}</p>
                 </div>
