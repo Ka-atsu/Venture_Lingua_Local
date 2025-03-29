@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3'
+import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3';
+import WrongBuzzer from '../../../../Sounds/WrongBuzzer.mp3';
 
 function EasyPhraseChallengeCebuano() {
     const navigate = useNavigate();
@@ -60,6 +61,7 @@ function EasyPhraseChallengeCebuano() {
             const remainingLives = lives - 1;
             setLives(remainingLives);
             setResultMessage(`Incorrect! You have ${remainingLives} lives remaining.`);
+            new Audio(WrongBuzzer).play();
             if (remainingLives === 0) {
                 setResultMessage('Game Over! You lost all lives. Resetting game...');
                 // Automatically reset after 2 seconds
