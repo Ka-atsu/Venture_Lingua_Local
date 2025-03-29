@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import CardSound from '../../../../Sounds/CardSound.mp3'
 import '../Cebuano.css';
 
 function VerbsTensesCebuano() {
@@ -101,7 +100,6 @@ function VerbsTensesCebuano() {
 
   const handleFlip = (tense) => {
     setFlippedIndices(prev => ({ ...prev, [tense]: !prev[tense] }));
-    new Audio(CardSound).play();
   };
 
   // Flip all cards back when switching groups

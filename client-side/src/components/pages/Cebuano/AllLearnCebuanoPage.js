@@ -1,9 +1,9 @@
 import React from 'react';
 import BasicWordsCebuano from '../../Dialects/Cebuano/Learn Cebuano/Basic  Words/BasicWordsCebuano';
-import CommonPhraseCebuano from '../../Dialects/Cebuano/Learn Cebuano/Common Phrase/CommonPharseCebuano';
+import CommonPharseCebuano from '../../Dialects/Cebuano/Learn Cebuano/Common Phrase/CommonPharseCebuano';
 import CulturalContextualCebuano from '../../Dialects/Cebuano/Learn Cebuano/Cultural Contex/CulturalContextualCebuano';
 import ExpressionCebuano from '../../Dialects/Cebuano/Learn Cebuano/Useful Expression/ExpressionCebuano';
-import PronounceSentenceCebuano from '../../Dialects/Cebuano/Learn Cebuano/Pronouns and Sentence/PronounseSentenceCebuano';
+import PronounseSentenceCebuano from '../../Dialects/Cebuano/Learn Cebuano/Pronouns and Sentence/PronounseSentenceCebuano';
 import VerbsTensesCebuano from '../../Dialects/Cebuano/Learn Cebuano/Verb and Tenses/VerbsTensesCebuano';
 
 export function CebuanoBasicWordsPage() {
@@ -19,7 +19,7 @@ export function CebuanoCommonPhrasePage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <CommonPhraseCebuano />
+            <CommonPharseCebuano />
         </>
     );
 }
@@ -46,7 +46,7 @@ export function CebuanoPronouncePage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <PronounceSentenceCebuano />
+            <PronounseSentenceCebuano />
         </>
     );
 }
