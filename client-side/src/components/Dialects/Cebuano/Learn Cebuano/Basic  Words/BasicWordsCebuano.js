@@ -29,11 +29,10 @@ function BasicWordsCebuano() {
             group: 'Greetings',
             words: [
                 { cebuano: 'Kamusta', english: 'Hello' },
-                { cebuano: 'Magandang aga', english: 'Good Morning' },
-                { cebuano: 'Magandang hapon', english: 'Good Afternoon' },
-                { cebuano: 'Magandang gab-i', english: 'Good Evening' },
-                { cebuano: 'Magandang gab-i', english: 'Good Night' },
-                { cebuano: 'Magandang aldaw', english: 'Good day' }
+                { cebuano: 'Maayong buntag', english: 'Good Morning' },
+                { cebuano: 'Maayong hapon', english: 'Good Afternoon' },
+                { cebuano: 'Maayong gabii', english: 'Good Evening' },
+                { cebuano: 'Maayong adlaw', english: 'Good Night' },
             ]
         },
         // Group 2: Essential Nouns
