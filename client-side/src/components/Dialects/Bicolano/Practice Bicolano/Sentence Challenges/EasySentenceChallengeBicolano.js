@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Container, Button, Row, Col, Card, ProgressBar, Toast } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3';
 import WrongBuzzer from '../../../../Sounds/WrongBuzzer.mp3';
 
 function EasySentenceChallengeBicolano() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
+    const location = useLocation(); 
+    // eslint-disable-next-line
+    const { category, level, isCompleted  } = location.state || {}; // safely access state
     const [questionIndex, setQuestionIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [score, setScore] = useState(0);
@@ -87,6 +90,12 @@ function EasySentenceChallengeBicolano() {
         setResultMessage('');
     };
 
+    const finished = () => { 
+        navigate(`/tagalogPractice`, {
+            state: { category, level, isCompleted: true }  // Passing the completion status
+        });
+    }
+
     const progress = ((questionIndex + 1) / questions.length) * 100;
 
     return (
@@ -148,7 +157,7 @@ function EasySentenceChallengeBicolano() {
                                     {lives > 0 && (
                                         <Button 
                                             variant="outline-secondary" 
-                                            onClick={questionIndex < questions.length - 1 ? nextQuestion : goBack} 
+                                            onClick={questionIndex < questions.length - 1 ? nextQuestion : finished} 
                                             className="mt-3"
                                         >
                                             {questionIndex < questions.length - 1 ? 'Next Question' : 'Finish Challenge'}

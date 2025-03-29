@@ -1,15 +1,61 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Container, Button, Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { SlStar } from "react-icons/sl";
 
 function PracticeCebuanoMainContent() {
     const navigate = useNavigate();
+    const location = useLocation();  
+    
+    // Track which challenges are completed
+    const [completedChallenges, setCompletedChallenges] = useState({
+        vocabularyChallenge: { easy: false, medium: false, hard: false },
+        pronunciationChallenge: { easy: false, medium: false, hard: false },
+        sentenceChallenge: { easy: false, medium: false, hard: false },
+        translationChallenge: { easy: false, medium: false, hard: false },
+        commonPhrasesChallenge: { easy: false, medium: false, hard: false },
+    });
 
-    // Navigation functions for each level of each challenge
+    // Load saved state from localStorage if it exists
+    useEffect(() => {
+        const savedState = JSON.parse(localStorage.getItem('completedChallenges'));
+        console.log('saves', savedState);
+        if (savedState) {
+            setCompletedChallenges(savedState);
+            localStorage.removeItem('completedChallenges');
+        }
+    }, []);
+
+
+    // Update completion status when the child component returns state via navigate
+    useEffect(() => {
+        if (location.state && location.state.isCompleted !== undefined) {
+            const { category, level, isCompleted } = location.state;
+
+            // Update the specific level for the correct category
+            if (category && level) {
+                setCompletedChallenges(prevState => {
+                    const updatedState = {
+                        ...prevState,
+                        [category]: {
+                            ...prevState[category],  // Retain the other levels (easy, medium, hard)
+                            [level]: isCompleted     // Update only the specific level
+                        }
+                    };
+                    localStorage.setItem('completedChallenges', JSON.stringify(updatedState)); // Save to localStorage
+                    return updatedState;
+                });
+            }
+        }
+    }, [location.state]);  // Trigger this effect when location.state changes
+
+    // Navigation to challenges, passing category and current completion status
     const gotoChallenge = (category, level) => {
-        navigate(`/cebuanoPractice/${category}/${level}`);
+        // console.log('Navigating to challenge with current state:', completedChallenges);
+        navigate(`/cebuanoPractice/${category}/${level}`, { 
+            state: { category, level, isCompleted: completedChallenges[category] } 
+        });
     };
 
     // Hover effect handlers with a smoother transition
@@ -75,7 +121,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <FaStar size={iconSize} />
+                                {completedChallenges.vocabularyChallenge.easy ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
@@ -94,7 +140,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <FaStar size={iconSize} />
+                                {completedChallenges.vocabularyChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
@@ -112,7 +158,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <FaStar size={iconSize} />
+                                {completedChallenges.vocabularyChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                     </Row>
@@ -139,7 +185,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.pronunciationChallenge.easy ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
@@ -157,7 +203,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.pronunciationChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
@@ -175,7 +221,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.pronunciationChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                     </Row>
@@ -202,7 +248,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.sentenceChallenge.easy ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
@@ -220,7 +266,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.sentenceChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
@@ -238,7 +284,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.sentenceChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                     </Row>
@@ -265,7 +311,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.translationChallenge.easy ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
@@ -283,7 +329,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.translationChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
@@ -301,7 +347,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.translationChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                     </Row>
@@ -328,7 +374,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.commonPhrasesChallenge.easy ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 6 }} className="d-flex justify-content-start">
@@ -346,7 +392,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.commonPhrasesChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                         <Col xs={{ span: 6, offset: 5 }} className="d-flex justify-content-start">
@@ -364,7 +410,7 @@ function PracticeCebuanoMainContent() {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
-                                <SlStar size={iconSize}/>
+                                {completedChallenges.commonPhrasesChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
                         </Col>
                     </Row>

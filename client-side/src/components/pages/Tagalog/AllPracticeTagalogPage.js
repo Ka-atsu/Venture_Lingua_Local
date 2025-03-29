@@ -4,6 +4,7 @@ import EasyPronunciationChallengeTagalog from '../../Dialects/Tagalog/Practice T
 import EasySentenceChallengeTagalog from '../../Dialects/Tagalog/Practice Tagalog/Sentence Challenges/EasySentenceChallengeTagalog';
 import EasyPhraseChallengeTagalog from '../../Dialects/Tagalog/Practice Tagalog/Phrase Challenges/EasyPhraseChallengeTagalog';
 import EasyTranslationChallengeTagalog from '../../Dialects/Tagalog/Practice Tagalog/Translation Challenges/EasyTranslationChallengeTagalog';
+import MediumSentenceChallengeTagalog from '../../Dialects/Tagalog/Practice Tagalog/Sentence Challenges/MediumSentenceChallengeTagalog';
 
 export function TagalogVocabularyEasyPage() {
     console.log("TagalogVocabularyEasyPage is rendering!");
@@ -46,6 +47,15 @@ export function TagalogTranslationEasyPage() {
     return (
         <> 
             <EasyTranslationChallengeTagalog />
+        </>
+    );
+}
+
+export function TagalogSentenceMediumPage() {
+    console.log("TagalogPronunciationEasyPage is rendering!");
+    return (
+        <> 
+            <MediumSentenceChallengeTagalog />
         </>
     );
 }
