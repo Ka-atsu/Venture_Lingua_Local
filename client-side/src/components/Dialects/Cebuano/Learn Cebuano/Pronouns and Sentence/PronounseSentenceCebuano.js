@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import CardSound from '../../../../Sounds/CardSound.mp3'
 import '../Cebuano.css';
 
 function PronounseSentenceCebuano() {
@@ -146,8 +147,10 @@ function PronounseSentenceCebuano() {
         const newFlippedIndices = new Set(flippedIndices);
         if (newFlippedIndices.has(index)) {
             newFlippedIndices.delete(index); // Unflip
+            new Audio(CardSound).play();
         } else {
             newFlippedIndices.add(index); // Flip
+            new Audio(CardSound).play();
         }
         setFlippedIndices(newFlippedIndices); // Update state
     };
