@@ -134,7 +134,7 @@ function EasySentenceChallengeIlocano() {
                             {/* Submit Answer Button */}
                             {selectedAnswer && !isSubmitted && (
                                 <div className="text-center mt-4">
-                                    <Button variant="outline-primary" onClick={submitAnswer}>
+                                    <Button variant="outline-dark" onClick={submitAnswer}>
                                         Submit Answer
                                     </Button>
                                 </div>

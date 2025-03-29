@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../../../zCSS/learn.css';
 import BayanihanImage from '../2 Images/Bayanihan.jpg';
-import OpoImage from '../2 Images/PoatOPO.jpg';
+import OpoImage from '../2 Images/Opo.png';
 import Harana from '../2 Images/Harana.jpg';
 import Fiesta from '../2 Images/Fiesta.jpg';
 

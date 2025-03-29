@@ -190,7 +190,7 @@ function EasyPronunciationChallengeCebuano() {
                             {/* Submit Answer Button: only appears when all syllables are selected */}
                             {!isSubmitted && selectedSyllables.length === questions[questionIndex].syllables.length && (
                                 <div className="text-center mt-4">
-                                    <Button variant="outline-primary" onClick={submitAnswer}>
+                                    <Button variant="outline-dark" onClick={submitAnswer}>
                                         Submit Answer
                                     </Button>
                                 </div>

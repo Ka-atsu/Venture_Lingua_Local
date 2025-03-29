@@ -161,7 +161,7 @@ function EasyTranslationChallengeIlocano() {
                             {/* Submit Answer Button */}
                             {selectedWords.length > 0 && !isSubmitted && (
                                 <div className="text-center mt-4">
-                                    <Button variant="outline-primary" onClick={submitAnswer}>
+                                    <Button variant="outline-dark" onClick={submitAnswer}>
                                         Submit Answer
                                     </Button>
                                 </div>
