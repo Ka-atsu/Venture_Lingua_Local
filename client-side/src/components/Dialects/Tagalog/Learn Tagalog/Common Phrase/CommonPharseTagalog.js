@@ -3,6 +3,19 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import '../Tagalog.css';
+import pangalan from './common phrase sounds/Anong pangalan mo.mp3';
+import gabi from './common phrase sounds/gabi.mp3';
+import ingat from './common phrase sounds/ingat.mp3';
+import Kamusta from './common phrase sounds/Kamusta.mp3';
+import magkita from './common phrase sounds/magkita.mp3';
+import mamaya from './common phrase sounds/mamaya.mp3';
+import Makilala from './common phrase sounds/Makilala.mp3';
+import paalam from './common phrase sounds/paalam.mp3';
+import Russel from './common phrase sounds/Russel.mp3';
+import Taga from './common phrase sounds/Taga saan.mp3';
+import umaga from './common phrase sounds/Umaga.mp3';
+import Mabuhay from './common phrase sounds/Mabuhay.mp3';
+import Manila from './common phrase sounds/Manila.mp3';
 
 function CommonPharseTagalog() {
     const navigate = useNavigate();
@@ -26,30 +39,29 @@ function CommonPharseTagalog() {
         {
             group: 'Greetings',
             phrases: [
-                { english: 'Hello (General greeting)', tagalog: 'Mabuhay', example: 'Mabuhay! Kamusta ka? (Hello! How are you?)' },
-                { english: 'How are you?', tagalog: 'Kamusta ka?', example: 'Kamusta ka? (How are you?)' },
-                { english: 'Good morning', tagalog: 'Magandang umaga', example: 'Magandang umaga! Kamusta ka? (Good morning! How are you?)' },
-                { english: 'Good evening', tagalog: 'Magandang gabi', example: 'Magandang gabi, paano ka? (Good evening, how are you?)' }
+                { english: 'Hello (General greeting)', tagalog: 'Mabuhay', example: 'Mabuhay! Kamusta ka? (Hello! How are you?)' , sound: Mabuhay },
+                { english: 'How are you?', tagalog: 'Kamusta ka?', example: 'Kamusta ka? (How are you?)' , sound: Kamusta },
+                { english: 'Good morning', tagalog: 'Magandang umaga', example: 'Magandang umaga! Kamusta ka? (Good morning! How are you?)' , sound: umaga },
+                { english: 'Good evening', tagalog: 'Magandang gabi', example: 'Magandang gabi! Kamusta ka? (Good evening! How are you?)' , sound: gabi }
             ]
         },
         {
             group: 'Introductions',
             phrases: [
-                { english: 'What’s your name?', tagalog: 'Anong pangalan mo?', example: 'Anong pangalan mo? (What’s your name?)' },
-                { english: 'My name is ...', tagalog: 'Ang pangalan ko ay ...', example: 'Ang pangalan ko ay Maria. (My name is Maria.)' },
-                { english: 'Where are you from?', tagalog: 'Tagasaan ka?', example: 'Tagasaan ka? (Where are you from?)' },
-                { english: 'I’m from ...', tagalog: 'Taga... ako', example: 'Taga Manila ako. (I’m from Manila.)' },
-                { english: 'Nice to meet you', tagalog: 'Ikinalulugod kong makilala ka', example: 'Ikinalulugod kong makilala ka. (Nice to meet you.)' }
+                { english: 'What’s your name?', tagalog: 'Anong pangalan mo?', example: 'Anong pangalan mo? (What’s your name?)' , sound: pangalan },
+                { english: 'My name is ...', tagalog: 'Ang pangalan ko ay ...', example: 'Ang pangalan ko ay Russel. (My name is Russel.)' , sound: Russel },
+                { english: 'Where are you from?', tagalog: 'Tagasaan ka?', example: 'Tagasaan ka? (Where are you from?)' , sound: Taga },
+                { english: 'I’m from ...', tagalog: 'Taga... ako', example: 'Taga Manila ako. (I’m from Manila.)' , sound: Manila },
+                { english: 'Nice to meet you', tagalog: 'Ikinalulugod ko na makilala ka', example: 'Ikinalulugod ko na makilala ka. (Nice to meet you.)' , sound: Makilala }
             ]
         },
         {
             group: 'Goodbyes',
             phrases: [
-                { english: 'Goodbye', tagalog: 'Paalam', example: 'Paalam, magkita tayo muli! (Goodbye, see you again!)' },
-                { english: 'See you later', tagalog: 'Magkita tayo mamaya', example: 'Magkita tayo mamaya! (See you later!)' },
-                { english: 'Take care', tagalog: 'Ingat ka', example: 'Ingat ka, ha? (Take care, okay?)' },
-                { english: 'Good night', tagalog: 'Magandang gabi', example: 'Magandang gabi, matulog na tayo! (Good night, let’s go to sleep!)' },
-                { english: 'See you tomorrow', tagalog: 'Magkita tayo bukas', example: 'Magkita tayo bukas! (See you tomorrow!)' }
+                { english: 'Goodbye', tagalog: 'Paalam', example: 'Paalam! magkita tayo muli! (Goodbye! see you again!)' , sound: paalam },
+                { english: 'See you later', tagalog: 'Magkita tayo mamaya', example: 'Magkita tayo, mamaya! (See you later!)' , sound: mamaya },
+                { english: 'Take care', tagalog: 'Ingat ka', example: 'Ingat ka, ha? (Take care, okay?)' , sound: ingat },
+                { english: 'See you tomorrow', tagalog: 'Magkita tayo bukas', example: 'Magkita tayo bukas! (See you tomorrow!)' , sound: magkita }
             ]
         }
     ];
@@ -118,9 +130,19 @@ function CommonPharseTagalog() {
                                     <h3 className="tagalog-word">{phrase.english}</h3>
                                     <p><strong>Tagalog:</strong> {phrase.tagalog}</p>
                                 </div>
-                                <div className="tagalog-flashcard-back flex-column">
+                                <div className="tagalog-flashcard-back flex-column" style={{ alignItems: 'center' }}>
                                     <h3 className="tagalog-word">{phrase.tagalog}</h3>
-                                    <p><strong>Example:</strong> {phrase.example}</p>
+                                    <p> {phrase.example}</p>
+                                    <button 
+                                        onClick={(e) => { 
+                                            e.stopPropagation(); // Prevent flipping the card when clicking the button
+                                            new Audio(phrase.sound).play();
+                                        }} 
+                                        className="btn btn-sm btn-light mt-2"
+                                    >
+                                        🔊
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
