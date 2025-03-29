@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import CardSound from '../../../../Sounds/CardSound.mp3'
 import '../Tagalog.css';
 import kamusta from './basic word sounds/Kamusta.mp3';
 import araw from './basic word sounds/Magandang araw.mp3';
@@ -101,8 +102,10 @@ function BasicWordsTagalog() {
         const newFlippedIndices = new Set(flippedIndices);
         if (newFlippedIndices.has(index)) {
             newFlippedIndices.delete(index); // Unflip the card
+            new Audio(CardSound).play();
         } else {
             newFlippedIndices.add(index); // Flip the card
+            new Audio(CardSound).play();
         }
         setFlippedIndices(newFlippedIndices); // Update flipped state
     };
