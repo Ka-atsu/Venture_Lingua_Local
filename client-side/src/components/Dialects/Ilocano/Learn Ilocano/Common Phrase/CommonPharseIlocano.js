@@ -27,30 +27,29 @@ function CommonPharseIlocano() {
         {
             group: 'Greetings',
             phrases: [
-                { english: 'Hello (General greeting)', ilocano: 'Mabuhay', example: 'Mabuhay! Kamusta ka? (Hello! How are you?)' },
-                { english: 'How are you?', ilocano: 'Kamusta ka?', example: 'Kamusta ka? (How are you?)' },
-                { english: 'Good morning', ilocano: 'Magandang aga', example: 'Magandang aga! Kamusta ka? (Good morning! How are you?)' },
-                { english: 'Good evening', ilocano: 'Magandang gab-i', example: 'Magandang gab-i, paano ka? (Good evening, how are you?)' }
+                { english: 'Good morning', ilocano: 'Naimbag a bigat', example: 'Naimbag a bigat, kasano ka? (Good evening, how are you?)' },
+                { english: 'Good afternoon', ilocano: '	Naimbag a malem', example: 'Naimbag a malem, kasano ka? (Good evening, how are you?)' },
+                { english: 'Good evening', ilocano: 'Naimbag a rabii', example: 'Naimbag a rabii, kasano ka? (Good evening, how are you?)' }
             ]
         },
         {
-            group: 'Introductions',
+            group: 'Asking',
             phrases: [
-                { english: 'What’s your name?', ilocano: 'Anong pangalan mo?', example: 'Anong pangalan mo? (What’s your name?)' },
-                { english: 'My name is ...', ilocano: 'Ang pangalan ko ay ...', example: 'Ang pangalan ko ay Maria. (My name is Maria.)' },
-                { english: 'Where are you from?', ilocano: 'Tagasaan ka?', example: 'Tagasaan ka? (Where are you from?)' },
-                { english: 'I’m from ...', ilocano: 'Taga... ako', example: 'Taga Manila ako. (I’m from Manila.)' },
-                { english: 'Nice to meet you', ilocano: 'Ikinalulugod kong makilala ka', example: 'Ikinalulugod kong makilala ka. (Nice to meet you.)' }
+                { english: 'Are you going?', ilocano: 'Mapanka kadi?', example: 'Mapanka kadi iti eskuela? (Are you going to school?)' },
+                { english: 'Are you hungry?', ilocano: 'Mabisinka kadi?', example: "Mabisinka kadi ngem awan ti makan? (Are you hungry but there's no food?)" },
+                { english: 'Are you mad?', ilocano: 'Nauyongka kadi?', example: 'Nauyongka kadi ta naipagan-anayka? (Are you mad because you were ignored?)' },
+                { english: 'Are you serious?', ilocano: 'Seriosoka kadi?', example: 'Seriosoka kadi nga agtrabaho iti dayta? (Are you serious about working on that?)' },
+                { english: 'Are you sleeping?', ilocano: 'Matmaturogka kadi?', example: 'Matmaturogka kadi ita? (Are you sleeping right now?)' }
             ]
         },
         {
-            group: 'Goodbyes',
+            group: 'Asking for Permission',
             phrases: [
-                { english: 'Goodbye', ilocano: 'Paalam', example: 'Paalam, magkita tayo muli! (Goodbye, see you again!)' },
-                { english: 'See you later', ilocano: 'Magkita tayo mamaya', example: 'Magkita tayo mamaya! (See you later!)' },
-                { english: 'Take care', ilocano: 'Ingat ka', example: 'Ingat ka, ha? (Take care, okay?)' },
-                { english: 'Good night', ilocano: 'Magandang gabi', example: 'Magandang gabi, matulog na tayo! (Good night, let’s go to sleep!)' },
-                { english: 'See you tomorrow', ilocano: 'Magkita tayo bukas', example: 'Magkita tayo bukas! (See you tomorrow!)' }
+                { english: 'May I come in?', ilocano: 'Mabalin kadi a sumrekak?', example: 'Mabalin kadi a sumrekak iti balayyo? (May I come in your house?)' },
+                { english: 'May I help you?', ilocano: 'Mabalin kadi a tulonganka?', example: 'Mabalin kadi a tulonganka iti trabaho? (May I help you with the work?)' },
+                { english: 'May I join you?', ilocano: 'Mabalin kadi a makikaduaak kenka?', example: 'Mabalin kadi a makikaduaak iti kape? (May I join you for coffee?)' },
+                { english: 'May I speak?', ilocano: 'Mabalin kadi nga agsaoak?', example: 'Mabalin kadi nga agsaoak ita? (May I speak right now?)' },
+                { english: 'May I eat this?', ilocano: 'Mabalin kadi a kanek daytoy?', example: 'Mabalin kadi a kanek daytoy nga adobo? (May I eat this adobo?)' }
             ]
         }
     ];

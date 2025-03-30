@@ -19,11 +19,11 @@ function PracticeBicolanoMainContent() {
 
     // Load saved state from localStorage if it exists
     useEffect(() => {
-        const savedState = JSON.parse(localStorage.getItem('completedChallenges'));
+        const savedState = JSON.parse(localStorage.getItem('completedChallengesBikol'));
         console.log('saves', savedState);
         if (savedState) {
             setCompletedChallenges(savedState);
-            localStorage.removeItem('completedChallenges');
+            // localStorage.removeItem('completedChallenges');
         }
     }, []);
 
@@ -42,7 +42,7 @@ function PracticeBicolanoMainContent() {
                             [level]: isCompleted     // Update only the specific level
                         }
                     };
-                    localStorage.setItem('completedChallenges', JSON.stringify(updatedState)); // Save to localStorage
+                    localStorage.setItem('completedChallengesBikol', JSON.stringify(updatedState)); // Save to localStorage
                     return updatedState;
                 });
             }

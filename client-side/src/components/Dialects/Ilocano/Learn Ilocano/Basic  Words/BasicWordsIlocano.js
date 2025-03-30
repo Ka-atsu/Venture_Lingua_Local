@@ -25,49 +25,49 @@ function BasicWordsIlocano() {
 
     // Grouping the words
     const wordGroups = [
-        // Group 1: Basic Greetings
+        // Group 1: Greetings
         {
             group: 'Greetings',
             words: [
-                { ilocano: 'Kamusta', english: 'Hello' },
-                { ilocano: 'Magandang aga', english: 'Good Morning' },
-                { ilocano: 'Magandang hapon', english: 'Good Afternoon' },
-                { ilocano: 'Magandang gab-i', english: 'Good Evening' },
-                { ilocano: 'Magandang gab-i', english: 'Good Night' },
-                { ilocano: 'Magandang aldaw', english: 'Good day' }
+                { ilocano: 'Kablaaw', english: 'Hello' },
+                { ilocano: 'Naimbag nga bigat', english: 'Good Morning' },
+                { ilocano: 'Naimbag nga malem', english: 'Good Afternoon' },
+                { ilocano: 'Naimbag nga rabi-i', english: 'Good Evening' },
             ]
         },
-        // Group 2: Essential Nouns
+        // Group 2: Basic Food
         {
-            group: 'Essential Nouns',
+            group: 'Basic Food',
             words: [
-                { ilocano: 'Pamilya', english: 'Family' },
-                { ilocano: 'Balay', english: 'House' },
-                { ilocano: 'Kaibahan', english: 'Friend' },
-                { ilocano: 'Obra', english: 'Work' },
-                { ilocano: 'Kotse', english: 'Car' },
-                { ilocano: 'Iro', english: 'Dog' }
+                { ilocano: 'Makan', english: 'Food' },
+                { ilocano: 'Danum', english: 'Water' },
+                { ilocano: 'Bagas', english: 'Rice' },
+                { ilocano: 'Karne', english: 'Meat' },
+                { ilocano: 'Isda', english: 'Fish' }
             ]
         },
-        // Group 3: Numbers
+        // Group 3: Easy words
         {
-            group: 'Numbers 1 to 5',
+            group: 'Easy words',
             words: [
-                { ilocano: 'Isa', english: 'One' },
-                { ilocano: 'Dua', english: 'Two' },
-                { ilocano: 'Tulo', english: 'Three' },
-                { ilocano: 'Apat', english: 'Four' },
-                { ilocano: 'Lima', english: 'Five' },
+                { ilocano: 'Baro', english: 'New' },
+                { ilocano: 'Nataengan', english: 'Old' },
+                { ilocano: 'Ayat', english: 'Love' },
+                { ilocano: 'Kasuron', english: 'Hate' },
+                { ilocano: 'Isuna', english: 'Yes' },
+                { ilocano: 'Saan', english: 'No' }
             ]
         },
+        // Group 4: Easy words
         {
-            group: 'Numbers 6 to 10',
+            group: 'Easy words',
             words: [
-                { ilocano: 'Anom', english: 'Six' },
-                { ilocano: 'Pito', english: 'Seven' },
-                { ilocano: 'Walo', english: 'Eight' },
-                { ilocano: 'Siyam', english: 'Nine' },
-                { ilocano: 'Sampo', english: 'Ten' }
+                { ilocano: 'nataengan a lalaki', english: 'Man' },
+                { ilocano: 'Babai', english: 'Woman' },
+                { ilocano: 'Kusto', english: 'Right' },
+                { ilocano: 'Kamali', english: 'Wrong' },
+                { ilocano: 'Bassit', english: 'Small' },
+                { ilocano: 'Dakkel', english: 'Big' }
             ]
         }
     ];

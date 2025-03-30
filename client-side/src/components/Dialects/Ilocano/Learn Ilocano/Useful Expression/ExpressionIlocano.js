@@ -20,35 +20,34 @@ function ExpressionIlocano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Sample useful expressions with general information
   const expressions = [
     {
       english: "Thank you",
-      ilocano: "Salamat",
-      example: "Salamat sa tulong mo! (Thank you for your help!)",
-      explanation: "This is used to show gratitude when someone helps you.",
-      usageTips: "You can use 'Salamat' in both formal and informal settings. If you want to be more polite or respectful, use 'Salamat po'.",
-      commonMistakes: "A common mistake is forgetting to say 'po' when speaking to elders or in formal settings.",
-      synonyms: "Other words to express thanks include 'Maraming Salamat' (Thank you very much) or 'Salamat po' (Formal version)."
+      ilocano: "Agyaman",
+      example: "Agyaman kami ti tulong yo! (Thank you for your help!)",
+      explanation: "This phrase is used to express gratitude to someone who has helped you or done something nice for you.",
+      usageTips: "You can use 'Agyamanak' in both formal and informal settings. To sound more respectful, you can say 'Agyamanak po' when speaking to elders or people you respect.",
+      commonMistakes: "A common mistake is forgetting to add 'po' when speaking formally. 'Agyamanak po' is a polite and respectful way to say 'thank you.'",
+      synonyms: "'Agyamanak unay' (Thank you very much) and 'Salamat' (another common term for thanks) are also used in Ilocano."
     },
     {
       english: "Sorry",
-      ilocano: "Pasensya na",
-      example: "Pasensya na, hindi ko sinasadya. (Sorry, I didn’t mean to.)",
-      explanation: "This is used when apologizing for a minor mistake.",
-      usageTips: "In formal situations, it’s better to say 'Pasensya po' to show respect. 'Paumanhin' is also commonly used in more formal contexts.",
-      commonMistakes: "Many learners confuse 'Pasensya na' with 'Pasensya po,' which are both used in different contexts. Remember to use 'po' when talking to elders or in formal settings.",
-      synonyms: "You can also use 'Paumanhin' for apologies, especially when speaking formally."
+      ilocano: "Pasensya",
+      example: "Pasensya, diak kayat ti ag-offend. (Sorry, I didn’t mean to offend.)",
+      explanation: "This phrase is used when apologizing for a minor mistake or when you’ve unintentionally caused inconvenience or harm.",
+      usageTips: "'Pasensya' can be used informally, but in formal settings or when talking to elders, you should say 'Pasensya po'.",
+      commonMistakes: "One mistake is mixing up 'Pasensya' with 'Paumanhin.' 'Paumanhin' is typically used in more serious or formal situations.",
+      synonyms: "'Paumanhin' is another word for 'sorry,' used in more formal or serious contexts."
     },
     {
       english: "Excuse me",
-      ilocano: "Mawalang-galang na po / Paumanhin",
-      example: "Mawalang-galang na po, maaari bang magtanong? (Excuse me, may I ask a question?)",
-      explanation: "This is used when politely catching someone's attention or asking for permission to pass by. 'Paumanhin' is more formal, while 'Mawalang-galang na' is a more apologetic phrase.",
-      usageTips: "'Paumanhin' is respectful and formal, while 'Mawalang-galang na' is used when you want to show extra respect, especially when interrupting or asking a favor.",
-      commonMistakes: "A common mistake is using 'Excuse me' too casually in formal settings. Always say 'Mawalang-galang na' or 'Paumanhin po' when addressing elders or superiors.",
-      synonyms: "'Pakiusap' (please) can also be used in a polite request, but it is a little different from a mere 'Excuse me.'"
-    }
+      ilocano: "Dumalanak man",
+      example: "Dispensarennak, mabalin kadi nga agsaludsodak? (Excuse me, may I ask a question?)",
+      explanation: "'Dumalanak man' is used when you want to politely get someone’s attention or ask for permission to interrupt. It's also used when you need to pass through a crowd or ask someone to move aside.",
+      usageTips: "'Dumalanak man' is more commonly used in informal settings. For formal situations, use 'Pakawanen' or 'Pakawanen po' when speaking to elders or superiors to show more respect.",
+      commonMistakes: "A common mistake is using 'Dumalanak man' too casually in formal settings. Always use 'Pakawanen' or 'Pakawanen po' when addressing elders or superiors.",
+      synonyms: "'Pakawanen' (excuse me) is a more formal version and should be used in polite requests or formal situations. 'Pakiusap' (please) is another polite word but is often used for requests rather than interrupting."
+    }    
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

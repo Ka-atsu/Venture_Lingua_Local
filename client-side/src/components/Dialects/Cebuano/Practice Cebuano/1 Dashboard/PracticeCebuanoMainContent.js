@@ -19,11 +19,11 @@ function PracticeCebuanoMainContent() {
 
     // Load saved state from localStorage if it exists
     useEffect(() => {
-        const savedState = JSON.parse(localStorage.getItem('completedChallenges'));
+        const savedState = JSON.parse(localStorage.getItem('completedChallengesCebuano'));
         console.log('saves', savedState);
         if (savedState) {
             setCompletedChallenges(savedState);
-            localStorage.removeItem('completedChallenges');
+            // localStorage.removeItem('completedChallengesCebuano');
         }
     }, []);
 
@@ -43,7 +43,7 @@ function PracticeCebuanoMainContent() {
                             [level]: isCompleted     // Update only the specific level
                         }
                     };
-                    localStorage.setItem('completedChallenges', JSON.stringify(updatedState)); // Save to localStorage
+                    localStorage.setItem('completedChallengesCebuano', JSON.stringify(updatedState)); // Save to localStorage
                     return updatedState;
                 });
             }

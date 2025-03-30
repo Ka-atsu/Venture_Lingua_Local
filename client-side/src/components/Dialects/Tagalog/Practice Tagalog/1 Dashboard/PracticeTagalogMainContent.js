@@ -19,11 +19,11 @@ function PracticeTagalogMainContent() {
 
     // Load saved state from localStorage if it exists
     useEffect(() => {
-        const savedState = JSON.parse(localStorage.getItem('completedChallenges'));
+        const savedState = JSON.parse(localStorage.getItem('completedChallengesTagalog'));
         console.log('saves', savedState);
         if (savedState) {
             setCompletedChallenges(savedState);
-            localStorage.removeItem('completedChallenges');
+            // localStorage.removeItem('completedChallengesTagalog');
         }
     }, []);
 
@@ -57,7 +57,7 @@ function PracticeTagalogMainContent() {
                             [level]: isCompleted     // Update only the specific level
                         }
                     };
-                    localStorage.setItem('completedChallenges', JSON.stringify(updatedState)); // Save to localStorage
+                    localStorage.setItem('completedChallengesTagalog', JSON.stringify(updatedState)); // Save to localStorage
                     return updatedState;
                 });
             }

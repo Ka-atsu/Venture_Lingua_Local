@@ -22,120 +22,102 @@ function PronounseSentenceIlocano() {
         e.currentTarget.style.transform = 'translateY(0)';
     };
 
-    // Grouped phrases with pronunciation, example sentences, and explanation
     const pronounceSentenceGroups = [
-        // Group 1: Greeting phrases
         {
-            group: 'Greetings',
+            group: 'Adjectives',
             phrases: [
                 {
-                    english: 'Hello',
-                    ilocano: 'Kamusta',
-                    pronunciation: 'Ka-mus-ta',
-                    sentence: 'Kamusta ka? (Hello! How are you?)',
-                    explanation: 'This is a greeting you use when meeting someone or when checking in with someone to see how they are doing.',
+                    english: 'Small',
+                    ilocano: 'Bassit',
+                    pronunciation: 'Bas-sit',
+                    sentence: 'Bassit laeng ti balayda. (Their house is small.)',
+                    explanation: 'This word is used to describe something that is small in size or quantity.',
                 },
                 {
-                    english: 'Good morning',
-                    ilocano: 'Magandang umaga',
-                    pronunciation: 'Mah-gan-dang oo-mah-ga',
-                    sentence: 'Magandang umaga! Kamusta ka at ang iyong pamilya? (Good morning! How are you and your family?)',
-                    explanation: 'This is used to greet someone in the morning and inquire about their well-being.',
+                    english: 'Big',
+                    ilocano: 'Dakkel',
+                    pronunciation: 'Dak-kel',
+                    sentence: 'Dakkel ti trabaho nga aramidenko. (I have a big task to do.)',
+                    explanation: 'This word is used to describe something that is large or significant in size or importance.',
                 },
                 {
-                    english: 'Good evening',
-                    ilocano: 'Magandang gabi',
-                    pronunciation: 'Mah-gan-dang gah-bee',
-                    sentence: 'Magandang gabi, paano ka? Matagal na kitang hindi nakita! (Good evening, how are you? It’s been a while since I last saw you!)',
-                    explanation: 'This is a greeting used in the evening to ask how someone is doing after the day has passed.',
+                    english: 'Hot',
+                    ilocano: 'Napudot',
+                    pronunciation: 'Na-pu-dot',
+                    sentence: 'Napudot ti init iti rabii. (The heat is intense in the afternoon.)',
+                    explanation: 'This word is used to describe something that is hot in temperature or heat.',
+                },
+                {
+                    english: 'Cold',
+                    ilocano: 'Nalam-ek',
+                    pronunciation: 'Na-lam-ek',
+                    sentence: 'Nalam-ek ti panahon ita. (The weather is cold today.)',
+                    explanation: 'This word is used to describe something that is cold in temperature or atmosphere.',
                 }
             ]
-        },
+        },        
     
-        // Group 2: Name and origin
         {
-            group: 'Introductions',
+            group: 'Descriptive Adjectives',
             phrases: [
                 {
-                    english: 'What’s your name?',
-                    ilocano: 'Anong pangalan mo?',
-                    pronunciation: 'A-nong pahng-ah-lahn mo?',
-                    sentence: 'Anong pangalan mo? Ako si Maria, at ikaw? (What’s your name? I’m Maria, and you?)',
-                    explanation: 'This phrase is used when meeting someone for the first time and asking for their name.',
+                    english: 'Delicious',
+                    ilocano: 'Naimas',
+                    pronunciation: 'Nai-mas',
+                    sentence: 'Naimas ti makan! (The food is delicious!)',
+                    explanation: 'This word is used to describe something that tastes very good or is enjoyable to eat.',
                 },
                 {
-                    english: 'My name is ...',
-                    ilocano: 'Ang pangalan ko ay ...',
-                    pronunciation: 'Ang pahng-ah-lahn ko ay ...',
-                    sentence: 'Ang pangalan ko ay Maria, at ako ay taga Maynila. (My name is Maria, and I’m from Manila.)',
-                    explanation: 'This is how you introduce yourself and tell others your name and where you\'re from.',
+                    english: 'Clean',
+                    ilocano: 'Nadalos',
+                    pronunciation: 'Na-da-los',
+                    sentence: 'Nadalos ti kuarto ko. (My room is clean.)',
+                    explanation: 'This word is used to describe something that is free of dirt or impurities, and is neat and organized.',
                 },
                 {
-                    english: 'Where are you from?',
-                    ilocano: 'Tagasaan ka?',
-                    pronunciation: 'Tah-gah-sah-ahn kah?',
-                    sentence: 'Tagasaan ka? Ako ay taga Bicol, ikaw? (Where are you from? I’m from Bicol, how about you?)',
-                    explanation: 'This question is used when you want to know where someone is from.',
+                    english: 'Dirty',
+                    ilocano: 'Narugit',
+                    pronunciation: 'Na-ru-git',
+                    sentence: 'Narugit ti sapatos ko. (My shoes are dirty.)',
+                    explanation: 'This word is used to describe something that is covered with dirt or has not been cleaned.',
                 },
                 {
-                    english: 'I’m from ...',
-                    ilocano: 'Taga... ako',
-                    pronunciation: 'Tah-gah... ah-ko',
-                    sentence: 'Taga Manila ako. Nais kong matutunan ang Tagalog nang mas maayos. (I’m from Manila. I want to learn Tagalog more fluently.)',
-                    explanation: 'This is used when you are telling someone where you are from.',
-                },
-                {
-                    english: 'Nice to meet you',
-                    ilocano: 'Ikinalulugod kong makilala ka',
-                    pronunciation: 'I-kee-nah-loo-loo-god kong mah-kee-lah-lah kah',
-                    sentence: 'Ikinalulugod kong makilala ka. Sana ay maging magkaibigan tayo. (Nice to meet you, I hope we can become friends.)',
-                    explanation: 'This is a polite way of expressing happiness when meeting someone for the first time.',
+                    english: 'Beautiful',
+                    ilocano: 'Naimbag',
+                    pronunciation: 'Naim-bag',
+                    sentence: 'Naimbag ti lugar ditoy. (The place is beautiful here.)',
+                    explanation: 'This word is used to describe something that is visually appealing or aesthetically pleasing.',
                 }
             ]
-        },
+        },        
     
-        // Group 3: Goodbye phrases
         {
-            group: 'Goodbyes',
+            group: 'Common Nouns',
             phrases: [
                 {
-                    english: 'Goodbye',
-                    ilocano: 'Paalam',
-                    pronunciation: 'Pah-ah-lahm',
-                    sentence: 'Paalam, magkita tayo muli sa susunod na linggo. (Goodbye, see you again next week.)',
-                    explanation: 'This is the standard way to say goodbye when you expect to see someone again soon.',
+                    english: 'House',
+                    ilocano: 'Balay',
+                    pronunciation: 'Ba-lay',
+                    sentence: 'Balay ko ket adda iti bungbung. (My house is on the hill.)',
+                    explanation: 'This word refers to a building or structure where people live, usually a family home.',
                 },
                 {
-                    english: 'See you later',
-                    ilocano: 'Magkita tayo mamaya',
-                    pronunciation: 'Mag-kee-tah tah-yo mah-mah-yah',
-                    sentence: 'Magkita tayo mamaya pagkatapos ng trabaho. (See you later after work.)',
-                    explanation: 'This is used when you are planning to meet someone later in the day after a specific activity.',
+                    english: 'Seat',
+                    ilocano: 'Tugaw',
+                    pronunciation: 'Tu-gaw',
+                    sentence: 'Adda tugaw iti lamesa. (There is a seat at the table.)',
+                    explanation: 'This word refers to a place where one can sit, like a chair or a bench.',
                 },
                 {
-                    english: 'Take care',
-                    ilocano: 'Ingat ka',
-                    pronunciation: 'Eeng-aht kah',
-                    sentence: 'Ingat ka sa daan, mag-ingat sa mga sasakyan. (Take care on the road, be careful with the vehicles.)',
-                    explanation: 'This is used when you want to show concern for someone\'s safety as they leave.',
-                },
-                {
-                    english: 'Good night',
-                    ilocano: 'Magandang gabi',
-                    pronunciation: 'Mah-gan-dang gah-bee',
-                    sentence: 'Magandang gabi, matulog ka ng mahimbing at magpahinga. (Good night, sleep well and rest.)',
-                    explanation: 'This is used when saying goodbye before someone goes to bed.',
-                },
-                {
-                    english: 'See you tomorrow',
-                    ilocano: 'Magkita tayo bukas',
-                    pronunciation: 'Mag-kee-tah tah-yo boo-kahs',
-                    sentence: 'Magkita tayo bukas sa mga 10:00 AM. (See you tomorrow at around 10:00 AM.)',
-                    explanation: 'This phrase is used when confirming plans to meet someone the following day.',
+                    english: 'Room',
+                    ilocano: 'Kwarto',
+                    pronunciation: 'Kwar-toh',
+                    sentence: 'Adda kwarto nga awan ti gamit. (There is a room with no furniture.)',
+                    explanation: 'This word refers to a separate space within a house or building, typically used for a specific purpose.',
                 }
             ]
-        }
-    ];        
+        }        
+    ];    
 
     // Setting the current group index
     const [currentSet, setCurrentSet] = useState(0);

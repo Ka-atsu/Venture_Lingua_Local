@@ -20,53 +20,44 @@ function VerbsTensesIlocano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Grouping the verb conjugations similar to your phrases grouping.
-  // Each group represents one verb (with its base form in the title)
-  // and contains an array of tense cards (Past, Present, Future).
   const verbTenseGroups = [
     {
-      group: 'To eat (kain)',
+      group: 'To eat (kanen)',
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'kumain',
-          example: 'Kumain siya ng mangga kahapon.',
-          explanation: 'Indicates a completed action in the past.'
+          conjugated: 'nakannak',
+          example: 'Nakannak ni siya ti mangga idi kalman. (He/she ate mango yesterday.)'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'kumakain',
-          example: 'Kumakain siya ng almusal ngayon.',
-          explanation: 'Describes an action that is currently in progress.'
+          conjugated: 'agnanannak',
+          example: 'Agnanannak ni siya ti almusal ita. (He/she is eating breakfast now.)'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'kakain',
-          example: 'Kakain siya ng hapunan mamaya.',
-          explanation: 'Indicates that the action will happen in the future.'
+          conjugated: 'mangan',
+          example: 'Mangan ni siya ti hapunan inton rabii. (He/she will eat dinner tonight.)'
         }
       ]
     },
     {
-      group: 'To go (punta)',
+      group: 'To go (mapan)',
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'pumunta',
-          example: 'Pumunta sila sa simbahan noong nakaraang linggo.',
-          explanation: 'Describes a movement that has been completed.'
+          conjugated: 'napan',
+          example: 'Napan da iti simbahan idi naglabas a lawas. (They went to the church last week.)'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'pumupunta',
-          example: 'Pumupunta sila sa trabaho sa kasalukuyan.',
-          explanation: 'Indicates an action that is happening at the moment.'
+          conjugated: 'agpapan',
+          example: 'Agpapan da iti trabaho ita. (They are going to work now.)'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'pupunta',
-          example: 'Pupunta sila sa paaralan bukas.',
-          explanation: 'Indicates an upcoming movement or action.'
+          conjugated: 'mapan',
+          example: 'Mapan da iti eskuela inton bigat. (They will go to school tomorrow.)'
         }
       ]
     },
@@ -75,24 +66,21 @@ function VerbsTensesIlocano() {
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'nagbasa',
-          example: 'Nagbasa siya ng libro kagabi.',
-          explanation: 'Shows that the action of reading was completed in the past.'
+          conjugated: 'nabasak',
+          example: 'Nabasak ti libro idi kalman. (He/she read a book last night.)'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'nagbabasa',
-          example: 'Nagbabasa siya ng pahayagan tuwing umaga.',
-          explanation: 'Describes an action that is currently taking place.'
+          conjugated: 'nagbabasaak',
+          example: 'Nagbabasaak ti libro ita. (I am reading a book now.)'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'babasa',
-          example: 'Babasa siya ng bagong nobela sa susunod na linggo.',
-          explanation: 'Indicates that the action is planned for the future.'
+          conjugated: 'babasakak',
+          example: 'Babasakak ti baro nga nobela inton bigat. (I will read a new novel tomorrow.)'
         }
       ]
-    }
+    }    
     // Add more groups (verbs) as needed...
   ];
 
@@ -161,7 +149,6 @@ function VerbsTensesIlocano() {
                 <div className="flashcard-back flex-column">
                   <h3 className="word">{item.conjugated}</h3>
                   <p className="text-start"><strong>Example:</strong> {item.example}</p>
-                  <p className="text-start"><strong>Explanation:</strong> {item.explanation}</p>
                 </div>
               </div>
             </div>
