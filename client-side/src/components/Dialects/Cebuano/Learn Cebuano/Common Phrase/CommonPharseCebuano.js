@@ -27,33 +27,33 @@ function CommonPharseCebuano() {
         {
             group: 'Greetings',
             phrases: [
-                { english: 'Hello (General greeting)', cebuano: 'Mabuhay', example: 'Mabuhay! Kamusta ka? (Hello! How are you?)' },
+                { english: 'Hello (General greeting)', cebuano: 'Hello (General greeting)', example: 'Hello! Kamusta ka? (Hello! How are you?)' },
                 { english: 'How are you?', cebuano: 'Kamusta ka?', example: 'Kamusta ka? (How are you?)' },
-                { english: 'Good morning', cebuano: 'Magandang aga', example: 'Magandang aga! Kamusta ka? (Good morning! How are you?)' },
-                { english: 'Good evening', cebuano: 'Magandang gab-i', example: 'Magandang gab-i, paano ka? (Good evening, how are you?)' }
+                { english: 'Good morning', cebuano: 'Maayong buntag', example: 'Maayong buntag! Kamusta ka? (Good morning! How are you?)' },
+                { english: 'Good evening', cebuano: 'Maayong gabii', example: 'Maayong gabii, kumusta ka? (Good evening, how are you?)' }
             ]
         },
         {
             group: 'Introductions',
             phrases: [
-                { english: 'What’s your name?', cebuano: 'Anong pangalan mo?', example: 'Anong pangalan mo? (What’s your name?)' },
-                { english: 'My name is ...', cebuano: 'Ang pangalan ko ay ...', example: 'Ang pangalan ko ay Maria. (My name is Maria.)' },
-                { english: 'Where are you from?', cebuano: 'Tagasaan ka?', example: 'Tagasaan ka? (Where are you from?)' },
-                { english: 'I’m from ...', cebuano: 'Taga... ako', example: 'Taga Manila ako. (I’m from Manila.)' },
-                { english: 'Nice to meet you', cebuano: 'Ikinalulugod kong makilala ka', example: 'Ikinalulugod kong makilala ka. (Nice to meet you.)' }
+                { english: 'What’s your name?', cebuano: 'Unsa imong ngalan?', example: 'Unsa imong ngalan? (What’s your name?)' },
+                { english: 'My name is ...', cebuano: 'Ang akong ngalan kay ...', example: 'Ang akong ngalan kay Maria. (My name is Maria.)' },
+                { english: 'Where are you from?', cebuano: 'Asa ka gikan?', example: 'Asa ka gikan? (Where are you from?)' },
+                { english: 'I’m from ...', cebuano: 'Gikan ko sa ...', example: 'Gikan ko sa Manila. (I’m from Manila.)' },
+                { english: 'Nice to meet you', cebuano: 'Malipayong pagkakita nimo', example: 'Malipayong pagkakita nimo, naglipay ko sa pagkahimamat nimo. (Nice to meet you, I’m happy to meet you.)' }
             ]
         },
         {
             group: 'Goodbyes',
             phrases: [
-                { english: 'Goodbye', cebuano: 'Paalam', example: 'Paalam, magkita tayo muli! (Goodbye, see you again!)' },
-                { english: 'See you later', cebuano: 'Magkita tayo mamaya', example: 'Magkita tayo mamaya! (See you later!)' },
-                { english: 'Take care', cebuano: 'Ingat ka', example: 'Ingat ka, ha? (Take care, okay?)' },
-                { english: 'Good night', cebuano: 'Magandang gabi', example: 'Magandang gabi, matulog na tayo! (Good night, let’s go to sleep!)' },
-                { english: 'See you tomorrow', cebuano: 'Magkita tayo bukas', example: 'Magkita tayo bukas! (See you tomorrow!)' }
+                { english: 'Goodbye', cebuano: 'Paalam', example: 'Paalam, magkita ta puhon! (Goodbye, see you again soon!)' },
+                { english: 'See you later', cebuano: 'Magkita ta unya', example: 'Magkita ta unya! (See you later!)' },
+                { english: 'Take care', cebuano: 'Amping', example: 'Amping, ha? (Take care, okay?)' },
+                { english: 'Good night', cebuano: 'Maayong gabii', example: 'Maayong gabii, magtulog na ta! (Good night, let’s go to sleep!)' },
+                { english: 'See you tomorrow', cebuano: 'Magkita ta ugma', example: 'Magkita ta ugma! (See you tomorrow!)' }
             ]
         }
-    ];
+    ];    
 
     const [currentSet, setCurrentSet] = useState(0);
     const [flippedIndices, setFlippedIndices] = useState(new Set());

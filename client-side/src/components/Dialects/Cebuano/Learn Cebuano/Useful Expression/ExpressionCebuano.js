@@ -20,36 +20,35 @@ function ExpressionCebuano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Sample useful expressions with general information
   const expressions = [
     {
       english: "Thank you",
       cebuano: "Salamat",
-      example: "Salamat sa tulong mo! (Thank you for your help!)",
+      example: "Salamat sa imong tabang! (Thank you for your help!)",
       explanation: "This is used to show gratitude when someone helps you.",
       usageTips: "You can use 'Salamat' in both formal and informal settings. If you want to be more polite or respectful, use 'Salamat po'.",
       commonMistakes: "A common mistake is forgetting to say 'po' when speaking to elders or in formal settings.",
-      synonyms: "Other words to express thanks include 'Maraming Salamat' (Thank you very much) or 'Salamat po' (Formal version)."
+      synonyms: "Other words to express thanks include 'Daghang Salamat' (Thank you very much) or 'Salamat kaayo' (Thanks a lot)."
     },
     {
       english: "Sorry",
-      cebuano: "Pasensya na",
-      example: "Pasensya na, hindi ko sinasadya. (Sorry, I didn’t mean to.)",
+      cebuano: "Pasayloa ko",
+      example: "Pasayloa ko, wala nako tuyo-a. (Sorry, I didn’t mean to.)",
       explanation: "This is used when apologizing for a minor mistake.",
-      usageTips: "In formal situations, it’s better to say 'Pasensya po' to show respect. 'Paumanhin' is also commonly used in more formal contexts.",
-      commonMistakes: "Many learners confuse 'Pasensya na' with 'Pasensya po,' which are both used in different contexts. Remember to use 'po' when talking to elders or in formal settings.",
-      synonyms: "You can also use 'Paumanhin' for apologies, especially when speaking formally."
+      usageTips: "In formal situations, it’s better to say 'Pasayloa ko, palihug' to show respect. 'Pasensya' is also commonly used in more casual contexts.",
+      commonMistakes: "A common mistake is using 'Pasayloa ko' too casually. In formal settings, it’s important to use more polite language like 'Pasayloa ko, palihug'.",
+      synonyms: "'Pasensya' (Sorry) can also be used as an informal apology."
     },
     {
-      english: "Excuse me",
-      cebuano: "Mawalang-galang na po / Paumanhin",
-      example: "Mawalang-galang na po, maaari bang magtanong? (Excuse me, may I ask a question?)",
-      explanation: "This is used when politely catching someone's attention or asking for permission to pass by. 'Paumanhin' is more formal, while 'Mawalang-galang na' is a more apologetic phrase.",
-      usageTips: "'Paumanhin' is respectful and formal, while 'Mawalang-galang na' is used when you want to show extra respect, especially when interrupting or asking a favor.",
-      commonMistakes: "A common mistake is using 'Excuse me' too casually in formal settings. Always say 'Mawalang-galang na' or 'Paumanhin po' when addressing elders or superiors.",
-      synonyms: "'Pakiusap' (please) can also be used in a polite request, but it is a little different from a mere 'Excuse me.'"
+      english: "Please",
+      cebuano: "Palihug",
+      example: "Palihug, pwede ba magpangutana? (Please, may I ask a question?)",
+      explanation: "This is used when making a polite request or asking for permission.",
+      usageTips: "In formal settings, use 'Palihug' with 'po' to show extra politeness: 'Palihug po.'",
+      commonMistakes: "A common mistake is not using 'Palihug' when making a polite request. Always use it when asking for something respectfully.",
+      synonyms: "'Pakiusap' (please) is also used in polite requests, but it’s typically more formal and often used in Tagalog."
     }
-  ];
+];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

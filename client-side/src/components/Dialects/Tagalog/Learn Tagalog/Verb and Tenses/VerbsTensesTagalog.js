@@ -40,21 +40,18 @@ function VerbsTensesTagalog() {
           tense: 'Past Tense',
           conjugated: 'kumain',
           example: 'Kumain siya ng mangga kahapon.',
-          explanation: 'Indicates a completed action in the past.',
           sound: kumain
         },
         {
           tense: 'Present Tense',
           conjugated: 'kumakain',
           example: 'Kumakain siya ng almusal ngayon.',
-          explanation: 'Describes an action that is currently in progress.',
           sound: kumakain
         },
         {
           tense: 'Future Tense',
           conjugated: 'kakain',
           example: 'Kakain siya ng hapunan mamaya.',
-          explanation: 'Indicates that the action will happen in the future.',
           sound: kakain
         }
       ]
@@ -66,21 +63,18 @@ function VerbsTensesTagalog() {
           tense: 'Past Tense',
           conjugated: 'pumunta',
           example: 'Pumunta sila sa simbahan noong nakaraang linggo.',
-          explanation: 'Describes a movement that has been completed.',
           sound: pumunta
         },
         {
           tense: 'Present Tense',
           conjugated: 'pumupunta',
           example: 'Pumupunta sila sa trabaho sa kasalukuyan.',
-          explanation: 'Indicates an action that is happening at the moment.',
           sound: pumupunta
         },
         {
           tense: 'Future Tense',
           conjugated: 'pupunta',
           example: 'Pupunta sila sa paaralan bukas.',
-          explanation: 'Indicates an upcoming movement or action.',
           sound: pupunta
         }
       ]
@@ -92,21 +86,18 @@ function VerbsTensesTagalog() {
           tense: 'Past Tense',
           conjugated: 'nagbasa',
           example: 'Nagbasa siya ng libro kagabi.',
-          explanation: 'Shows that the action of reading was completed in the past.',
           sound: nagbasa
         },
         {
           tense: 'Present Tense',
           conjugated: 'nagbabasa',
           example: 'Nagbabasa siya ng pahayagan tuwing umaga.',
-          explanation: 'Describes an action that is currently taking place.',
           sound: nagbabasa
         },
         {
           tense: 'Future Tense',
           conjugated: 'babasahin',
           example: 'Babasa siya ng bagong nobela sa susunod na linggo.',
-          explanation: 'Indicates that the action is planned for the future.',
           sound: babasahin
         }
       ]
@@ -180,7 +171,6 @@ function VerbsTensesTagalog() {
                   <h3 className="word">{item.conjugated}</h3>
                   {/* just add w-100 to over write the align items center and text-start */}
                   <p className="text-start w-100"><strong>Example:</strong> {item.example}</p>
-                  <p className="text-start w-100"><strong>Explanation:</strong> {item.explanation}</p>
                   <button 
                       onClick={(e) => { 
                           e.stopPropagation(); // Prevent flipping the card when clicking the button

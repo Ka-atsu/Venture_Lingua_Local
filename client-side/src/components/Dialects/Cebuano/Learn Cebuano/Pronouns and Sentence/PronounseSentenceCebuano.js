@@ -22,120 +22,77 @@ function PronounseSentenceCebuano() {
         e.currentTarget.style.transform = 'translateY(0)';
     };
 
-    // Grouped phrases with pronunciation, example sentences, and explanation
     const pronounceSentenceGroups = [
-        // Group 1: Greeting phrases
         {
             group: 'Greetings',
             phrases: [
                 {
-                    english: 'Hello',
-                    cebuano: 'Kamusta',
-                    pronunciation: 'Ka-mus-ta',
-                    sentence: 'Kamusta ka? (Hello! How are you?)',
-                    explanation: 'This is a greeting you use when meeting someone or when checking in with someone to see how they are doing.',
+                    english: 'Hello', cebuano: 'Kamusta', pronunciation: 'Ka-mus-ta', sentence: 'Kamusta ka? (Hello! How are you?)',
+                    explanation: 'This is a greeting you use when meeting someone or when checking in with someone to see how they are doing.'
                 },
                 {
-                    english: 'Good morning',
-                    cebuano: 'Magandang umaga',
-                    pronunciation: 'Mah-gan-dang oo-mah-ga',
-                    sentence: 'Magandang umaga! Kamusta ka at ang iyong pamilya? (Good morning! How are you and your family?)',
-                    explanation: 'This is used to greet someone in the morning and inquire about their well-being.',
+                    english: 'Good morning', cebuano: 'Maayong buntag', pronunciation: 'Ma-ay-ong bun-tag', sentence: 'Maayong buntag! Kamusta ka at ang imong pamilya? (Good morning! How are you and your family?)',
+                    explanation: 'This is used to greet someone in the morning and inquire about their well-being.'
                 },
                 {
-                    english: 'Good evening',
-                    cebuano: 'Magandang gabi',
-                    pronunciation: 'Mah-gan-dang gah-bee',
-                    sentence: 'Magandang gabi, paano ka? Matagal na kitang hindi nakita! (Good evening, how are you? It’s been a while since I last saw you!)',
-                    explanation: 'This is a greeting used in the evening to ask how someone is doing after the day has passed.',
+                    english: 'Good evening', cebuano: 'Maayong gabii', pronunciation: 'Ma-ay-ong ga-bee', sentence: 'Maayong gabii, kumusta ka? (Good evening, how are you?)',
+                    explanation: 'This is a greeting used in the evening to ask how someone is doing after the day has passed.'
                 }
             ]
         },
     
-        // Group 2: Name and origin
         {
             group: 'Introductions',
             phrases: [
                 {
-                    english: 'What’s your name?',
-                    cebuano: 'Anong pangalan mo?',
-                    pronunciation: 'A-nong pahng-ah-lahn mo?',
-                    sentence: 'Anong pangalan mo? Ako si Maria, at ikaw? (What’s your name? I’m Maria, and you?)',
-                    explanation: 'This phrase is used when meeting someone for the first time and asking for their name.',
+                    english: 'What’s your name?', cebuano: 'Unsa imong ngalan?', pronunciation: 'Un-sa im-ong nga-lan?', sentence: 'Unsa imong ngalan? (What’s your name?)',
+                    explanation: 'This phrase is used when meeting someone for the first time and asking for their name.'
                 },
                 {
-                    english: 'My name is ...',
-                    cebuano: 'Ang pangalan ko ay ...',
-                    pronunciation: 'Ang pahng-ah-lahn ko ay ...',
-                    sentence: 'Ang pangalan ko ay Maria, at ako ay taga Maynila. (My name is Maria, and I’m from Manila.)',
-                    explanation: 'This is how you introduce yourself and tell others your name and where you\'re from.',
+                    english: 'My name is ...', cebuano: 'Ang akong ngalan kay ...', pronunciation: 'Ang a-kong nga-lan kay ...', sentence: 'Ang akong ngalan kay Maria. (My name is Maria.)',
+                    explanation: 'This is how you introduce yourself and tell others your name and where you\'re from.'
                 },
                 {
-                    english: 'Where are you from?',
-                    cebuano: 'Tagasaan ka?',
-                    pronunciation: 'Tah-gah-sah-ahn kah?',
-                    sentence: 'Tagasaan ka? Ako ay taga Bicol, ikaw? (Where are you from? I’m from Bicol, how about you?)',
-                    explanation: 'This question is used when you want to know where someone is from.',
+                    english: 'Where are you from?', cebuano: 'Asa ka gikan?', pronunciation: 'A-sa ka gi-kan?', sentence: 'Asa ka gikan? (Where are you from?)',
+                    explanation: 'This question is used when you want to know where someone is from.'
                 },
                 {
-                    english: 'I’m from ...',
-                    cebuano: 'Taga... ako',
-                    pronunciation: 'Tah-gah... ah-ko',
-                    sentence: 'Taga Manila ako. Nais kong matutunan ang Tagalog nang mas maayos. (I’m from Manila. I want to learn Tagalog more fluently.)',
-                    explanation: 'This is used when you are telling someone where you are from.',
+                    english: 'I’m from ...', cebuano: 'Gikan ko sa ...', pronunciation: 'Gi-kan ko sa ...', sentence: 'Gikan ko sa Manila. (I’m from Manila.)',
+                    explanation: 'This is used when you are telling someone where you are from.'
                 },
                 {
-                    english: 'Nice to meet you',
-                    cebuano: 'Ikinalulugod kong makilala ka',
-                    pronunciation: 'I-kee-nah-loo-loo-god kong mah-kee-lah-lah kah',
-                    sentence: 'Ikinalulugod kong makilala ka. Sana ay maging magkaibigan tayo. (Nice to meet you, I hope we can become friends.)',
-                    explanation: 'This is a polite way of expressing happiness when meeting someone for the first time.',
+                    english: 'Nice to meet you', cebuano: 'Malipayong pagkakita nimo', pronunciation: 'Ma-li-pa-yong pag-ki-ka-ta ni-mo', sentence: 'Malipayong pagkakita nimo. (Nice to meet you.)',
+                    explanation: 'This is a polite way of expressing happiness when meeting someone for the first time.'
                 }
             ]
         },
     
-        // Group 3: Goodbye phrases
         {
             group: 'Goodbyes',
             phrases: [
                 {
-                    english: 'Goodbye',
-                    cebuano: 'Paalam',
-                    pronunciation: 'Pah-ah-lahm',
-                    sentence: 'Paalam, magkita tayo muli sa susunod na linggo. (Goodbye, see you again next week.)',
-                    explanation: 'This is the standard way to say goodbye when you expect to see someone again soon.',
+                    english: 'Goodbye', cebuano: 'Paalam', pronunciation: 'Pah-ah-lahm', sentence: 'Paalam, magkita ta puhon! (Goodbye, see you again soon!)',
+                    explanation: 'This is the standard way to say goodbye when you expect to see someone again soon.'
                 },
                 {
-                    english: 'See you later',
-                    cebuano: 'Magkita tayo mamaya',
-                    pronunciation: 'Mag-kee-tah tah-yo mah-mah-yah',
-                    sentence: 'Magkita tayo mamaya pagkatapos ng trabaho. (See you later after work.)',
-                    explanation: 'This is used when you are planning to meet someone later in the day after a specific activity.',
+                    english: 'See you later', cebuano: 'Magkita ta unya', pronunciation: 'Mag-kee-ta ta un-ya', sentence: 'Magkita ta unya! (See you later!)',
+                    explanation: 'This is used when you are planning to meet someone later in the day after a specific activity.'
                 },
                 {
-                    english: 'Take care',
-                    cebuano: 'Ingat ka',
-                    pronunciation: 'Eeng-aht kah',
-                    sentence: 'Ingat ka sa daan, mag-ingat sa mga sasakyan. (Take care on the road, be careful with the vehicles.)',
-                    explanation: 'This is used when you want to show concern for someone\'s safety as they leave.',
+                    english: 'Take care', cebuano: 'Amping', pronunciation: 'Am-ping', sentence: 'Amping, ha? (Take care, okay?)',
+                    explanation: 'This is used when you want to show concern for someone\'s safety as they leave.'
                 },
                 {
-                    english: 'Good night',
-                    cebuano: 'Magandang gabi',
-                    pronunciation: 'Mah-gan-dang gah-bee',
-                    sentence: 'Magandang gabi, matulog ka ng mahimbing at magpahinga. (Good night, sleep well and rest.)',
-                    explanation: 'This is used when saying goodbye before someone goes to bed.',
+                    english: 'Good night', cebuano: 'Maayong gabii', pronunciation: 'Ma-ay-ong ga-bee', sentence: 'Maayong gabii, magtulog na ta! (Good night, let’s go to sleep!)',
+                    explanation: 'This is used when saying goodbye before someone goes to bed.'
                 },
                 {
-                    english: 'See you tomorrow',
-                    cebuano: 'Magkita tayo bukas',
-                    pronunciation: 'Mag-kee-tah tah-yo boo-kahs',
-                    sentence: 'Magkita tayo bukas sa mga 10:00 AM. (See you tomorrow at around 10:00 AM.)',
-                    explanation: 'This phrase is used when confirming plans to meet someone the following day.',
+                    english: 'See you tomorrow', cebuano: 'Magkita ta ugma', pronunciation: 'Mag-kee-ta ta ug-ma', sentence: 'Magkita ta ugma! (See you tomorrow!)',
+                    explanation: 'This phrase is used when confirming plans to meet someone the following day.'
                 }
             ]
         }
-    ];        
+    ];            
 
     // Setting the current group index
     const [currentSet, setCurrentSet] = useState(0);
@@ -218,48 +175,26 @@ function PronounseSentenceCebuano() {
             </Row>
 
             {/* Navigation buttons to move between groups */}
-                  <Row className="d-flex w-100 justify-content-between mt-5">
-                    <Col xs="auto">
-                      <Button
-                        onClick={prevSet}
-                        disabled={currentSet === 0}
-                        className="btn-lg rounded-pill"
-                        style={{
-                          transition: 'transform 0.3s',
-                          transform: 'translateY(0)',
-                          padding: '12px 25px',
-                          backgroundColor: '#5783db',
-                          borderColor: '#5783db',
-                          color: '#fff',
-                          fontSize: '1.1rem',
-                        }}
-                        onMouseOver={handleMouseOver}
-                        onMouseOut={handleMouseOut}
-                      >
-                        Previous Word
-                      </Button>
-                    </Col>
-                    <Col xs="auto">
-                      <Button
-                        onClick={nextSet}
-                        disabled={currentSet + 1 >= pronounceSentenceGroups.length}
-                        className="btn-lg rounded-pill"
-                        style={{
-                          transition: 'transform 0.3s',
-                          transform: 'translateY(0)',
-                          padding: '12px 25px',
-                          backgroundColor: '#5adbb5',
-                          borderColor: '#5adbb5',
-                          color: '#000',
-                          fontSize: '1.1rem',
-                        }}
-                        onMouseOver={handleMouseOver}
-                        onMouseOut={handleMouseOut}
-                      >
-                        Next Word
-                      </Button>
-                    </Col>
-                  </Row>
+            <Row className="d-flex w-100 justify-content-between mt-5">
+            <Col xs="auto">
+                <Button onClick={prevSet} disabled={currentSet === 0} className="btn-lg rounded-pill"
+                style={{ transition: 'transform 0.3s', transform: 'translateY(0)', padding: '12px 25px', backgroundColor: '#5783db', borderColor: '#5783db', color: '#fff', fontSize: '1.1rem', }}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                >
+                Previous Word
+                </Button>
+            </Col>
+            <Col xs="auto">
+                <Button onClick={nextSet} disabled={currentSet + 1 >= pronounceSentenceGroups.length} className="btn-lg rounded-pill"
+                style={{ transition: 'transform 0.3s', transform: 'translateY(0)', padding: '12px 25px', backgroundColor: '#5adbb5', borderColor: '#5adbb5', color: '#000', fontSize: '1.1rem', }}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                >
+                Next Word
+                </Button>
+            </Col>
+            </Row>
         </Container>
     );
 }

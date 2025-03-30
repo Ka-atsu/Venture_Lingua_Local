@@ -20,53 +20,44 @@ function VerbsTensesCebuano() {
     e.currentTarget.style.transform = 'translateY(0)';
   };
 
-  // Grouping the verb conjugations similar to your phrases grouping.
-  // Each group represents one verb (with its base form in the title)
-  // and contains an array of tense cards (Past, Present, Future).
   const verbTenseGroups = [
     {
-      group: 'To eat (kain)',
+      group: 'To eat (kaon)',
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'kumain',
-          example: 'Kumain siya ng mangga kahapon.',
-          explanation: 'Indicates a completed action in the past.'
+          conjugated: 'nakaon',
+          example: 'Nakaon siya og mangga gahapon. (He/she ate mango yesterday.)'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'kumakain',
-          example: 'Kumakain siya ng almusal ngayon.',
-          explanation: 'Describes an action that is currently in progress.'
+          conjugated: 'nagakaon',
+          example: 'Nagakaon siya og pamahaw karon. (He/she is eating breakfast now.)'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'kakain',
-          example: 'Kakain siya ng hapunan mamaya.',
-          explanation: 'Indicates that the action will happen in the future.'
+          conjugated: 'mokaon',
+          example: 'Mokaon siya og panihapon unya. (He/she will eat dinner later.)'
         }
       ]
     },
     {
-      group: 'To go (punta)',
+      group: 'To go (adto)',
       tenses: [
         {
           tense: 'Past Tense',
-          conjugated: 'pumunta',
-          example: 'Pumunta sila sa simbahan noong nakaraang linggo.',
-          explanation: 'Describes a movement that has been completed.'
+          conjugated: 'nakaadto',
+          example: 'Nakaadto sila sa simbahan niadtong miaging semana. (They went to the church last week.)'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'pumupunta',
-          example: 'Pumupunta sila sa trabaho sa kasalukuyan.',
-          explanation: 'Indicates an action that is happening at the moment.'
+          conjugated: 'nag-adto',
+          example: 'Nag-adto sila sa trabaho karon. (They are going to work now.)'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'pupunta',
-          example: 'Pupunta sila sa paaralan bukas.',
-          explanation: 'Indicates an upcoming movement or action.'
+          conjugated: 'moadto',
+          example: 'Moadto sila sa eskwelahan ugma. (They will go to school tomorrow.)'
         }
       ]
     },
@@ -76,20 +67,17 @@ function VerbsTensesCebuano() {
         {
           tense: 'Past Tense',
           conjugated: 'nagbasa',
-          example: 'Nagbasa siya ng libro kagabi.',
-          explanation: 'Shows that the action of reading was completed in the past.'
+          example: 'Nagbasa siya og libro kagabi-i. (He/she read a book last night.)'
         },
         {
           tense: 'Present Tense',
-          conjugated: 'nagbabasa',
-          example: 'Nagbabasa siya ng pahayagan tuwing umaga.',
-          explanation: 'Describes an action that is currently taking place.'
+          conjugated: 'nagabasa',
+          example: 'Nagabasa siya og pahayagan kada buntag. (He/she reads the newspaper every morning.)'
         },
         {
           tense: 'Future Tense',
-          conjugated: 'babasa',
-          example: 'Babasa siya ng bagong nobela sa susunod na linggo.',
-          explanation: 'Indicates that the action is planned for the future.'
+          conjugated: 'mabasa',
+          example: 'Mabasa siya og bagong nobela sa sunod nga semana. (He/she will read a new novel next week.)'
         }
       ]
     }
@@ -161,7 +149,6 @@ function VerbsTensesCebuano() {
                 <div className="flashcard-back flex-column">
                   <h3 className="word">{item.conjugated}</h3>
                   <p className="text-start"><strong>Example:</strong> {item.example}</p>
-                  <p className="text-start"><strong>Explanation:</strong> {item.explanation}</p>
                 </div>
               </div>
             </div>
