@@ -104,7 +104,7 @@ function PracticeBicolanoMainContent() {
         <Container fluid className="d-flex flex-column bg-dark p-5" style={{minHeight:'100vh'}}>
             <Row className="text-start mb-4">
                 <h1 className="display-4 text-white" style={headerStyle}>
-                Practice Tagalog: Challenges
+                Practice Bicolano: Challenges
                 </h1>  
                 {/* <Button onClick={resetChallenges}>Reset Challenges</Button> */}
                 <div>
