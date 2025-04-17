@@ -1,18 +1,18 @@
 import React from 'react';
 import { Navbar, Button, Container } from 'react-bootstrap';
 import { useNavigate, useLocation  } from 'react-router-dom';
-import { FaCog, FaSignOutAlt, FaBook, FaPencilAlt, FaDiceD6 } from 'react-icons/fa'; // Icons for settings and logout
+import { FaSignOutAlt, FaBook, FaPencilAlt, FaDiceD6 } from 'react-icons/fa'; // Icons for settings and logout
 
 function BicolanoSideComponent() {
     const navigate = useNavigate(); // Initialize the navigate function
     const location = useLocation(); // Get the current location/path
 
-    const handleSettingsClick = () => {
-        navigate('/settings'); // Programmatically navigate to the settings page
-    };
+    // const handleSettingsClick = () => {
+    //     navigate('/settings'); // Programmatically navigate to the settings page
+    // };
 
     const handleLogoutClick = () => {
-        navigate('/login'); // Navigate to the login page after logout
+        navigate('/'); // Navigate to the login page after logout
     };
 
     const isActive = (path) => location.pathname === path;
@@ -68,7 +68,7 @@ function BicolanoSideComponent() {
                     <FaDiceD6 className="me-3" />
                     DIALECTS
                 </Button>
-                <Button
+                {/* <Button
                     variant="light"
                     className="w-100 mb-3 py-3 d-flex align-items-center justify-content-start"
                     onClick={handleSettingsClick}
@@ -76,16 +76,17 @@ function BicolanoSideComponent() {
                 >
                     <FaCog className="me-3" />
                     PROFILE
-                </Button>
+                </Button> */}
 
                 <Button
+                    xs={1}
                     variant="outline-light"
                     className="w-100 py-3 d-flex align-items-center justify-content-start"
                     onClick={handleLogoutClick}
                     style={button}
                 >
                     <FaSignOutAlt className="me-3" />
-                    LOGOUT
+                    LANDING PAGE
                 </Button>
             </Container>
             

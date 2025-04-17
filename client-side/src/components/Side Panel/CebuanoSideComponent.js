@@ -1,18 +1,18 @@
 import React from 'react';
 import { Navbar, Button, Container } from 'react-bootstrap';
 import { useNavigate, useLocation  } from 'react-router-dom';
-import { FaCog, FaSignOutAlt, FaBook, FaPencilAlt, FaDiceD6 } from 'react-icons/fa'; // Icons for settings and logout
+import { FaSignOutAlt, FaBook, FaPencilAlt, FaDiceD6 } from 'react-icons/fa'; // Icons for settings and logout
 
 function CebuanoSideComponent() {
     const navigate = useNavigate(); // Initialize the navigate function
     const location = useLocation(); // Get the current location/path
 
-    const handleSettingsClick = () => {
-        navigate('/settings'); // Programmatically navigate to the settings page
-    };
+    // const handleSettingsClick = () => {
+    //     navigate('/settings'); // Programmatically navigate to the settings page
+    // };
 
     const handleLogoutClick = () => {
-        navigate('/login'); // Navigate to the login page after logout
+        navigate('/'); // Navigate to the login page after logout
     };
 
     const isActive = (path) => location.pathname === path;
@@ -68,7 +68,7 @@ function CebuanoSideComponent() {
                     <FaDiceD6 className="me-3" />
                     DIALECTS
                 </Button>
-                <Button
+                {/* <Button
                     variant="light"
                     className="w-100 mb-3 py-3 d-flex align-items-center justify-content-start"
                     onClick={handleSettingsClick}
@@ -76,7 +76,7 @@ function CebuanoSideComponent() {
                 >
                     <FaCog className="me-3" />
                     PROFILE
-                </Button>
+                </Button> */}
 
                 <Button
                     variant="outline-light"
@@ -85,7 +85,7 @@ function CebuanoSideComponent() {
                     style={button}
                 >
                     <FaSignOutAlt className="me-3" />
-                    LOGOUT
+                    LANDING PAGE
                 </Button>
             </Container>
             
