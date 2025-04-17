@@ -1,7 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginRegisterPage from './components/pages/LoginRegisterPage';
-import DialectPage from './components/pages/DialectPage';
+import LoginRegisterPage from './components/pages/Login Register/LoginRegisterPage';
+import LandingPage from './components/pages/Landing Page/LandingPage';
+import DialectPage from './components/pages/Dialect Selector/DialectPage';
 import TagalogLearnPage from './components/pages/Tagalog/TagalogLearnPage';
 import TagalogPracticePage from './components/pages/Tagalog/TagalogPracticePage';
 import BicolanoLearnPage from './components/pages/Bicolano/BicolanoLearnPage';
@@ -25,7 +26,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<DialectPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginRegisterPage />} />
 
           <Route path="/dialectSelector" element={<DialectPage />} />
