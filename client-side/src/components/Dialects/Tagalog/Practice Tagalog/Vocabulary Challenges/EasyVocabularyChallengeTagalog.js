@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3';
 import WrongBuzzer from '../../../../Sounds/WrongBuzzer.mp3';
 
-function EasyVocabularyChallengeTagalog() {
+function EasyVocabularyChallengeTagalog(screenSize) {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const location = useLocation(); 
@@ -110,7 +110,7 @@ function EasyVocabularyChallengeTagalog() {
     const progress = ((questionIndex + 1) / questions.length) * 100;
 
     return (
-        <Container fluid className="d-flex flex-column align-items-center bg-dark vh-100">
+        <Container fluid className="d-flex flex-column align-items-center bg-dark" style={{ minHeight: screenSize ? '100vh' : 'auto'}}>
             <div className="go-back-icon">
                 <FaArrowLeft
                     size={30}

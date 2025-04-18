@@ -14,7 +14,7 @@ import pumunta from './verb sounds/pumunta.mp3';
 import pumupunta from './verb sounds/pumupunta.mp3';
 import pupunta from './verb sounds/pupunta.mp3';
 
-function VerbsTensesTagalog() {
+function VerbsTensesTagalog( screenSize ) {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
@@ -137,7 +137,7 @@ function VerbsTensesTagalog() {
   };
 
   return (
-    <Container fluid className="bg-dark p-5 vh-100">
+    <Container fluid className="bg-dark p-5" style={{ display:'flex' , flexDirection:'column' ,justifyContent: 'space-between', minHeight: screenSize ? '100vh' : 'auto' }}>
       <div className="go-back-icon">
         <FaArrowLeft
           size={30}
@@ -147,30 +147,32 @@ function VerbsTensesTagalog() {
         />
       </div>
 
-      <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Tagalog Verb Conjugation</h1>
-      <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
+      <div>
+      <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}>Tagalog Verb Conjugation</h1>
+      <p className="text-center mb-3 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>Click the card to Flip</p>
 
-      <h2 className="text-center mb-3 text-white"> {verbTenseGroups[currentSet].group}</h2>
+      <h2 className="text-center mb-3 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}> {verbTenseGroups[currentSet].group}</h2>
+      </div>
+
 
       {/* Display tense cards for the current group */}
-      <Row className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
+      <Row className="d-flex justify-content-center align-items-center">
         {verbTenseGroups[currentSet].tenses.map((item, index) => (
-          <Col md={4} sm={6} key={item.tense}>
+          <Col className='mb-4' xs={4} key={item.tense}>
             <div
               className={`flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
               onClick={() => handleFlip(item.tense)}
             >
               <div className="flashcard-inner">
                 <div className="flashcard-front flex-column">
-                  <h3 className="word">{item.tense}</h3>
-                  <p>
+                  <h3 style={{ fontSize: 'clamp(1rem, 1.5vw, 5rem)' }}>{item.tense}</h3>
+                  <p style={{ fontSize: 'clamp(1rem, 0.5vw, 5rem)' }}>
                     <strong>Base Form:</strong> {verbTenseGroups[currentSet].group.split('(')[1].replace(')', '')}
                   </p>
                 </div>
                 <div className="flashcard-back flex-column align-items-center">
-                  <h3 className="word">{item.conjugated}</h3>
-                  {/* just add w-100 to over write the align items center and text-start */}
-                  <p className="text-start w-100"><strong>Example:</strong> {item.example}</p>
+                  <h3 style={{ fontSize: 'clamp(1rem, 1.5vw, 5rem)' }}>{item.conjugated}</h3>
+                  <p style={{ fontSize: 'clamp(1rem, 0.5vw, 5rem)' }} className="text-start"><strong>Example:</strong> {item.example}</p>
                   <button 
                       onClick={(e) => { 
                           e.stopPropagation(); // Prevent flipping the card when clicking the button

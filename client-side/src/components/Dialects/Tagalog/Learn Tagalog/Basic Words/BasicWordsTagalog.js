@@ -26,7 +26,7 @@ import siyam from './basic word sounds/Siyam.mp3';
 import sampu from './basic word sounds/Sampu.mp3';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
-function BasicWordsTagalog() {
+function BasicWordsTagalog( screenSize ) {
     const navigate = useNavigate(); 
 
     const goBack = () => {
@@ -137,29 +137,30 @@ function BasicWordsTagalog() {
     };
 
     return (
-        <Container fluid className="bg-dark p-5 vh-100">
+        <Container fluid className="bg-dark p-5" style={{ display:'flex' , flexDirection:'column' ,justifyContent: 'space-between', minHeight: screenSize ? '100vh' : 'auto' }}>
             <div className="go-back-icon">
                 {/* Go back icon */}
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Tagalog Words</h1>
-            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
+            <div>
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}>Basic Tagalog Words </h1>
+            <p className="text-center mb-3 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>Click the card to Flip</p>
 
-            {/* Group Name */}
-            <h2 className="text-center text-white mb-5 ">{wordGroups[currentSet].group}</h2>
+            <h2 className="text-center text-white mb-5 " style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>{wordGroups[currentSet].group}</h2>
+            </div>
 
             {/* Display words for the current group */}
-            <Row className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
+            <Row className="d-flex justify-content-center align-items-center">
                 {wordGroups[currentSet].words.map((word, index) => (
-                    <Col md={4} sm={6} key={index}>
+                    <Col className='mb-4' xs={4} key={index}>
                         <div className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`} onClick={() => handleFlip(index)}>
                             <div className="flashcard-inner">
                                 <div className="flashcard-front align-items-center">
-                                    <h2 className="word">{word.english}</h2>
+                                    <h2 style={{ fontSize: 'clamp(1.8rem, 2vw, 5rem)' }}>{word.english}</h2>
                                 </div>
                                 <div className="flashcard-back flex-column align-items-center">
-                                    <h2 className="word">{word.tagalog}</h2>
+                                    <h2 style={{ fontSize: 'clamp(1.8rem, 2vw, 5rem)' }}>{word.tagalog}</h2>
                                     <button 
                                         onClick={(e) => { 
                                             e.stopPropagation(); // Prevent flipping the card when clicking the button

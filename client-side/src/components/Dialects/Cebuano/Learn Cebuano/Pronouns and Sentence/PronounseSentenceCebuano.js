@@ -5,7 +5,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
-function PronounseSentenceCebuano() {
+function PronounseSentenceCebuano( screenSize ) {
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1); 
@@ -139,34 +139,34 @@ function PronounseSentenceCebuano() {
     };
 
     return (
-        <Container fluid className="bg-dark p-5 vh-100">
+        <Container fluid className="bg-dark p-5" style={{ display:'flex' , flexDirection:'column' ,justifyContent: 'space-between', minHeight: screenSize ? '100vh' : 'auto' }}>
             <div className="go-back-icon">
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Cebuano Pronunciation and Example Sentences</h1>
-            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}>Cebuano Pronunciation and Example Sentences</h1>
+            <p className="text-center mb-3 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>Click the card to Flip</p>
 
-            <h2 className="text-center text-white mb-5 ">{pronounceSentenceGroups[currentSet].group}</h2>
+            <h2 className="text-center text-white mb-5" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>{pronounceSentenceGroups[currentSet].group}</h2>
 
             {/* Display phrases for the current group */}
-            <Row className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
+            <Row className="d-flex justify-content-center align-items-center">
                 {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
-                    <Col md={4} sm={6} key={index}>
+                    <Col className='mb-4' xs={4} key={index}>
                         <div
                             className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
                         >
                             <div className="flashcard-inner">
                                 <div className="flashcard-front flex-column">
-                                    <h3 className="word">{phrase.english}</h3>
-                                    <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
-                                    <p><strong>Cebuano:</strong> {phrase.cebuano}</p>
+                                    <h3 style={{ fontSize: 'clamp(1rem, 1.5vw, 5rem)' , marginBottom: '0' }}>{phrase.english}</h3>
+                                    <p style={{ fontSize: 'clamp(1rem, 0.5vw, 5rem)' , marginBottom: '0'  }}><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
+                                    <p style={{ fontSize: 'clamp(1rem, 0.5vw, 5rem)' , marginBottom: '1rem'  }}><strong>Cebuano:</strong> {phrase.cebuano}</p>
                                 </div>
                                 <div className="flashcard-back flex-column">
-                                    <h1 className="word">{phrase.cebuano}</h1>
-                                    <p className='text-start'><strong>Example:</strong> {phrase.sentence}</p>
-                                    <p className='text-start'><strong>Explanation:</strong> {phrase.explanation}</p>
+                                    <h1 style={{fontSize: 'clamp(1rem, 1vw, 5rem)'}}>{phrase.cebuano}</h1>
+                                    <p className='text-start' style={{ fontSize: 'clamp(0.5rem, 1vw, 5rem)', marginBottom: '0'}}><strong>Example:</strong> {phrase.sentence}</p>
+                                    <p className='text-start' style={{ fontSize: 'clamp(0.5rem, 1vw, 5rem)' }}><strong>Explanation:</strong> {phrase.explanation}</p>
                                 </div>
                             </div>
                         </div>

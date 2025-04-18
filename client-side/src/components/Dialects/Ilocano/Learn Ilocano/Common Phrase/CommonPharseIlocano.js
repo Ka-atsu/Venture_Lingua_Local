@@ -5,7 +5,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
-function CommonPharseIlocano() {
+function CommonPharseIlocano( screenSize ) {
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1); 
@@ -93,36 +93,38 @@ function CommonPharseIlocano() {
     };
 
     return (
-        <Container fluid className="bg-dark p-5 vh-100">
+        <Container fluid className="bg-dark p-5" style={{ display:'flex' , flexDirection:'column' ,justifyContent: 'space-between', minHeight: screenSize ? '100vh' : 'auto' }}>
             <div className="go-back-icon">
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: '2.5rem' }}>
+            <div>
+            <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}>
                 Common Ilocano Phrases
             </h1>
-            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>
+            <p className="text-center mb-3 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>
                 Click the card to Flip
             </p>
 
-            <h2 className="text-center text-white mb-5">{phraseGroups[currentSet].group}</h2>
+            <h2 className="text-center text-white mb-5" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>{phraseGroups[currentSet].group}</h2>
+            </div>
 
             {/* Display phrases for the current group */}
-            <Row className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
+            <Row className="d-flex justify-content-center align-items-center">
                 {phraseGroups[currentSet].phrases.map((phrase, index) => (
-                    <Col md={4} sm={6} key={index}>
+                    <Col className='mb-4' xs={4} key={index}>
                         <div
                             className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
                         >
                             <div className="flashcard-inner">
                                 <div className="flashcard-front flex-column">
-                                    <h3 className="word">{phrase.english}</h3>
-                                    <p><strong>Ilocano:</strong> {phrase.ilocano}</p>
+                                    <h3 style={{ fontSize: 'clamp(1rem, 1.5vw, 5rem)' }}>{phrase.english}</h3>
+                                    <p style={{ fontSize: 'clamp(1rem, 1vw, 5rem)' }}><strong>Ilocano:</strong> {phrase.ilocano}</p>
                                 </div>
                                 <div className="flashcard-back flex-column">
-                                    <h3 className="word">{phrase.ilocano}</h3>
-                                    <p><strong>Example:</strong> {phrase.example}</p>
+                                    <h3 style={{ fontSize: 'clamp(0.9rem, 1.5vw, 5rem)' }}>{phrase.ilocano}</h3>
+                                    <p style={{ fontSize: 'clamp(0.9rem, 1vw, 5rem)' }}><strong>Example:</strong> {phrase.example}</p>
                                 </div>
                             </div>
                         </div>

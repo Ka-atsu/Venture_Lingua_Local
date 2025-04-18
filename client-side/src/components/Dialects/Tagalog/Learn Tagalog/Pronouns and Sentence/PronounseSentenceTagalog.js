@@ -17,7 +17,7 @@ import Taga from './pronouns sounds/Taga Manila ako.mp3';
 import Tagasaan from './pronouns sounds/Tagasaan ka.mp3';
 import bukas from './pronouns sounds/Magkita tayo bukas.mp3';
 
-function PronounceSentenceTagalog() {
+function PronounceSentenceTagalog( screenSize ) {
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1); 
@@ -197,45 +197,48 @@ function PronounceSentenceTagalog() {
             }
         }, 500); // Delay to allow flip back animation
     };
+    console.log(screenSize);
 
     return (
-        <Container fluid className="bg-dark p-5 vh-100">
+        <Container fluid className="bg-dark p-5" style={{ display:'flex' , flexDirection:'column' ,justifyContent: 'space-between', minHeight: screenSize ? '100vh' : 'auto' }}>
             <div className="go-back-icon">
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
 
-            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Tagalog Pronunciation and Example Sentences</h1>
-            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
+            <div>
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}>Tagalog Pronunciation and Example Sentences</h1>
+            <p className="text-center mb-3 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>Click the card to Flip</p>
 
-            <h2 className="text-center text-white mb-5 ">{pronounceSentenceGroups[currentSet].group}</h2>
+            <h2 className="text-center text-white mb-5" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>{pronounceSentenceGroups[currentSet].group}</h2>
+            </div>
 
             {/* Display phrases for the current group */}
-            <Row className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
+            <Row className="d-flex justify-content-center align-items-center">
                 {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
-                    <Col md={4} sm={6} key={index}>
+                    <Col className='mb-4' xs={4} key={index}>
                         <div
                             className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
                         >
                             <div className="flashcard-inner">
                                 <div className="flashcard-front flex-column align-items-center">
-                                    <h3 className="word">{phrase.english}</h3>
-                                    <p>{phrase.tagalog}</p>
-                                    <p><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
+                                    <h3 style={{ fontSize: 'clamp(1rem, 1.5vw, 5rem)' , marginBottom: '0' }}>{phrase.english}</h3>
+                                    <p style={{ fontSize: 'clamp(1rem, 0.5vw, 5rem)' , marginBottom: '0'  }}>{phrase.tagalog}</p>
+                                    <p style={{ fontSize: 'clamp(1rem, 0.5vw, 5rem)' , marginBottom: '1rem'  }}><strong>Pronunciation:</strong> {phrase.pronunciation}</p>
                                     <button 
                                         onClick={(e) => { 
                                             e.stopPropagation(); // Prevent flipping the card when clicking the button
                                             new Audio(phrase.sound).play();
                                         }} 
-                                        className="btn btn-sm btn-dark mt-2"
+                                        className="btn btn-sm btn-dark"
                                     >
                                         🔊
                                     </button>
                                 </div>
                                 <div className="flashcard-back flex-column">
-                                    <h1 className="word">{phrase.tagalog}</h1>
-                                    <p className='text-start'><strong>Example:</strong> {phrase.sentence}</p>
-                                    <p className='text-start'><strong>Explanation:</strong> {phrase.explanation}</p>
+                                    <h1 style={{fontSize: 'clamp(1rem, 1vw, 5rem)'}}>{phrase.tagalog}</h1>
+                                    <p className='text-start' style={{ fontSize: 'clamp(0.5rem, 1vw, 5rem)', marginBottom: '0'}}><strong>Example:</strong> {phrase.sentence}</p>
+                                    <p className='text-start' style={{ fontSize: 'clamp(0.5rem, 1vw, 5rem)' }}><strong>Explanation:</strong> {phrase.explanation}</p>
                                 </div>
                             </div>
                         </div>
@@ -244,48 +247,48 @@ function PronounceSentenceTagalog() {
             </Row>
 
             {/* Navigation buttons to move between groups */}
-                  <Row className="d-flex w-100 justify-content-between mt-5">
-                    <Col xs="auto">
-                      <Button
-                        onClick={prevSet}
-                        disabled={currentSet === 0}
-                        className="btn-lg rounded-pill"
-                        style={{
-                          transition: 'transform 0.3s',
-                          transform: 'translateY(0)',
-                          padding: '12px 25px',
-                          backgroundColor: '#5783db',
-                          borderColor: '#5783db',
-                          color: '#fff',
-                          fontSize: '1.1rem',
-                        }}
-                        onMouseOver={handleMouseOver}
-                        onMouseOut={handleMouseOut}
-                      >
-                        Previous Word
-                      </Button>
-                    </Col>
-                    <Col xs="auto">
-                      <Button
-                        onClick={nextSet}
-                        disabled={currentSet + 1 >= pronounceSentenceGroups.length}
-                        className="btn-lg rounded-pill"
-                        style={{
-                          transition: 'transform 0.3s',
-                          transform: 'translateY(0)',
-                          padding: '12px 25px',
-                          backgroundColor: '#5adbb5',
-                          borderColor: '#5adbb5',
-                          color: '#000',
-                          fontSize: '1.1rem',
-                        }}
-                        onMouseOver={handleMouseOver}
-                        onMouseOut={handleMouseOut}
-                      >
-                        Next Word
-                      </Button>
-                    </Col>
-                  </Row>
+            <Row className="d-flex w-100 justify-content-between">
+            <Col xs="auto">
+                <Button
+                onClick={prevSet}
+                disabled={currentSet === 0}
+                className="btn-lg rounded-pill"
+                style={{
+                    transition: 'transform 0.3s',
+                    transform: 'translateY(0)',
+                    padding: '12px 25px',
+                    backgroundColor: '#5783db',
+                    borderColor: '#5783db',
+                    color: '#fff',
+                    fontSize: '1.1rem',
+                }}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                >
+                Previous Word
+                </Button>
+            </Col>
+            <Col xs="auto">
+                <Button
+                onClick={nextSet}
+                disabled={currentSet + 1 >= pronounceSentenceGroups.length}
+                className="btn-lg rounded-pill"
+                style={{
+                    transition: 'transform 0.3s',
+                    transform: 'translateY(0)',
+                    padding: '12px 25px',
+                    backgroundColor: '#5adbb5',
+                    borderColor: '#5adbb5',
+                    color: '#000',
+                    fontSize: '1.1rem',
+                }}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                >
+                Next Word
+                </Button>
+            </Col>
+            </Row>
         </Container>
     );
 }

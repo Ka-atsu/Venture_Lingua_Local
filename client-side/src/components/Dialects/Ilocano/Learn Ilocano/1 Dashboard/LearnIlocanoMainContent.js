@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-function LearnIlocanoMainContent() {
+function LearnIlocanoMainContent( isSmallScreen ) {
   const navigate = useNavigate();
 
   // Navigation functions
@@ -32,7 +32,7 @@ function LearnIlocanoMainContent() {
   };
 
   return (
-    <Container fluid className="vh-100 bg-dark p-5">
+    <Container fluid className="bg-dark p-5" style={{ minHeight: isSmallScreen ? '100vh' : 'auto' }}>
       {/* Title and description section */}
       <Row className="text-start mb-4">
         <Col>

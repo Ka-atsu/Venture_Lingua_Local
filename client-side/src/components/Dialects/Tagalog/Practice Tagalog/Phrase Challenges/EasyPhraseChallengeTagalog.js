@@ -5,7 +5,7 @@ import { useNavigate , useLocation } from 'react-router-dom';
 import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3'
 import WrongBuzzer from '../../../../Sounds/WrongBuzzer.mp3';
 
-function EasyPhraseChallengeTagalog() {
+function EasyPhraseChallengeTagalog( screenSize ) {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const location = useLocation(); 
@@ -106,7 +106,7 @@ function EasyPhraseChallengeTagalog() {
     const progress = ((questionIndex + 1) / questions.length) * 100;
 
     return (
-        <Container fluid className="d-flex flex-column align-items-center bg-dark vh-100">
+        <Container fluid className="d-flex flex-column align-items-center bg-dark" style={{ minHeight: screenSize ? '100vh' : 'auto'}}>
             <div className="go-back-icon">
                 <FaArrowLeft
                     size={30}
@@ -131,8 +131,8 @@ function EasyPhraseChallengeTagalog() {
                 <Col>
                     <Card className="p-4 shadow-sm">
                         <Card.Body>
-                            <div className="text-center mb-4">
-                                <h4>{questions[questionIndex].question}</h4>
+                            <div className="text-center">
+                                <h4 style={{ fontSize: 'clamp(1rem, 1.5vw, 5rem)'}}>{questions[questionIndex].question}</h4>
                             </div>
 
                             {/* Options Column */}
@@ -141,7 +141,7 @@ function EasyPhraseChallengeTagalog() {
                                     <Button
                                         key={index}
                                         variant={selectedAnswer === word ? 'dark' : 'outline-dark'}
-                                        className={`w-100 py-3 mb-3 shadow-sm rounded-pill ${selectedAnswer === word ? 'bg-dark text-white' : ''}`}
+                                        className={`w-100 py-2 mt-3 shadow-sm rounded-pill ${selectedAnswer === word ? 'bg-dark text-white' : ''}`}
                                         onClick={() => handleAnswerSelection(word)}
                                         disabled={isSubmitted}
                                     >

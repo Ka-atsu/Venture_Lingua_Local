@@ -5,58 +5,65 @@ import CulturalContextualBicolano from '../../Dialects/Bicolano/Learn Bicolano/C
 import PronounseSentenceBicolano from '../../Dialects/Bicolano/Learn Bicolano/Pronouns and Sentence/PronounseSentenceBicolano';
 import ExpressionBicolano from '../../Dialects/Bicolano/Learn Bicolano/Useful Expression/ExpressionBicolano';
 import VerbsTensesBicolano from '../../Dialects/Bicolano/Learn Bicolano/Verb and Tenses/VerbsTensesBicolano';
+import useScreenSize from '../Screen Size Hook/useScreenSize';
 
 export function BicolanoBasicWordsPage() {
+    const screenSize = useScreenSize();
     console.log("TagalogVocabularyEasyPage is rendering!");
     return (
         <> 
-            <BasicWordsBicolano />
+            <BasicWordsBicolano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function BicolanoCommonPhrasePage() {
+    const screenSize = useScreenSize();
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <CommonPharseBicolano />
+            <CommonPharseBicolano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function BicolanoCulturalPage() {
+    const screenSize = useScreenSize();
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <CulturalContextualBicolano />
+            <CulturalContextualBicolano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function BicolanoExpressionsPage() {
+    const screenSize = useScreenSize();
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <ExpressionBicolano />
+            <ExpressionBicolano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function BicolanoPronouncePage() {
+    const screenSize = useScreenSize();
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <PronounseSentenceBicolano />
+            <PronounseSentenceBicolano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 
 export function BicolanoVerbsTensesPage() {
+    const screenSize = useScreenSize();
     console.log("TagalogPronunciationEasyPage is rendering!");
     return (
         <> 
-            <VerbsTensesBicolano />
+            <VerbsTensesBicolano screenSize={screenSize === 'small'}/>
         </>
     );
 }

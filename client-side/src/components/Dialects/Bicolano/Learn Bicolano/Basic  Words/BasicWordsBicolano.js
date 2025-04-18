@@ -5,7 +5,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import '../../../zCSS/learn.css';
 import CardSound from '../../../../Sounds/CardSound.mp3';
 
-function BasicWordsBicolano() {
+function BasicWordsBicolano( screenSize ) {
     const navigate = useNavigate(); 
 
     const goBack = () => {
@@ -115,32 +115,34 @@ function BasicWordsBicolano() {
     };
 
     return (
-        <Container fluid className="bg-dark p-5 vh-100">
+        <Container fluid className="bg-dark p-5" style={{ display:'flex' , flexDirection:'column' ,justifyContent: 'space-between', minHeight: screenSize ? '100vh' : 'auto' }}>
             <div className="go-back-icon">
                 {/* Go back icon */}
                 <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
             </div>
-
-            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: '2.5rem' }}>Basic Bicolano Words</h1>
-            <p className="text-center mb-3 text-white" style={{ fontSize: '1.3rem' }}>Click the card to Flip</p>
+            
+            <div>   
+            <h1 className="text-center text-white" style={{ fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}>Basic Bicolano Words</h1>
+            <p className="text-center mb-3 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>Click the card to Flip</p>
 
             {/* Group Name */}
-            <h2 className="text-center text-white mb-5 ">{wordGroups[currentSet].group}</h2>
+            <h2 className="text-center text-white mb-5" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>{wordGroups[currentSet].group}</h2>
+            </div>
 
             {/* Display words for the current group */}
-            <Row className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
+            <Row className="d-flex justify-content-center align-items-center">
                 {wordGroups[currentSet].words.map((word, index) => (
-                    <Col md={4} sm={6} key={index}>
+                    <Col className='mb-4' xs={4} key={index}>
                         <div
                             className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)} // Flip the card on click
                         >
                             <div className="flashcard-inner">
                                 <div style={{ alignItems: 'center' }} className="flashcard-front">
-                                    <h2 className="word">{word.english}</h2>
+                                    <h2 style={{ fontSize: 'clamp(1.8rem, 2vw, 5rem)' }}>{word.english}</h2>
                                 </div>
                                 <div style={{ alignItems: 'center' }} className="flashcard-back">
-                                    <h2 className="word">{word.bicolano}</h2>
+                                    <h2 style={{ fontSize: 'clamp(1.8rem, 2vw, 5rem)' }}>{word.bicolano}</h2>
                                 </div>
                             </div>
                         </div>

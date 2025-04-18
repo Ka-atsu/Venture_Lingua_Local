@@ -5,58 +5,65 @@ import CulturalContextualTagalog from '../../Dialects/Tagalog/Learn Tagalog/Cult
 import ExpressionsTagalog from '../../Dialects/Tagalog/Learn Tagalog/Useful Expression/ExpressionTagalog';
 import PronounceSentenceTagalog from '../../Dialects/Tagalog/Learn Tagalog/Pronouns and Sentence/PronounseSentenceTagalog';
 import VerbsTensesTagalog from '../../Dialects/Tagalog/Learn Tagalog/Verb and Tenses/VerbsTensesTagalog';
+import useScreenSize from '../Screen Size Hook/useScreenSize';
 
 export function TagalogBasicWordsPage() {
     console.log("TagalogVocabularyEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <BasicWordsTagalog />
+            <BasicWordsTagalog screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function TagalogCommonPhrasePage() {
-    console.log("TagalogPronunciationEasyPage is rendering!");
+    console.log("TagalogCommonPhrasePage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <CommonPharseTagalog />
+            <CommonPharseTagalog screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function TagalogCulturalPage() {
-    console.log("TagalogPronunciationEasyPage is rendering!");
+    console.log("TagalogCulturalPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <CulturalContextualTagalog />
+            <CulturalContextualTagalog screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function TagalogExpressionsPage() {
-    console.log("TagalogPronunciationEasyPage is rendering!");
+    console.log("TagalogExpressionsPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <ExpressionsTagalog />
+            <ExpressionsTagalog screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function TagalogPronouncePage() {
-    console.log("TagalogPronunciationEasyPage is rendering!");
+    console.log("TagalogPronouncePage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <PronounceSentenceTagalog />
+            <PronounceSentenceTagalog screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 
 export function TagalogVerbsTensesPage() {
-    console.log("TagalogPronunciationEasyPage is rendering!");
+    console.log("TagalogVerbsTensesPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <VerbsTensesTagalog />
+            <VerbsTensesTagalog screenSize={screenSize === 'small'}/>
         </>
     );
 }

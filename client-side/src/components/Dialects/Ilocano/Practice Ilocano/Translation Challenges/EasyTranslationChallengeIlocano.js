@@ -5,7 +5,7 @@ import { useNavigate , useLocation } from 'react-router-dom';
 import CorrectBuzzer from '../../../../Sounds/CorrectBuzzer.mp3';
 import WrongBuzzer from '../../../../Sounds/WrongBuzzer.mp3';
 
-function EasyTranslationChallengeIlocano() {
+function EasyTranslationChallengeIlocano( screenSize) {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
     const location = useLocation(); 
@@ -110,7 +110,7 @@ function EasyTranslationChallengeIlocano() {
     const progress = ((questionIndex + 1) / sentences.length) * 100;
 
     return (
-        <Container fluid className="d-flex flex-column align-items-center bg-dark vh-100 p-4">
+        <Container fluid className="d-flex flex-column align-items-center bg-dark" style={{ minHeight: screenSize ? '100vh' : 'auto'}}>
             <div className="go-back-icon">
                 <FaArrowLeft
                     size={30}
@@ -120,7 +120,7 @@ function EasyTranslationChallengeIlocano() {
                 />
             </div>
 
-            <h2 className="text-center my-4 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
+            <h2 className="text-center my-5 text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}>
                 Complete the Sentence - Ilocano
             </h2>
 

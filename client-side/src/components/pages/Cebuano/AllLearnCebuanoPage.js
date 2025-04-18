@@ -5,48 +5,54 @@ import CulturalContextualCebuano from '../../Dialects/Cebuano/Learn Cebuano/Cult
 import ExpressionCebuano from '../../Dialects/Cebuano/Learn Cebuano/Useful Expression/ExpressionCebuano';
 import PronounseSentenceCebuano from '../../Dialects/Cebuano/Learn Cebuano/Pronouns and Sentence/PronounseSentenceCebuano';
 import VerbsTensesCebuano from '../../Dialects/Cebuano/Learn Cebuano/Verb and Tenses/VerbsTensesCebuano';
+import useScreenSize from '../Screen Size Hook/useScreenSize';
 
 export function CebuanoBasicWordsPage() {
     console.log("TagalogVocabularyEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <BasicWordsCebuano />
+            <BasicWordsCebuano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function CebuanoCommonPhrasePage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <CommonPharseCebuano />
+            <CommonPharseCebuano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function CebuanoCulturalPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <CulturalContextualCebuano />
+            <CulturalContextualCebuano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function CebuanoExpressionsPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <ExpressionCebuano />
+            <ExpressionCebuano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function CebuanoPronouncePage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <PronounseSentenceCebuano />
+            <PronounseSentenceCebuano screenSize={screenSize === 'small'}/>
         </>
     );
 }
@@ -54,9 +60,10 @@ export function CebuanoPronouncePage() {
 
 export function CebuanoVerbsTensesPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <VerbsTensesCebuano />
+            <VerbsTensesCebuano screenSize={screenSize === 'small'}/>
         </>
     );
 }

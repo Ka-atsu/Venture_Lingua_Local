@@ -32,7 +32,7 @@ function LearnCebuanoMainContent( isSmallScreen ) {
   };
 
   return (
-    <Container fluid className="vh-100 bg-dark p-5">
+    <Container fluid className="bg-dark p-5" style={{ minHeight: isSmallScreen ? '100vh' : 'auto' }}>
       {/* Title and description section */}
       <Row className="text-start mb-4">
         <Col>

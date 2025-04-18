@@ -7,7 +7,7 @@ import Mayon from '../2 Images/Mayon.jpg';
 import Pantomina from '../2 Images/Pantomina.jpg';
 import Penafrancia from '../2 Images/Penafrancia.jpg';
 
-function CulturalContextualBicolano() {
+function CulturalContextualBicolano( screenSize ) {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
@@ -69,40 +69,42 @@ function CulturalContextualBicolano() {
   const currentExpression = culturalExpressions[currentIndex];
 
   return (
-    <Container fluid className="bg-dark p-5 vh-100">
+    <Container fluid className="bg-dark p-5" style={{ display:'flex' , flexDirection:'column' ,justifyContent: 'space-between', minHeight: screenSize ? '100vh' : 'auto' }}>
       <div className="go-back-icon">
         <FaArrowLeft size={30} color="#fff" onClick={goBack} className="go-back-arrow" />
       </div>
 
-      <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: '2.5rem' }}>
+      <div>
+      <h1 className="text-center text-white mb-4" style={{ fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}>
         Cultural Context in Bikol
       </h1>
-      <p className="text-center mb-4 text-white" style={{ fontSize: '1.3rem' }}>
-        Explore Filipino culture through language and expressions.
+      <p className="text-center mb-4 text-white" style={{ fontSize: 'clamp(1.5rem, 1vw, 5rem)' }}>
+        Explore Bicolano culture through language and expressions.
       </p>
+      </div>
 
       {/* Display current cultural expression */}
-      <Row className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
+      <Row className="d-flex justify-content-center align-items-center">
         <Col md={6}>
           <Card className="bg-light text-dark p-4 shadow-lg rounded">
             <Card.Body>
-              <h3 className="mb-3 text-center" style={{ fontWeight: 500, fontSize: '1.8rem' }}>
+              <h3 className="mb-3 text-center" style={{ fontWeight: 500, fontSize: 'clamp(1rem, 1.5vw, 5rem)' }}>
                 {currentExpression.english}
               </h3>
-              <h5 className="mb-3 text-center" style={{ color: '#731768', fontSize: '1.5rem' }}>
+              <h5 className="mb-3 text-center" style={{ color: '#731768', fontSize: 'clamp(1rem, 1.5vw, 5rem)' }}>
                 {currentExpression.bicolano}
               </h5>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Description:</strong> {currentExpression.description}</p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Cultural Note:</strong> {currentExpression.culturalNote}</p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Historical Background:</strong> {currentExpression.historicalBackground}</p>
-              <p className="mb-2 text-start" style={{ fontSize: '1.2rem' }}><strong>Modern Relevance:</strong> {currentExpression.modernRelevance}</p>
+              <p className="mb-2 text-start" style={{ fontSize: 'clamp(1rem, 1vw, 5rem)' }}><strong>Description:</strong> {currentExpression.description}</p>
+              <p className="mb-2 text-start" style={{ fontSize: 'clamp(1rem, 1vw, 5rem)' }}><strong>Cultural Note:</strong> {currentExpression.culturalNote}</p>
+              <p className="mb-2 text-start" style={{ fontSize: 'clamp(1rem, 1vw, 5rem)' }}><strong>Historical Background:</strong> {currentExpression.historicalBackground}</p>
+              <p className="mb-2 text-start" style={{ fontSize: 'clamp(1rem, 1vw, 5rem)' }}><strong>Modern Relevance:</strong> {currentExpression.modernRelevance}</p>
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6}>
+        <Col md={4}>
           <Card className="bg-transparent border-0 rounded">
             <Card.Body className="p-0">
-              <img src={currentExpression.image} alt={currentExpression.bicolano} className="img-fluid rounded" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={currentExpression.image} alt={currentExpression.bicolano} className="img-fluid rounded" style={{ width: '100%', maxWidth: '40rem', height: 'auto', objectFit: 'cover' }} />
             </Card.Body>
           </Card>
         </Col>

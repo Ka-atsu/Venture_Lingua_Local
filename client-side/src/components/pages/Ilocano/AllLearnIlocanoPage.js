@@ -5,48 +5,54 @@ import CulturalContextualIlocano from '../../Dialects/Ilocano/Learn Ilocano/Cult
 import ExpressionIlocano from '../../Dialects/Ilocano/Learn Ilocano/Useful Expression/ExpressionIlocano';
 import PronounseSentenceIlocano from '../../Dialects/Ilocano/Learn Ilocano/Pronouns and Sentence/PronounseSentenceIlocano';
 import VerbsTensesIlocano from '../../Dialects/Ilocano/Learn Ilocano/Verb and Tenses/VerbsTensesIlocano';
+import useScreenSize from '../Screen Size Hook/useScreenSize';
 
 export function IlocanoBasicWordsPage() {
     console.log("TagalogVocabularyEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <BasicWordsIlocano />
+            <BasicWordsIlocano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function IlocanoCommonPhrasePage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <CommonPharseIlocano />
+            <CommonPharseIlocano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function IlocanoCulturalPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <CulturalContextualIlocano />
+            <CulturalContextualIlocano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function IlocanoExpressionsPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <ExpressionIlocano />
+            <ExpressionIlocano screenSize={screenSize === 'small'}/>
         </>
     );
 }
 
 export function IlocanoPronouncePage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <PronounseSentenceIlocano />
+            <PronounseSentenceIlocano screenSize={screenSize === 'small'}/>
         </>
     );
 }
@@ -54,9 +60,10 @@ export function IlocanoPronouncePage() {
 
 export function IlocanoVerbsTensesPage() {
     console.log("TagalogPronunciationEasyPage is rendering!");
+    const screenSize = useScreenSize();
     return (
         <> 
-            <VerbsTensesIlocano />
+            <VerbsTensesIlocano screenSize={screenSize === 'small'}/>
         </>
     );
 }
