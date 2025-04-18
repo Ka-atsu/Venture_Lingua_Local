@@ -146,7 +146,7 @@ function VerbsTensesBicolano( screenSize ) {
       {/* Display tense cards for the current group */}
       <Row className="d-flex justify-content-center align-items-center">
         {verbTenseGroups[currentSet].tenses.map((item, index) => (
-          <Col className='mb-4' xs={4} key={item.tense}>
+          <Col className='mb-4' xs={7} sm={4} key={item.tense}>
             <div
               className={`flashcard ${flippedIndices[item.tense] ? 'flipped' : ''}`}
               onClick={() => handleFlip(item.tense)}
@@ -178,16 +178,16 @@ function VerbsTensesBicolano( screenSize ) {
             style={{
               transition: 'transform 0.3s',
               transform: 'translateY(0)',
-              padding: '12px 25px',
+              padding: '12px',
               backgroundColor: '#5783db',
               borderColor: '#5783db',
               color: '#fff',
-              fontSize: '1.1rem',
+              fontSize: 'clamp(1rem, 1.5vw, 5rem)',
             }}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
           >
-            Previous Word
+            Previous
           </Button>
         </Col>
         <Col xs="auto">
@@ -198,16 +198,16 @@ function VerbsTensesBicolano( screenSize ) {
             style={{
               transition: 'transform 0.3s',
               transform: 'translateY(0)',
-              padding: '12px 25px',
+              padding: '12px',
               backgroundColor: '#5adbb5',
               borderColor: '#5adbb5',
               color: '#000',
-              fontSize: '1.1rem',
+              fontSize: 'clamp(1rem, 1.5vw, 5rem)',
             }}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
           >
-            Next Word
+            Next
           </Button>
         </Col>
       </Row>

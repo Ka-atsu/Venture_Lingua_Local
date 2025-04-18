@@ -84,7 +84,7 @@ function ExpressionIlocano( screenSize ) {
 
       {/* Display current expression */}
       <Row className="d-flex justify-content-center align-items-center">
-        <Col className='mb-4' xs={4}>
+        <Col className='mb-4' xs={6}>
           <Card className="bg-light text-dark p-4 shadow-lg rounded">
             <Card.Body>
               <h3 className="mb-3" style={{ fontWeight: 500, fontSize: 'clamp(1rem, 1.5vw, 5rem)' }}>
@@ -115,16 +115,16 @@ function ExpressionIlocano( screenSize ) {
             style={{
               transition: 'transform 0.3s',
               transform: 'translateY(0)',
-              padding: '12px 25px',
+              padding: '12px',
               backgroundColor: '#5783db',
               borderColor: '#5783db',
               color: '#fff',
-              fontSize: '1.1rem',
+              fontSize: 'clamp(1rem, 1.5vw, 5rem)',
             }}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
           >
-            Previous Expression
+            Previous
           </Button>
         </Col>
         <Col xs="auto">
@@ -135,16 +135,16 @@ function ExpressionIlocano( screenSize ) {
             style={{
               transition: 'transform 0.3s',
               transform: 'translateY(0)',
-              padding: '12px 25px',
+              padding: '12px',
               backgroundColor: '#5adbb5',
               borderColor: '#5adbb5',
               color: '#000',
-              fontSize: '1.1rem',
+              fontSize: 'clamp(1rem, 1.5vw, 5rem)',
             }}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
           >
-            Next Expression
+            Next
           </Button>
         </Col>
       </Row>

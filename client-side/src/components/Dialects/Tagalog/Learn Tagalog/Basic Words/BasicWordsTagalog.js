@@ -153,14 +153,14 @@ function BasicWordsTagalog( screenSize ) {
             {/* Display words for the current group */}
             <Row className="d-flex justify-content-center align-items-center">
                 {wordGroups[currentSet].words.map((word, index) => (
-                    <Col className='mb-4' xs={4} key={index}>
+                    <Col className='mb-4' xs={7} sm={4} key={index}>
                         <div className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`} onClick={() => handleFlip(index)}>
                             <div className="flashcard-inner">
                                 <div className="flashcard-front align-items-center">
-                                    <h2 style={{ fontSize: 'clamp(1.8rem, 2vw, 5rem)' }}>{word.english}</h2>
+                                    <h2 style={{ fontSize: 'clamp(1.5rem, 2vw, 5rem)' }}>{word.english}</h2>
                                 </div>
                                 <div className="flashcard-back flex-column align-items-center">
-                                    <h2 style={{ fontSize: 'clamp(1.8rem, 2vw, 5rem)' }}>{word.tagalog}</h2>
+                                    <h2 style={{ fontSize: 'clamp(1.5rem, 2vw, 5rem)' }}>{word.tagalog}</h2>
                                     <button 
                                         onClick={(e) => { 
                                             e.stopPropagation(); // Prevent flipping the card when clicking the button
@@ -177,7 +177,6 @@ function BasicWordsTagalog( screenSize ) {
                 ))}
             </Row>
 
-
             {/* Button to navigate between groups */}
             <Row className="d-flex w-100 justify-content-between mt-5">
                 <Col xs="auto">
@@ -185,20 +184,20 @@ function BasicWordsTagalog( screenSize ) {
                         variant="outline-light"
                         onClick={prevSet}
                         disabled={currentSet === 0}
-                        className="btn-lg rounded-pill mx-2"
+                        className="btn-lg rounded-pill"
                         style={{
                             transition: 'transform 0.3s',
                             transform: 'translateY(0)',
-                            padding: '12px 25px',
+                            padding: '12px',
                             backgroundColor: '#5783db',
                             borderColor: '#5783db',
                             color: '#fff',
-                            fontSize: '1.1rem',
+                            fontSize: 'clamp(1rem, 1.5vw, 5rem)',
                         }}
                         onMouseOver={handleMouseOver}
                         onMouseOut={handleMouseOut}
                     >
-                        Previous Set
+                        Previous
                     </Button>
                 </Col>
                 <Col xs="auto">
@@ -206,20 +205,20 @@ function BasicWordsTagalog( screenSize ) {
                         variant="outline-success"
                         onClick={nextSet}
                         disabled={currentSet + 1 >= wordGroups.length}
-                        className="btn-lg rounded-pill mx-2"
+                        className="btn-lg rounded-pill"
                         style={{
                             transition: 'transform 0.3s',
                             transform: 'translateY(0)',
-                            padding: '12px 25px',
+                            padding: '12px',
                             backgroundColor: '#5adbb5',
                             borderColor: '#5adbb5',
                             color: '#000',
-                            fontSize: '1.1rem',
+                            fontSize: 'clamp(1rem, 1.5vw, 5rem)',
                         }}
                         onMouseOver={handleMouseOver}
                         onMouseOut={handleMouseOut}
                     >
-                        Next Set
+                        Next
                     </Button>
                 </Col>
             </Row>

@@ -152,7 +152,7 @@ function PronounseSentenceCebuano( screenSize ) {
             {/* Display phrases for the current group */}
             <Row className="d-flex justify-content-center align-items-center">
                 {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
-                    <Col className='mb-4' xs={4} key={index}>
+                    <Col className='mb-4' xs={7} sm={4} key={index}>
                         <div
                             className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
@@ -178,20 +178,20 @@ function PronounseSentenceCebuano( screenSize ) {
             <Row className="d-flex w-100 justify-content-between mt-5">
             <Col xs="auto">
                 <Button onClick={prevSet} disabled={currentSet === 0} className="btn-lg rounded-pill"
-                style={{ transition: 'transform 0.3s', transform: 'translateY(0)', padding: '12px 25px', backgroundColor: '#5783db', borderColor: '#5783db', color: '#fff', fontSize: '1.1rem', }}
+                style={{ transition: 'transform 0.3s', transform: 'translateY(0)', padding: '12px', backgroundColor: '#5783db', borderColor: '#5783db', color: '#fff', fontSize: 'clamp(1rem, 1.5vw, 5rem)', }}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 >
-                Previous Word
+                Previous
                 </Button>
             </Col>
             <Col xs="auto">
                 <Button onClick={nextSet} disabled={currentSet + 1 >= pronounceSentenceGroups.length} className="btn-lg rounded-pill"
-                style={{ transition: 'transform 0.3s', transform: 'translateY(0)', padding: '12px 25px', backgroundColor: '#5adbb5', borderColor: '#5adbb5', color: '#000', fontSize: '1.1rem', }}
+                style={{ transition: 'transform 0.3s', transform: 'translateY(0)', padding: '12px', backgroundColor: '#5adbb5', borderColor: '#5adbb5', color: '#000', fontSize: 'clamp(1rem, 1.5vw, 5rem)', }}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 >
-                Next Word
+                Next
                 </Button>
             </Col>
             </Row>

@@ -179,7 +179,7 @@ function PronounseSentenceIlocano( screenSize ) {
             {/* Display phrases for the current group */}
             <Row className="d-flex justify-content-center align-items-center">
                 {pronounceSentenceGroups[currentSet].phrases.map((phrase, index) => (
-                    <Col className='mb-4' xs={4} key={index}>
+                    <Col className='mb-4' xs={7} sm={4} key={index}>
                         <div
                             className={`flashcard ${flippedIndices.has(index) ? 'flipped' : ''}`}
                             onClick={() => handleFlip(index)}
@@ -211,16 +211,16 @@ function PronounseSentenceIlocano( screenSize ) {
                         style={{
                           transition: 'transform 0.3s',
                           transform: 'translateY(0)',
-                          padding: '12px 25px',
+                          padding: '12px',
                           backgroundColor: '#5783db',
                           borderColor: '#5783db',
                           color: '#fff',
-                          fontSize: '1.1rem',
+                          fontSize: 'clamp(1rem, 1.5vw, 5rem)',
                         }}
                         onMouseOver={handleMouseOver}
                         onMouseOut={handleMouseOut}
                       >
-                        Previous Word
+                        Previous
                       </Button>
                     </Col>
                     <Col xs="auto">
@@ -231,16 +231,16 @@ function PronounseSentenceIlocano( screenSize ) {
                         style={{
                           transition: 'transform 0.3s',
                           transform: 'translateY(0)',
-                          padding: '12px 25px',
+                          padding: '12px',
                           backgroundColor: '#5adbb5',
                           borderColor: '#5adbb5',
                           color: '#000',
-                          fontSize: '1.1rem',
+                          fontSize: 'clamp(1rem, 1.5vw, 5rem)',
                         }}
                         onMouseOver={handleMouseOver}
                         onMouseOut={handleMouseOut}
                       >
-                        Next Word
+                        Next
                       </Button>
                     </Col>
                   </Row>
