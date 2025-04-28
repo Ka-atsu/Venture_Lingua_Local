@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card, Navbar, Nav  } from 'react-bootstrap';
-import { FaUsers, FaRegFileAlt, FaChartLine, FaBars, FaTimes } from 'react-icons/fa';
+import { FaUsers, FaRegFileAlt, FaChartLine, FaBars, FaTimes , FaEnvelope, FaFacebook, FaPhone } from 'react-icons/fa';
+
 import Russel from './pictures/Tano.jpg';
 import Kent from './pictures/Kent.png';
 import Reigne from './pictures/Reign.jpg';
 import InfoGraphic from './pictures/DIALECT.png';
+import Family from './pictures/Family Communication.jpg';
+import Heritage from './pictures/Heritage Pride.jpg';
 import { useNavigate } from 'react-router-dom';
 
 // LandingPage Component
@@ -148,28 +151,59 @@ function Features() {
             <h2 style={{ fontSize: '2.5rem', fontWeight: '600', color: '#333' }}>Solution Benefits</h2>
             </Row>
 
-            <Row className="text-center mx-5 justify-content-center align-items-center">
+            <Row className="text-center justify-content-around  align-items-center">
                 <Col md={3} className="text-center mb-4">
-                    <h4>Functional Benefits</h4>
                     <p>Communicate easily with family, strengthen relationships, and preserve cultural heritage.</p>
                 </Col>
-                
+
+                <Col md={4} className="text-center mb-4">
+                <img 
+                    src={Family}
+                    alt="Language Learning" 
+                    style={{
+                        width: '100%',         
+                        maxWidth: '650px',     
+                        height: 'auto'         
+                    }} 
+                />
+                </Col>
+            </Row>
+
+            <Row className="text-center mx-5 justify-content-around align-items-center">
+                <Col md={4} className="text-center mb-5">
+                <img 
+                    src={Heritage}
+                    alt="Language Learning" 
+                    style={{
+                        width: '100%',         
+                        maxWidth: '650px',     
+                        height: 'auto'         
+                    }} 
+                />
+                </Col>
                 <Col md={3} className="text-center mb-5">
-                    <h4>Emotional Benefits</h4>
                     <p>Feel connected to your heritage, and proud of preserving your native dialect.</p>
                 </Col>
             </Row>
-            <Row className="text-center mx-5 justify-content-center align-items-center">
+
+            <Row className="text-center mx-5 justify-content-around  align-items-center">
                 <Col md={3} className="text-center mb-4">
-                    <h4>Social Benefits</h4>
-                    <p>Strengthen relationships through meaningful conversations and cultural appreciation.</p>
-                </Col>
-                
-                <Col md={3} className="text-center mb-4">
-                    <h4>Macro Benefits</h4>
                     <p>Preserve regional dialects at risk of disappearing and promote linguistic diversity in the Philippines.</p>
                 </Col>
+                
+                <Col md={4} className="text-center mb-4">
+                <img 
+                    src={InfoGraphic}
+                    alt="Language Learning" 
+                    style={{
+                        width: '100%',         
+                        maxWidth: '650px',     
+                        height: 'auto'         
+                    }} 
+                />
+                </Col>
             </Row>
+
         </Container>
     );
 }
@@ -220,9 +254,23 @@ function About() {
             </Container>
             <Container className="text-start mt-5">
                 <h2>Contact Us</h2>
-                <p>Email: contact@lingualokal.com <br/>
-                Facebook: contact@lingualokal.com <br/>
-                Phone: +123 456 7890
+                <p>
+                    <a href="mailto:contact@lingualokal.com" className="text-decoration-none text-dark">
+                    <FaEnvelope className="me-2" /> 
+                    </a>
+                    Email: contact@lingualokal.com <br />
+
+                    <a 
+                    href="https://www.facebook.com/TRusselKen" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-decoration-none text-dark"
+                    >
+                    <FaFacebook className="me-2" /> 
+                    </a>
+                    Facebook: contact@lingualokal.com <br />
+
+                    <FaPhone className="me-2" /> Phone: +123 456 7890
                 </p>
             </Container>
             </Col>

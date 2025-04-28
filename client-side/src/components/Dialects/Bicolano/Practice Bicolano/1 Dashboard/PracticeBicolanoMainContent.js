@@ -150,7 +150,7 @@ function PracticeBicolanoMainContent() {
                                     color: '#fff',
                                     maxWidth: '5rem', // Ensures the button doesn't grow too large
                                 }}
-                                
+                                disabled={true}
                                 onClick={() => gotoChallenge('vocabularyChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
@@ -170,6 +170,7 @@ function PracticeBicolanoMainContent() {
                                     maxWidth: '5rem', // Ensures the button doesn't grow too large
                                 }}
                                 onClick={() => gotoChallenge('vocabularyChallenge', 'hard')}
+                                disabled={true}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
@@ -217,6 +218,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('pronunciationChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.pronunciationChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -235,6 +237,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('pronunciationChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.pronunciationChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -280,6 +283,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('sentenceChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.sentenceChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -298,6 +302,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('sentenceChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.sentenceChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -343,6 +348,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('translationChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.translationChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -361,6 +367,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('translationChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.translationChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -406,6 +413,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('commonPhrasesChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.commonPhrasesChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -424,6 +432,7 @@ function PracticeBicolanoMainContent() {
                                 onClick={() => gotoChallenge('commonPhrasesChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.commonPhrasesChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>

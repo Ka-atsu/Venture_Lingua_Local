@@ -153,6 +153,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('vocabularyChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.vocabularyChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -171,6 +172,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('vocabularyChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.vocabularyChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -216,6 +218,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('pronunciationChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.pronunciationChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -234,6 +237,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('pronunciationChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.pronunciationChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -279,6 +283,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('sentenceChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.sentenceChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -297,6 +302,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('sentenceChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.sentenceChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -342,6 +348,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('translationChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.translationChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -360,6 +367,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('translationChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.translationChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -405,6 +413,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('commonPhrasesChallenge', 'medium')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.commonPhrasesChallenge.medium ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
@@ -423,6 +432,7 @@ function PracticeIlocanoMainContent() {
                                 onClick={() => gotoChallenge('commonPhrasesChallenge', 'hard')}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
+                                disabled={true}
                             >
                                 {completedChallenges.commonPhrasesChallenge.hard ? <FaStar size={iconSize} /> : <SlStar size={iconSize} />}
                             </Button>
